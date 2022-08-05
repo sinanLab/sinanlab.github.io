@@ -139,8 +139,10 @@
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="sinanmathematics@gmail" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                 </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="country" id="country" placeholder="Country" required>
               </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
@@ -200,13 +202,13 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li> -->
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <!--<div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -215,21 +217,21 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              School of Mathematical Sciences, <br>
+              University of Electronic Science and Technology of China,<br>
+              Chengdu, 611731, China  <br><br>
+              <!-- <strong>Phone:</strong> +1 5589 55488 55<br> -->
+              <strong>Email:</strong> sinanmathematics@gmail<br>
             </p>
 
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-info">
+          <!-- <div class="col-lg-3 col-md-6 footer-info">
             <h3>About Moderna</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
@@ -238,7 +240,7 @@
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -246,14 +248,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>SinanLab</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://sinanlab.github.io/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
