@@ -86,7 +86,7 @@
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <!-- Slide 1 -->
-      <!-- <div class="carousel-item active">
+       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>SinanLab</span></h2>
           <p class="animate__animated animate__fadeInUp">Researcher in Applied Mathematics, working in Mathematical Biology and studing Infectious Diseases using Dynamical Systems.</p>
@@ -95,7 +95,7 @@
       </div>
 
       <!-- Slide 2 -->
-      <div class="carousel-item">
+      <!--<div class="carousel-item">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Muhammad Sinan</h2>
           <p class="animate__animated animate__fadeInUp">A Master's Student in Applied Mathematics at University of Electronic Science and Technology of China (UESTC).</p>
@@ -157,7 +157,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box icon-box-blue">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="https://github.com/sinanLab/sinanlab.github.io/blob/b9e9ab3b80bb1cfeb0cae128c9067de43f750b42/assets/docs/Resume_Sinan.pdf">CV</a></h4>
+              <h4 class="title"><a href="assets/docs/Resume_Sinan.pdf">CV</a></h4>
               <p class="description">Download or read my Curriculum Vitae</p>
             </div>
           </div>
