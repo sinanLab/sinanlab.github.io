@@ -1,0 +1,8 @@
+@article{rezapour2022mathematical,
+  title={A mathematical analysis on the new fractal-fractional model of second-hand smokers via the power law type kernel: numerical solutions, equilibrium points, and sensitivity analysis},
+  author={Rezapour, S and Etemad, S and Sinan, M and Alzabut, J and Vinodkumar, A},
+  journal={Journal of Function Spaces},
+  volume={2022},
+  year={2022},
+  publisher={Hindawi}
+}

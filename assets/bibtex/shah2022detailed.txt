@@ -1,0 +1,8 @@
+@article{shah2022detailed,
+  title={A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination},
+  author={Shah, Kamal and Sinan, Muhammad and Abdeljawad, Thabet and El-Shorbagy, MA and Abdalla, Bahaaeldin and Abualrub, Marwan S and others},
+  journal={Complexity},
+  volume={2022},
+  year={2022},
+  publisher={Hindawi}
+}

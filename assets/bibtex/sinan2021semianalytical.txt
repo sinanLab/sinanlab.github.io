@@ -1,0 +1,9 @@
+@article{sinan2021semianalytical,
+  title={On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method},
+  author={Sinan, Muhammad and Shah, Kamal and Khan, Zareen A and Al-Mdallal, Qasem and Rihan, Fathalla},
+  journal={Journal of Mathematics},
+  volume={2021},
+  pages={1--11},
+  year={2021},
+  publisher={Hindawi Limited}
+}
