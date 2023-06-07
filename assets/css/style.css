@@ -2346,3 +2346,31 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+ .column {
+    flex-basis: 50%;
+  }
+}
