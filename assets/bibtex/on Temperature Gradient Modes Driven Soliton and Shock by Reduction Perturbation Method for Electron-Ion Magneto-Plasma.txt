@@ -1,0 +1,10 @@
+@article{khan2022ion,
+  title={Ion temperature gradient modes driven soliton and shock by reduction perturbation method for electron-ion magneto-plasma},
+  author={Khan, Aziz and Khan, Abbas and Sinan, Muhammad},
+  journal={Mathematical Modelling and Numerical Simulation with Applications},
+  volume={2},
+  number={1},
+  pages={1--12},
+  year={2022},
+  publisher={Mehmet YAVUZ}
+}

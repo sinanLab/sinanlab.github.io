@@ -1,0 +1,10 @@
+@article{naz2024enhancing,
+  title={Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting},
+  author={Naz, Farah and She, Lei and Sinan, Muhammad and Shao, Jie},
+  journal={Sensors},
+  volume={24},
+  number={2},
+  pages={459},
+  year={2024},
+  publisher={MDPI}
+}

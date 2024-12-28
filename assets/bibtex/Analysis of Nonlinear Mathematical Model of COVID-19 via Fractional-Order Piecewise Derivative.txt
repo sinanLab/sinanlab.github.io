@@ -1,0 +1,10 @@
+@article{sinan2023analysis,
+  title={Analysis of nonlinear mathematical model of COVID-19 via fractional-order piecewise derivative},
+  author={Sinan, Muhammad and Shah, Kamal and Abdeljawad, Thabet and Akgul, Ali},
+  journal={Chaos Theory and Applications},
+  volume={5},
+  number={1},
+  pages={27--33},
+  year={2023},
+  publisher={Akif AKG{\"U}L}
+}
