@@ -1,0 +1,9 @@
+@article{khan2024dust,
+  title={Dust acoustic nonlinearity of nonlinear mode in plasma to compute temporal and spatial results},
+  author={Khan, Aziz and Sinan, Muhammad and Bibi, Sumera and Shah, Kamal and Hleili, Manel and Abdalla, Bahaaeldin and Abdeljawad, Thabet},
+  journal={Alexandria Engineering Journal},
+  volume={104},
+  pages={115--123},
+  year={2024},
+  publisher={Elsevier}
+}
