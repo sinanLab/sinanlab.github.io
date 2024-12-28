@@ -1,0 +1,9 @@
+@article{sinan2020analytic,
+  title={Analytic approximate solution of rabies transmission dynamics using homotopy perturbation method},
+  author={Sinan, Muhammad},
+  journal={Matrix Science Mathematics (MSMK)},
+  volume={4},
+  number={1},
+  pages={01--05},
+  year={2020}
+}
