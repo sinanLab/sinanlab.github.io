@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Muhammad Sinan</title>
     <!-- Add Leaflet CSS (you can use a CDN) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -10,6 +12,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <!-- CSS Styles -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script>
+        // Data for the chart
+        const data = [
+            { year: 2020, value: 1 },
+            { year: 2021, value: 11 },
+            { year: 2022, value: 62 },
+            { year: 2023, value: 98 },
+            { year: 2024, value: 107 }
+        ];
+
+        const chart = document.getElementById("chart");
+
+        // Dynamically create bars
+        data.forEach(item => {
+            const bar = document.createElement("div");
+            bar.className = "bar";
+            bar.style.height = `${item.value * 2}px`; // Scale values for visualization
+            bar.setAttribute("data-label", `Year: ${item.year}, Value: ${item.value}`);
+            chart.appendChild(bar);
+        });
+    </script>
     <style>
         .inline-links {
             display: inline-block;
@@ -57,6 +80,10 @@
                     <span class="divider">|</span>
                     <a href="https://scholar.google.com/citations?user=qoeSgwkAAAAJ&hl=en" target="_blank" style="text-decoration: none; color: inherit;">
                         <i class="ai ai-google-scholar ai-3x" style="font-size: 32px;"></i>
+                    </a>  
+                    <span class="divider">|</span>
+                    <a href="./assets/pdfs/Muhammad sinan cv.pdf" target="_blank" style="text-decoration: none; color: inherit;">
+                        <i class="ai ai-cv ai-3x" style="font-size: 32px;"></i>
                     </a>  
                 </div>
                 <div>
@@ -217,12 +244,10 @@
         <!-- Article 1 -->
         <div class="row my-4">
             <div class="col-md-9">
-                <h4>
+                <h5>
                     <!-- Linked title of the research article -->
-                    <a>
                         Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model
-                    </a>
-                </h4>
+                </h5>
                 <p>Ali, Amjad; Khan, Muhammad Yasin; Sinan, Muhammad; Allehiany, FM; Mahmoud, Emad E; Abdel-Aty, Abdel-Haleem; Ali, Gohar, 2020, Results in Physics. Elsevier, 103676.</p>
                 <p><strong>Research output:</strong> Journal article</p>
                 <p><a href="https://doi.org/10.1016/j.rinp.2020.103676">Journal URL</a> &emsp; <a href="./assets/bibtex/Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model.txt">Bibtex</a></p> 
@@ -236,12 +261,10 @@
         <!-- Article 2 -->
         <div class="row my-4">
             <div class="col-md-9">
-                <h4>
+                <h5>
                     <!-- Linked title of the research article -->
-                    <a >
                         Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method
-                    </a>
-                </h4>
+                </h5>
                 <p>Sinan, Muhammad, 2020, Matrix Science Mathematics (MSMK), 4(1), 01--05.</p>
                 <p><strong>Research output:</strong> Journal article</p>
                 <p><a href="https://matrixsmathematic.com/msmk-01-2020-01-05">Journal URL</a> &emsp; <a href="./assets/bibtex/Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method.txt">Bibtex</a></p> 
@@ -252,12 +275,10 @@
         <!-- Article 3 -->
         <div class="row my-4">
             <div class="col-md-9">
-                <h4>
+                <h5>
                     <!-- Linked title of the research article -->
-                    <a >
                         Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment
-                    </a>
-                </h4>
+                </h5>
                 <p>Sinan, Muhammad; Ali, Amjad; Shah, Kamal; Assiri, Taghreed A; Nofal, Taher A, 2021, Results in Physics. Elsevier, 103873.</p>
                 <p><strong>Research output:</strong> Journal article</p>
                 <p><a href="https://doi.org/10.1016/j.rinp.2021.103873">Journal URL</a> &emsp; <a href="./assets/bibtex/Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment.txt">Bibtex</a></p> 
@@ -271,12 +292,9 @@
         <!-- Article 4 -->
         <div class="row my-4">
             <div class="col-md-9">
-                <h4>
-                    <!-- Linked title of the research article -->
-                    <a >
+                <h5>
                         On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method
-                    </a>
-                </h4>
+                </h5>
                 <p>Sinan, Muhammad; Shah, Kamal; Khan, Zareen A; Al-Mdallal, Qasem; Rihan, Fathalla, 2021, Journal of Mathematics, Hindawi, 6045722.</p>
                 <p><strong>Research output:</strong> Journal article</p>
                 <p><a href="https://doi.org/10.1155/2021/6045722">Journal URL</a> &emsp; <a href="./assets/bibtex/On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method.txt">Bibtex</a></p> 
@@ -289,12 +307,10 @@
         <!-- Article 5 -->
         <div class="row my-4">
             <div class="col-md-9">
-                <h4>
+                <h5>
                     <!-- Linked title of the research article -->
-                    <a >
                         Fractional Mathematical Modeling of Malaria Disease with Treatment & Insecticides
-                    </a>
-                </h4>
+                </h5>
                 <p>Sinan, Muhammad; Ahmad, Hijaz; Ahmad, Zubair; Baili, Jamel; Murtaza, Saqib; Aiyashi, MA; Botmart, Thongchai, 2022, Results in Physics, Elsevier, 105220.</p>
                 <p><strong>Research output:</strong> Journal article</p>
                 <p><a href="https://doi.org/10.1016/j.rinp.2022.105220">Journal URL</a> &emsp; <a href="./assets/bibtex/Fractional Mathematical Modeling of Malaria Disease with Treatment & Insecticides.txt">Bibtex</a></p> 
@@ -308,12 +324,9 @@
             <!-- Article 6 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Ion Temperature Gradient Modes Driven Soliton and Shock by Reduction Perturbation Method for Electron-Ion Magneto-Plasma
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Khan, Aziz; Khan, Abbas; Sinan, Muhammad, 2022, Mathematical Modelling and Numerical Simulation with Applications, Mehmet YAVUZ, 1--12.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.53391/mmnsa.2022.01.001">Journal URL</a> &emsp; <a href="./assets/bibtex/on Temperature Gradient Modes Driven Soliton and Shock by Reduction Perturbation Method for Electron-Ion Magneto-Plasma.txt">Bibtex</a></p> 
@@ -326,12 +339,9 @@
             <!-- Article 8 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Rezapour, S; Etemad, S; Sinan, M; Alzabut, J; Vinodkumar, A, 2022, Journal of Function Spaces, Hindawi, 3553021.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.1155/2022/3553021">Journal URL</a> &emsp; <a href="./assets/bibtex//A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel Numerical Solutions, Equilibrium Points, and Sensitivity Analysis.txt">Bibtex</a></p> 
@@ -344,12 +354,9 @@
             <!-- Article 9 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Asymptotic Behavior and Semi-Analytic Solution of a Novel Compartmental Biological Model
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Sinan, Muhammad; Leng, Jinsong; Anjum, Misbah; Fiaz, Mudassar, 2022, Mathematical Modelling and Numerical Simulation with Applications, Mehmet YAVUZ, 88--107.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.53391/mmnsa.2022.008">Journal URL</a> &emsp; <a href="./assets/bibtex/Asymptotic Behavior and Semi-Analytic Solution of a Novel Compartmental Biological Model.txt">Bibtex</a></p> 
@@ -362,12 +369,10 @@
             <!-- Article 10 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
+                    <h5>
                         <!-- Linked title of the research article -->
-                        <a >
                             A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Shah, Kamal; Sinan, Muhammad; Abdeljawad, Thabet; El-Shorbagy, Mohammed A; Abdalla, Bahaaeldin; Abualrub, Marwan S, 2022, Complexity, Hindawi, 7236824.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.1155/2022/7236824">Journal URL</a> &emsp; <a href="./assets/bibtex/A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination.txt">Bibtex</a></p> 
@@ -380,12 +385,9 @@
                         <!-- Article 11 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Analysis of Nonlinear Mathematical Model of COVID-19 via Fractional-Order Piecewise Derivative
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Sinan, Muhammad; Shah, Kamal; Abdeljawad, Thabet; Akgul, Ali, 2023, Chaos Theory and Applications, Akif AKGÜL, 27--33.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.51537/chaos.1210461">Journal URL</a> &emsp; <a href="./assets/bibtex/Analysis of Nonlinear Mathematical Model of COVID-19 via Fractional-Order Piecewise Derivative.txt">Bibtex</a></p> 
@@ -398,12 +400,9 @@
             <!-- Article 12 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Analysis of the Mathematical Model of Cutaneous Leishmaniasis Disease
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Sinan, Muhammad; Ansari, Khursheed J; Kanwal, Asia; Shah, Kamal; Abdeljawad, Thabet; Abdalla, Bahaaeldin; others, 2023, Alexandria Engineering Journal, Elsevier, 117--134.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.1016/j.aej.2023.03.065">Journal URL</a> &emsp; <a href="./assets/bibtex/Analysis of the Mathematical Model of Cutaneous Leishmaniasis Disease.txt">Bibtex</a></p> 
@@ -416,12 +415,9 @@
             <!-- Article 13 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Mathematical Analysis of Fractal-Fractional Mathematical Model of COVID-19
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Sinan, Muhammad; Alharthi, Nadiyah Hussain, 2023, Fractal and Fractional, MDPI, 7(5), 358.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.3390/fractalfract7050358">Journal URL</a> &emsp; <a href="./assets/bibtex/Mathematical Analysis of Fractal-Fractional Mathematical Model of COVID-19.txt">Bibtex</a></p> 
@@ -434,12 +430,9 @@
             <!-- Article 14 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Advances in Numerical Simulation with a Clustering Method Based on K-means Algorithm and Adams Bashforth Scheme for Fractional Order Laser Chaotic System
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Sinan, Muhammad; Leng, Jinsong; Shah, Kamal; Abdeljawad, Thabet, 2023, Alexandria Engineering Journal, Elsevier, 75, 165--179.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.1016/j.aej.2023.05.080">Journal URL</a> &emsp; <a href="./assets/bibtex/Advances in Numerical Simulation with a Clustering Method Based on K-means Algorithm and Adams Bashforth Scheme for Fractional Order Laser Chaotic System.txt">Bibtex</a></p> 
@@ -452,12 +445,9 @@
             <!-- Article 15 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a>
+                    <h5>
                             Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Naz, Farah; She, Lei; Sinan, Muhammad; Shao, Jie, 2024, Sensors, MDPI, 24(2), 459.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.3390/s24020459">Journal URL</a> &emsp; <a href="./assets/bibtex/Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting.txt">Bibtex</a></p> 
@@ -470,12 +460,9 @@
             <!-- Article 16 -->
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <a >
+                    <h5>
                             Fractional Order Mathematical Modeling of Typhoid Fever Disease
-                        </a>
-                    </h4>
+                    </h5>
                     <p>Sinan, Muhammad; Shah, Kamal; Kumam, Poom; Mahariq, Ibrahim; Ansari, Khursheed J; Ahmad, Zubair; Shah, Zahir, 2022, Results in Physics, Elsevier, 32, 105044.</p>
                     <p><strong>Research output:</strong> Journal article</p>
                     <p><a href="https://doi.org/10.1016/j.rinp.2021.105044">Journal URL</a> &emsp; <a href="./assets/bibtex/Fractional order mathematical modeling of typhoid fever disease.txt">Bibtex</a></p> 
@@ -487,12 +474,9 @@
             
             <div class="row my-4">
                 <div class="col-md-9">
-                    <h4>
-                        <!-- Linked title of the research article -->
-                        <p>
+                    <h5>
                             Dust Acoustic Nonlinearity of Nonlinear Mode in Plasma to Compute Temporal and Spatial Results
-                        </p>
-                    </h4>
+                    </h5>
                     <p>Khan, Aziz; Sinan, Muhammad; Bibi, Sumera; Shah, Kamal; Hleili, Manel; Abdalla, Bahaaeldin; Abdeljawad, Thabet, 2024, Alexandria Engineering Journal, Elsevier, 104, 115--123.</p>
                     <p><strong>Research output:</strong> Journal article</p> 
                     <p><a href="https://doi.org/10.1016/j.aej.2024.06.030">Journal URL</a> &emsp; <a href="./assets/bibtex/Dust Acoustic Nonlinearity of Nonlinear Mode in Plasma to Compute Temporal and Spatial Results.txt">Bibtex</a></p> 
