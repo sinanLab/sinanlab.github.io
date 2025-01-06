@@ -97,12 +97,12 @@
                 <li class="nav-item"><a class="nav-link" href="#achievements">Academic Achievements</a></li>
                 <li class="nav-item"><a class="nav-link" href="#fingerprints">Fingerprints</a></li>
                 <li class="nav-item"><a class="nav-link" href="#network">Network</a></li>
+                <li class="nav-item"><a class="nav-link" href="#profileIndex">World Rankings</a></li>
                 <li class="nav-item"><a class="nav-link" href="#research-output">Research Output</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <!-- Main Content -->
     <main class="container my-4">
         <!-- Personal Profile Section -->
@@ -129,7 +129,7 @@
                     </div>
                 </div>
                     <div class="col-md-3">
-                        <img src="./assets/pictures/500-y2024-WUR-badge.png" alt="QS ranking" width="150" height="150">
+                        <img src="./assets/pictures/500-y2024-WUR-badge.png" alt="QS ranking" width="150" height="160">
                     </div>
             </div>
             <!-- Education 2 -->
@@ -467,6 +467,46 @@
 
     </div>
     
+
+<!-- Horizontal separator -->
+<hr class="my-4" border border-3">
+
+    <div id="profileIndex">
+        <h3>Profile Index (World Scientific Ranking: ScholarGPS)</h3>
+        <p></p>
+        <!-- Education 1 -->
+        <div class="row my-4">
+            <div class="col-md-9">
+                <a href="https://scholargps.com/scholars/87153854044154/muhammad-sinan"><img src="./assets/pictures/rankingTable.png" alt="ScholarGPS ranking" style="max-width: 100%; height: auto;"></a>
+            </div>
+            <div class="col-md-3">
+                <img src="./assets/pictures/scholargps_logo_socials.png" alt="ScholarGPS" style="max-width: 100%; height: auto;">
+                <h1>Year: 2023</h1>
+                <h3>Rank #438,127</h3>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="col-md-3">
+                <div>
+                    <a href="https://scholargps.com/scholars/87153854044154/muhammad-sinan"><img src="./assets/pictures/publication_history.png" alt="ScholarGPS ranking" style="max-width: 400%; height: auto;"></a>
+                </div>
+                <div>
+                    <a href="https://scholargps.com/scholars/87153854044154/muhammad-sinan"><img src="./assets/pictures/publications.png" alt="ScholarGPS ranking" style="max-width: 400%; height: auto;"></a>
+                </div>
+            </div>
+            <div>
+                <p><strong>ScholarGPS ID:</strong> 87153854044154<br>
+                <strong>Affiliation:</strong> University of Electronic Science and Technology of China<br>
+                <strong>Field: </strong>Physical Sciences and Mathematics <br>
+                <strong>Discipline: </strong>Mathematics <br>
+                <strong>Total publications: </strong>14 <br>
+                <strong>Total predicted citations: </strong>250 <br>
+                <strong>Overall (All Fields) predicted h-index: </strong>7 <br>
+            <strong>Link to ScholarGPS: </strong>https://scholargps.com/scholars/87153854044154/muhammad-sinan</p>
+            </div>
+        </div>
+</div>
+    
     <!-- Horizontal separator -->
     <hr class="my-4" border border-3">
 
@@ -555,4 +595,20 @@
                 })
                 .catch(error => console.error('Error loading GeoJSON:', error));
         </script>
+
+        <script>
+        const sourceURL = "https://scholargps.com/scholars/87153854044154/muhammad-sinan"; // Replace with the actual URL
+        fetch(sourceURL)
+            .then(response => response.text())
+            .then(data => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, "text/html");
+            const targetDiv = doc.querySelector("#header_chart"); // Update this to the specific div's ID
+            if (targetDiv) {
+                document.getElementById("embeddedDiv").innerHTML = targetDiv.outerHTML;
+            }
+            })
+            .catch(error => console.error("Error fetching the content:", error));
+        </script>
+
 </html>
