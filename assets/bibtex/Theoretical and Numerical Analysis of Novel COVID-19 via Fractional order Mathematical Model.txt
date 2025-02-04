@@ -1,9 +1,0 @@
-@article{ali2021theoretical,
-  title={Theoretical and numerical analysis of novel COVID-19 via fractional order mathematical model},
-  author={Ali, Amjad and Khan, Muhammad Yasin and Sinan, Muhammad and Allehiany, FM and Mahmoud, Emad E and Abdel-Aty, Abdel-Haleem and Ali, Gohar},
-  journal={Results in physics},
-  volume={20},
-  pages={103676},
-  year={2021},
-  publisher={Elsevier}
-}

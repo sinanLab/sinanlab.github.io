@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="scroll-progress"></div>
+
+<style>
+    .scroll-progress {
+        height: 3px;
+        background: #3498db;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinan (R1 Researcher)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- MathJax for equations -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <!-- HTML -->
+    <header class="academic-header">
+        <div class="header-container">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="assets/images/img2.jpg" alt="Your Name" class="profile-img">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="name">Muhammad Sinan</h1>
+                    <p class="position">First Stage Researcher (R1)</p>
+                    <div class="affiliation">
+                        <img src="assets/images/logo-ippt.png" alt="University Logo" class="affiliation-logo">
+                        <div class="affiliation-details">
+                            <span class="university-name">Polish Academy of Sciences</span>
+                            <span class="department">Institute of Fundamental and Technological Researcher</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <!-- In your header's contact button -->
+                <button class="contact-btn" onclick="smoothScroll('contact-form')">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </button>
+                <a href="./assets/docs/Muhammad sinan cv.pdf" download class="cv-btn">
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
+                <a href="https://scholar.google.com/citations?user=ID&user=qoeSgwkAAAAJ" class="scholar-btn">
+                    <i class="ai ai-google-scholar ai-3x" style="font-size: 32px;"></i>
+                    Scholar Profile
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="academic-nav">
+            <ul>
+                <li><a href="./index.html" class="active">Overview</a></li>
+                <li><a href="./publicationList.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Qualification background -->
+    <section class="section">
+        <h2>Qualification</h2>
+        <div class="chart-container">
+        </div>
+    </section>
+
+</body>
+</html>

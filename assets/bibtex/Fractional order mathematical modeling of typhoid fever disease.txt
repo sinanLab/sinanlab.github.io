@@ -1,9 +1,0 @@
-@article{sinan2022fractional,
-  title={Fractional order mathematical modeling of typhoid fever disease},
-  author={Sinan, Muhammad and Shah, Kamal and Kumam, Poom and Mahariq, Ibrahim and Ansari, Khursheed J and Ahmad, Zubair and Shah, Zahir},
-  journal={Results in Physics},
-  volume={32},
-  pages={105044},
-  year={2022},
-  publisher={Elsevier}
-}

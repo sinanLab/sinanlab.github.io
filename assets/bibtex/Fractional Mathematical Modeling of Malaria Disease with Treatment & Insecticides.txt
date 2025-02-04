@@ -1,9 +1,0 @@
-@article{sinan2022fractional,
-  title={Fractional mathematical modeling of malaria disease with treatment \& insecticides},
-  author={Sinan, Muhammad and Ahmad, Hijaz and Ahmad, Zubair and Baili, Jamel and Murtaza, Saqib and Aiyashi, MA and Botmart, Thongchai},
-  journal={Results in Physics},
-  volume={34},
-  pages={105220},
-  year={2022},
-  publisher={Elsevier}
-}

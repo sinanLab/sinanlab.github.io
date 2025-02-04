@@ -1,9 +1,0 @@
-@article{sinan2023analysis,
-  title={Analysis of the mathematical model of cutaneous leishmaniasis disease},
-  author={Sinan, Muhammad and Ansari, Khursheed J and Kanwal, Asia and Shah, Kamal and Abdeljawad, Thabet and Abdalla, Bahaaeldin and others},
-  journal={Alexandria Engineering Journal},
-  volume={72},
-  pages={117--134},
-  year={2023},
-  publisher={Elsevier}
-}

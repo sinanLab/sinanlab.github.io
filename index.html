@@ -1,534 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+<div class="scroll-progress"></div>
+
+<style>
+    .scroll-progress {
+        height: 3px;
+        background: #3498db;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Muhammad Sinan</title>
-    <!-- Add Leaflet CSS (you can use a CDN) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Sinan (R1 Researcher)</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <!-- CSS Styles -->
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <style>
-        .inline-links {
-            display: inline-block;
-            vertical-align: top;
-            margin-top: 10px; /* Adjust as needed */
-        }
-        .divider {
-            margin: 0 10px; /* Adjust the margin value as needed */
-        }
-        .my-4 {
-            margin-top: 4px;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- MathJax for equations -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="container py-4 border-bottom">
-        <div class="row align-items-center">
-            <!-- Author Photo -->
-            <div class="col-md-2 text-center">
-                <img src="./assets/profilePicture.jpg" class="img-fluid rounded">
+    <!-- Hero Section -->
+    <!-- HTML -->
+    <header class="academic-header">
+        <div class="header-container">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="assets/images/img2.jpg" alt="Your Name" class="profile-img">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="name">Muhammad Sinan</h1>
+                    <p class="position">First Stage Researcher (R1)</p>
+                    <div class="affiliation">
+                        <img src="assets/images/logo-ippt.png" alt="University Logo" class="affiliation-logo">
+                        <div class="affiliation-details">
+                            <span class="university-name">Polish Academy of Sciences</span>
+                            <span class="department">Institute of Fundamental and Technological Researcher</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Author Name and Details -->
-            <div class="col-md-7">
-                <h1>Muhammad Sinan</h1>
-                <h5>M.Sc in Mathematics</h5>
-                <p>School of Mathematical Sciences, University of Electronic Science and Technology of China UESTC</p>
-                <div class="d-flex align-items-center mt-2">
-                    <a href="https://orcid.org/0000-0003-2177-3806" target="_blank" style="text-decoration: none; color: inherit;">
-                        <i class="ai ai-orcid ai-3x" style="font-size: 32px;"></i>
-                    </a>  
-                    <span class="divider">|</span>
-                    <a href="https://www.scopus.com/authid/detail.uri?authorId=57221590341" target="_blank" style="text-decoration: none; color: inherit;">
-                        <i class="ai ai-scopus ai-3x" style="font-size: 32px;"></i>
-                    </a>   
-                    <span class="divider">|</span>
-                    <a href="https://www.researchgate.net/profile/Muhammad-Sinan" target="_blank" style="text-decoration: none; color: inherit;">
-                        <i class="ai ai-researchgate ai-3x" style="font-size: 32px;"></i>
-                    </a>  
-                    <span class="divider">|</span>
-                    <a href="https://scholar.google.com/citations?user=qoeSgwkAAAAJ&hl=en" target="_blank" style="text-decoration: none; color: inherit;">
-                        <i class="ai ai-google-scholar ai-3x" style="font-size: 32px;"></i>
-                    </a>  
-                    <span class="divider">|</span>
-                    <a href="./assets/pdfs/Muhammad sinan cv.pdf" target="_blank" style="text-decoration: none; color: inherit;">
-                        <i class="ai ai-cv ai-3x" style="font-size: 32px;"></i>
-                    </a>  
-                </div>
-                <div>
-                    <a href="mailto:sinan@alu.uestc.edu.cn" class="btn btn-outline-primary mt-2">Contact</a> 
-                </div>
 
-            </div>
-            <!-- h-index and Citations -->
-            <div class="col-md-3 bg-light p-3 text-center rounded border">
-                <h5>h-index</h5><div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="text-muted"><strong>Citations:</strong> <span class="mb-0">230</span></p>
-                    <p class="text-muted"><strong>h-index:</strong> <span class="mb-0">9</span></p>
-                    <p class="text-muted"><strong>i10-index:</strong> <span class="mb-0">10</span></p>
-                </div>                
-                <!-- Bar Chart Placeholder -->
-                <div class="d-flex align-items-end" style="height: 200px; gap: 5px;">
-                    <!-- Embed PDF using embed -->
-                    <embed src="./assets/bar_graph.png" width="100%" height="100%">
-                </div>                
-                <p class="text-muted mt-2">Citations per year</p>
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <!-- In your header's contact button -->
+                <button class="contact-btn" onclick="smoothScroll('contact-form')">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </button>
+                <a href="./assets/docs/Muhammad sinan cv.pdf" download class="cv-btn">
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
+                <a href="https://scholar.google.com/citations?user=ID&user=qoeSgwkAAAAJ" class="scholar-btn">
+                    <i class="ai ai-google-scholar ai-3x" style="font-size: 32px;"></i>
+                    Scholar Profile
+                </a>
             </div>
         </div>
-    </header>
-    
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border">
-        <div class="container">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Education">Education</a></li>
-                <li class="nav-item"><a class="nav-link" href="#ResearchInterests">Research Interests</a></li>
-                <li class="nav-item"><a class="nav-link" href="#achievements">Academic Achievements</a></li>
-                <li class="nav-item"><a class="nav-link" href="#fingerprints">Fingerprints</a></li>
-                <li class="nav-item"><a class="nav-link" href="#network">Network</a></li>
-                <li class="nav-item"><a class="nav-link" href="#profileIndex">World Rankings</a></li>
-                <li class="nav-item"><a class="nav-link" href="#research-output">Research Output</a></li>
+
+        <!-- Navigation -->
+        <nav class="academic-nav">
+            <ul>
+                <li><a href="./index.html" class="active">Overview</a></li>
+                <li><a href="./publicationList.html">Publications</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Main Content -->
-    <main class="container my-4">
-        <!-- Personal Profile Section -->
-        <div id="overview">
-            <h1>Profile Overview</h1>
-            <p></p>
-            <p></p>
-        </div>
-            
-        <!-- Horizontal separator -->
-        <hr class="my-4" border border-3">
-
-        <div id="Education">
-            <h3>Education</h3>
-            <!-- Education 1 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h6>Master of Science in Mathematics (18 years)</h6>
-                    <p>School of Mathematical Sciences, Univeristy of Electronic Science and Technolog of China <br>
-                        <strong>Thesis title:</strong> Mathematical Modelling and Epidemiological Framework of Infectious Diseases with Optimal Control using Dynamical Systems
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="text-muted">Supervisor: <span class="text-muted">Prof. Leng Jinsong</span></p>
-                    </div>
-                </div>
-                    <div class="col-md-3">
-                        <img src="./assets/pictures/500-y2024-WUR-badge.png" alt="QS ranking" width="150" height="160">
-                    </div>
-            </div>
-            <!-- Education 2 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h6>BS Mathematics (16 years)</h6>
-                    <p>Department of Mathematics and Statistics, Univeristy of Swat <br>
-                    <strong>Thesis title:</strong> Stability Analysis of Dynamical Leptospirosis Disease with Hormonic Mean type incidence rate
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p class="text-muted">Supervisor: <span class="text-muted">Prof. Amir Khan</span></p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <img src="./assets/pictures/uswat.png" alt="QS ranking" width="250" height="150">
-                </div>
-            </div>
-        </div>
-
-        <!-- Horizontal separator -->
-        <hr class="my-4" border border-3">
-
-        <div id="ResearchInterests">
-            <h3>Research Interests</h3>
-            <p>Dynamical Systems</p>
-        </div>
-
-        <!-- Horizontal separator -->
-        <hr class="my-4" border border-3">
-
-        <div id="achievements">
-            <h3>Achievements</h3>
-            <h4>Scholarship</h4>
-            <!-- Scholarship 1 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h6>Fully Funded Chinese University Scholarship</h6>
-                    <p>School of Mathematical Sciences, Univeristy of Electronic Science and Technolog of China <br>
-                    Duration: September 2021 - June 2024
-                    </p>
-                </div>
-            </div>
-
-            <h4>Awards</h4>
-            <!-- award 1 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h6>First Prize of Academic Achievement Award </h6>
-                    <p>School of Mathematical Sciences, Univeristy of Electronic Science and Technolog of China
-                        <br> Reason: For the achievements in the field of academic research in the academic year of 2022-2023
-                       </p>
-                        <p>Year: 2023</p>
-                </div>
-            </div>
-            <!-- award 2 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h6>Second Prize of Excellent Performance Award</h6>
-                    <p>International Student Office (ISO), Univeristy of Electronic Science and Technolog of China
-                     <br> Reason: For active participation into all kinds of school activities in the areas of arts, sports and voluntarly work etc. and hereby great Achievements in the academic year of 2022-2023
-                    </p>
-                     <p>Year: 2023</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Horizontal separator -->
-        <hr class="my-4" border border-3">
-
-        <div id="fingerprints" class="my-5">
-            <h3>Fingerprints</h3>
-            <p></p>
-            <div class="row">
-                <div class="col-6 col-md-4 mb-3">
-                    <div class="p-3 border bg-light">Biomathematics</div>
-                </div>
-                <div class="col-6 col-md-4 mb-3">
-                    <div class="p-3 border bg-light">Mathematical Modeling in Medicine</div>
-                </div>
-                <div class="col-6 col-md-4 mb-3">
-                    <div class="p-3 border bg-light">Biomedical Engineering</div>
-                </div>
-        </div>
-
-    <!-- Horizontal separator -->
-    <hr class="hr-full">
-
-    <div id="research-output" class="container my-5">
-        <h2>Research Output (Selected Articles)</h2>
-    
-        <!-- Article 1 -->
-        <div class="row my-4">
-            <div class="col-md-9">
-                <h5>
-                    <!-- Linked title of the research article -->
-                        Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model
-                </h5>
-                <p>Ali, Amjad; Khan, Muhammad Yasin; Sinan, Muhammad; Allehiany, FM; Mahmoud, Emad E; Abdel-Aty, Abdel-Haleem; Ali, Gohar, 2020, Results in Physics. Elsevier, 103676.</p>
-                <p><strong>Research output:</strong> Journal article</p>
-                <p><a href="https://doi.org/10.1016/j.rinp.2020.103676">Journal URL</a> &emsp; <a href="./assets/bibtex/Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model.txt">Bibtex</a></p> 
-
-            </div>
-            <div class="col-md-3">
-                <div class="scite-badge" data-doi="10.1016/j.rinp.2020.103676" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-            </div>
-        </div>
-
-        <!-- Article 2 -->
-        <div class="row my-4">
-            <div class="col-md-9">
-                <h5>
-                    <!-- Linked title of the research article -->
-                        Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method
-                </h5>
-                <p>Sinan, Muhammad, 2020, Matrix Science Mathematics (MSMK), 4(1), 01--05.</p>
-                <p><strong>Research output:</strong> Journal article</p>
-                <p><a href="https://matrixsmathematic.com/msmk-01-2020-01-05">Journal URL</a> &emsp; <a href="./assets/bibtex/Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method.txt">Bibtex</a></p> 
-
-            </div>
-        </div>
-
-        <!-- Article 3 -->
-        <div class="row my-4">
-            <div class="col-md-9">
-                <h5>
-                    <!-- Linked title of the research article -->
-                        Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment
-                </h5>
-                <p>Sinan, Muhammad; Ali, Amjad; Shah, Kamal; Assiri, Taghreed A; Nofal, Taher A, 2021, Results in Physics. Elsevier, 103873.</p>
-                <p><strong>Research output:</strong> Journal article</p>
-                <p><a href="https://doi.org/10.1016/j.rinp.2021.103873">Journal URL</a> &emsp; <a href="./assets/bibtex/Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment.txt">Bibtex</a></p> 
-
-            </div>
-            <div class="col-md-3">
-                <div class="scite-badge" data-doi="10.1016/j.rinp.2021.103873" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-            </div>
-        </div>
-
-        <!-- Article 4 -->
-        <div class="row my-4">
-            <div class="col-md-9">
-                <h5>
-                        On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method
-                </h5>
-                <p>Sinan, Muhammad; Shah, Kamal; Khan, Zareen A; Al-Mdallal, Qasem; Rihan, Fathalla, 2021, Journal of Mathematics, Hindawi, 6045722.</p>
-                <p><strong>Research output:</strong> Journal article</p>
-                <p><a href="https://doi.org/10.1155/2021/6045722">Journal URL</a> &emsp; <a href="./assets/bibtex/On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method.txt">Bibtex</a></p> 
-            </div>
-            <div class="col-md-3">
-                <div class="scite-badge" data-doi="10.1155/2021/6045722" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-            </div>
-        </div>
-
-        <!-- Article 5 -->
-        <div class="row my-4">
-            <div class="col-md-9">
-                <h5>
-                    <!-- Linked title of the research article -->
-                        Fractional Mathematical Modeling of Malaria Disease with Treatment & Insecticides
-                </h5>
-                <p>Sinan, Muhammad; Ahmad, Hijaz; Ahmad, Zubair; Baili, Jamel; Murtaza, Saqib; Aiyashi, MA; Botmart, Thongchai, 2022, Results in Physics, Elsevier, 105220.</p>
-                <p><strong>Research output:</strong> Journal article</p>
-                <p><a href="https://doi.org/10.1016/j.rinp.2022.105220">Journal URL</a> &emsp; <a href="./assets/bibtex/Fractional Mathematical Modeling of Malaria Disease with Treatment & Insecticides.txt">Bibtex</a></p> 
-            </div>
-            <div class="col-md-3">
-                <div class="scite-badge" data-doi="10.1016/j.rinp.2022.105220" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-            </div>
-        </div>
-
-        
-            <!-- Article 6 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Ion Temperature Gradient Modes Driven Soliton and Shock by Reduction Perturbation Method for Electron-Ion Magneto-Plasma
-                    </h5>
-                    <p>Khan, Aziz; Khan, Abbas; Sinan, Muhammad, 2022, Mathematical Modelling and Numerical Simulation with Applications, Mehmet YAVUZ, 1--12.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.53391/mmnsa.2022.01.001">Journal URL</a> &emsp; <a href="./assets/bibtex/on Temperature Gradient Modes Driven Soliton and Shock by Reduction Perturbation Method for Electron-Ion Magneto-Plasma.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.53391/mmnsa.2022.01.001" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-    
-            <!-- Article 8 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis
-                    </h5>
-                    <p>Rezapour, S; Etemad, S; Sinan, M; Alzabut, J; Vinodkumar, A, 2022, Journal of Function Spaces, Hindawi, 3553021.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.1155/2022/3553021">Journal URL</a> &emsp; <a href="./assets/bibtex//A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel Numerical Solutions, Equilibrium Points, and Sensitivity Analysis.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.1155/2022/3553021" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-    
-            <!-- Article 9 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Asymptotic Behavior and Semi-Analytic Solution of a Novel Compartmental Biological Model
-                    </h5>
-                    <p>Sinan, Muhammad; Leng, Jinsong; Anjum, Misbah; Fiaz, Mudassar, 2022, Mathematical Modelling and Numerical Simulation with Applications, Mehmet YAVUZ, 88--107.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.53391/mmnsa.2022.008">Journal URL</a> &emsp; <a href="./assets/bibtex/Asymptotic Behavior and Semi-Analytic Solution of a Novel Compartmental Biological Model.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.53391/mmnsa.2022.008" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-    
-            <!-- Article 10 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                        <!-- Linked title of the research article -->
-                            A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination
-                    </h5>
-                    <p>Shah, Kamal; Sinan, Muhammad; Abdeljawad, Thabet; El-Shorbagy, Mohammed A; Abdalla, Bahaaeldin; Abualrub, Marwan S, 2022, Complexity, Hindawi, 7236824.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.1155/2022/7236824">Journal URL</a> &emsp; <a href="./assets/bibtex/A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.1155/2022/7236824" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-                        <!-- Article 11 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Analysis of Nonlinear Mathematical Model of COVID-19 via Fractional-Order Piecewise Derivative
-                    </h5>
-                    <p>Sinan, Muhammad; Shah, Kamal; Abdeljawad, Thabet; Akgul, Ali, 2023, Chaos Theory and Applications, Akif AKGÜL, 27--33.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.51537/chaos.1210461">Journal URL</a> &emsp; <a href="./assets/bibtex/Analysis of Nonlinear Mathematical Model of COVID-19 via Fractional-Order Piecewise Derivative.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.51537/chaos.1210461" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-            <!-- Article 12 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Analysis of the Mathematical Model of Cutaneous Leishmaniasis Disease
-                    </h5>
-                    <p>Sinan, Muhammad; Ansari, Khursheed J; Kanwal, Asia; Shah, Kamal; Abdeljawad, Thabet; Abdalla, Bahaaeldin; others, 2023, Alexandria Engineering Journal, Elsevier, 117--134.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.1016/j.aej.2023.03.065">Journal URL</a> &emsp; <a href="./assets/bibtex/Analysis of the Mathematical Model of Cutaneous Leishmaniasis Disease.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.1016/j.aej.2023.03.065" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-            <!-- Article 13 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Mathematical Analysis of Fractal-Fractional Mathematical Model of COVID-19
-                    </h5>
-                    <p>Sinan, Muhammad; Alharthi, Nadiyah Hussain, 2023, Fractal and Fractional, MDPI, 7(5), 358.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.3390/fractalfract7050358">Journal URL</a> &emsp; <a href="./assets/bibtex/Mathematical Analysis of Fractal-Fractional Mathematical Model of COVID-19.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.3390/fractalfract7050358" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-            <!-- Article 14 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Advances in Numerical Simulation with a Clustering Method Based on K-means Algorithm and Adams Bashforth Scheme for Fractional Order Laser Chaotic System
-                    </h5>
-                    <p>Sinan, Muhammad; Leng, Jinsong; Shah, Kamal; Abdeljawad, Thabet, 2023, Alexandria Engineering Journal, Elsevier, 75, 165--179.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.1016/j.aej.2023.05.080">Journal URL</a> &emsp; <a href="./assets/bibtex/Advances in Numerical Simulation with a Clustering Method Based on K-means Algorithm and Adams Bashforth Scheme for Fractional Order Laser Chaotic System.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.1016/j.aej.2023.05.080" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-            <!-- Article 15 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting
-                    </h5>
-                    <p>Naz, Farah; She, Lei; Sinan, Muhammad; Shao, Jie, 2024, Sensors, MDPI, 24(2), 459.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.3390/s24020459">Journal URL</a> &emsp; <a href="./assets/bibtex/Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.3390/s24020459" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-            <!-- Article 16 -->
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Fractional Order Mathematical Modeling of Typhoid Fever Disease
-                    </h5>
-                    <p>Sinan, Muhammad; Shah, Kamal; Kumam, Poom; Mahariq, Ibrahim; Ansari, Khursheed J; Ahmad, Zubair; Shah, Zahir, 2022, Results in Physics, Elsevier, 32, 105044.</p>
-                    <p><strong>Research output:</strong> Journal article</p>
-                    <p><a href="https://doi.org/10.1016/j.rinp.2021.105044">Journal URL</a> &emsp; <a href="./assets/bibtex/Fractional order mathematical modeling of typhoid fever disease.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.1016/j.rinp.2021.105044" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-            
-            <div class="row my-4">
-                <div class="col-md-9">
-                    <h5>
-                            Dust Acoustic Nonlinearity of Nonlinear Mode in Plasma to Compute Temporal and Spatial Results
-                    </h5>
-                    <p>Khan, Aziz; Sinan, Muhammad; Bibi, Sumera; Shah, Kamal; Hleili, Manel; Abdalla, Bahaaeldin; Abdeljawad, Thabet, 2024, Alexandria Engineering Journal, Elsevier, 104, 115--123.</p>
-                    <p><strong>Research output:</strong> Journal article</p> 
-                    <p><a href="https://doi.org/10.1016/j.aej.2024.06.030">Journal URL</a> &emsp; <a href="./assets/bibtex/Dust Acoustic Nonlinearity of Nonlinear Mode in Plasma to Compute Temporal and Spatial Results.txt">Bibtex</a></p> 
-                </div>
-                <div class="col-md-3">
-                    <div class="scite-badge" data-doi="10.1016/j.aej.2024.06.030" data-layout="vertical" data-show-zero="false" data-small="false" data-show-labels="true" data-tally-show="true"> </div>
-                </div>
-            </div>
-
-    </div>
-    
-
-<!-- Horizontal separator -->
-<hr class="my-4" border border-3">
-
-    <div id="profileIndex">
-        <h3>Profile Index (World Scientific Ranking: ScholarGPS)</h3>
-        <p></p>
-        <!-- Education 1 -->
-        <div class="row my-4">
-            <div class="col-md-9">
-                <a href="https://scholargps.com/scholars/87153854044154/muhammad-sinan"><img src="./assets/pictures/rankingTable.png" alt="ScholarGPS ranking" style="max-width: 100%; height: auto;"></a>
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/pictures/scholargps_logo_socials.png" alt="ScholarGPS" style="max-width: 100%; height: auto;">
-                <h1>Year: 2023</h1>
-                <h3>Rank #438,127</h3>
+    <!-- Qualification background -->
+    <section class="section">
+        <h3>Qualification</h3>
+        <div class="col-md-9">
+            <h5>Master of Science in Mathematics (18 years)</h5>
+            <p>School of Mathematical Sciences, Univeristy of Electronic Science and Technolog of China <br>
+                <strong>Thesis title:</strong> Mathematical Modelling and Epidemiological Framework of Infectious Diseases with Optimal Control using Dynamical Systems
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="text-muted">Supervisor: <span class="text-muted">Prof. Leng Jinsong</span></p>
             </div>
         </div>
         <div class="col-md-9">
-            <div class="col-md-3">
-                <div>
-                    <a href="https://scholargps.com/scholars/87153854044154/muhammad-sinan"><img src="./assets/pictures/publication_history.png" alt="ScholarGPS ranking" style="max-width: 400%; height: auto;"></a>
-                </div>
-                <div>
-                    <a href="https://scholargps.com/scholars/87153854044154/muhammad-sinan"><img src="./assets/pictures/publications.png" alt="ScholarGPS ranking" style="max-width: 400%; height: auto;"></a>
-                </div>
-            </div>
-            <div>
-                <p><strong>ScholarGPS ID:</strong> 87153854044154<br>
-                <strong>Affiliation:</strong> University of Electronic Science and Technology of China<br>
-                <strong>Field: </strong>Physical Sciences and Mathematics <br>
-                <strong>Discipline: </strong>Mathematics <br>
-                <strong>Total publications: </strong>14 <br>
-                <strong>Total predicted citations: </strong>250 <br>
-                <strong>Overall (All Fields) predicted h-index: </strong>7 <br>
-            <strong>Link to ScholarGPS: </strong>https://scholargps.com/scholars/87153854044154/muhammad-sinan</p>
+            <h5>BS Mathematics (16 years)</h5>
+            <p>Department of Mathematics and Statistics, Univeristy of Swat <br>
+            <strong>Thesis title:</strong> Stability Analysis of Dynamical Leptospirosis Disease with Hormonic Mean type incidence rate
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="text-muted">Supervisor: <span class="text-muted">Prof. Amir Khan</span></p>
             </div>
         </div>
-</div>
-    
-    <!-- Horizontal separator -->
-    <hr class="my-4" border border-3">
+    </section>
 
-    <!-- Research Collaborators Section -->
-    <div id="network" class="my-5">
-        <h3>Collaborations and top research areas</h3>
-        <!-- Placeholder for Map -->
-        <div class="border bg-light" style="height: 300px; text-align: center; line-height: 300px;">
-            <div id="world-map" class="border bg-light" style="height: 300px;"></div>
+    <section class="section">
+        <h3>Achievements</h2>
+        <div class="col-md-9">
+            <h5>Fully Funded Chinese University Scholarship</h5>
+                    <p>School of Mathematical Sciences, Univeristy of Electronic Science and Technolog of China <br>
+                    Duration: September 2021 - June 2024
+                    </p>
         </div>
-    </div>
+        <div class="col-md-9">
+            <h5>First Prize of Academic Achievement Award </h5>
+            <p>School of Mathematical Sciences, Univeristy of Electronic Science and Technolog of China
+            <br> Reason: For the achievements in the field of academic research in the academic year of 2022-2023
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h5>Second Prize of Excellent Performance Award</h5>
+            <p>International Student Office (ISO), Univeristy of Electronic Science and Technolog of China
+             <br> Reason: For active participation into all kinds of school activities in the areas of arts, 
+             <br> sports and voluntarly work etc. and hereby great Achievements in the academic year of 2022-2023
+            </p>
+        </div>
+    </section>
 
-</main>
+    <!-- Publications Section -->
+    <section class="section">
+        <h3>Publications</h3>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search publications...">
+            <button id="resetButton" class="reset-btn">Reset</button>
+        </div>
+        <div id="publicationList" class="publications-grid"></div>
+        <p></p>
+        <a href="./publicationList.html">Full list</a>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-light text-center py-3 border-top">
-        <p>&copy; 2024 Muhammad Sinan. All rights reserved.</p>
-    </footer>
-    <!--------------------------------------------------------------------------------------------------------------------------->
-    <!---------------------------------------------------- Bootstrap JS --------------------------------------------------------->
-    <!--------------------------------------------------------------------------------------------------------------------------->
-    <script async type="application/javascript" src="https://cdn.scite.ai/badge/scite-badge-latest.min.js"></script>
+    <!-- Research Metrics -->
+    <section class="section">
+        <h3>Research Impact</h3>
+        <div class="chart-container">
+            <canvas id="citationChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section" id="contact-form">
+        <h3>Contact</h3>
+        <form class="contact-form"  id="contact-section" action="https://formspree.io/f/mqaeboje" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3XC6G1C70D"></script>
     <script>
@@ -539,76 +170,10 @@
     gtag('config', 'G-3XC6G1C70D');
     </script>
 
-    <!---------------------------------- map plugin ------------------------------------>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+    <script src="app.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-        <!-- JavaScript Section -->
-        <!-- Leaflet JS -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/0.0.8/leaflet.ajax.min.js"></script>
-
-        <script>
-            // Initialize the map
-            var map = L.map('world-map').setView([20, 0], 2); // Set initial view (lat, long, zoom level)
-
-            // Set up tile layer (OpenStreetMap tiles)
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-
-            // Load the GeoJSON for world countries
-            fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Add countries to the map
-                    L.geoJSON(data, {
-                        style: function (feature) {
-                            return {
-                                fillColor: '#CCCCCC',  // Default gray color for unhighlighted countries
-                                weight: 1,
-                                opacity: 0.6,
-                                color: 'white',
-                                fillOpacity: 0.7
-                            };
-                        },
-                        onEachFeature: function (feature, layer) {
-                            // Highlight specific countries
-                            const highlightedCountries = ['Thailand', 'Saudi Arabia', 'Iran', 'Turkey'];  // Specify the countries you want to highlight
-                            const countryName = feature.properties.name;
-
-                            if (highlightedCountries.includes(countryName)) {
-                                layer.setStyle({
-                                    fillColor: '#4CAF50',  // Green color for highlighted countries
-                                    fillOpacity: 1,
-                                });
-
-                                // Add the country name to the popup for highlighted countries
-                                layer.bindPopup(`<b>${countryName}</b>`);
-                            } else {
-                                // For non-highlighted countries, you can still add the name if needed
-                                layer.bindPopup(countryName);
-                            }
-                        }
-                    }).addTo(map);
-                })
-                .catch(error => console.error('Error loading GeoJSON:', error));
-        </script>
-
-        <script>
-        const sourceURL = "https://scholargps.com/scholars/87153854044154/muhammad-sinan"; // Replace with the actual URL
-        fetch(sourceURL)
-            .then(response => response.text())
-            .then(data => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, "text/html");
-            const targetDiv = doc.querySelector("#header_chart"); // Update this to the specific div's ID
-            if (targetDiv) {
-                document.getElementById("embeddedDiv").innerHTML = targetDiv.outerHTML;
-            }
-            })
-            .catch(error => console.error("Error fetching the content:", error));
-        </script>
-
 </html>

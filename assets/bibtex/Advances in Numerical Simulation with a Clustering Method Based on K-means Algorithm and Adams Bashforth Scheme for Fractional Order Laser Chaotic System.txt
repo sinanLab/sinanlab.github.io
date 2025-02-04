@@ -1,9 +1,0 @@
-@article{sinan2023advances,
-  title={Advances in numerical simulation with a clustering method based on K--means algorithm and Adams Bashforth scheme for fractional order laser chaotic system},
-  author={Sinan, Muhammad and Leng, Jinsong and Shah, Kamal and Abdeljawad, Thabet},
-  journal={Alexandria Engineering Journal},
-  volume={75},
-  pages={165--179},
-  year={2023},
-  publisher={Elsevier}
-}

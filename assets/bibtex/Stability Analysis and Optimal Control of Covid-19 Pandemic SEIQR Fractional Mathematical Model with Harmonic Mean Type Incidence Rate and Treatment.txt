@@ -1,9 +1,0 @@
-@article{sinan2021stability,
-  title={Stability analysis and optimal control of COVID-19 pandemic SEIQR fractional mathematical model with harmonic mean type incidence rate and treatment},
-  author={Sinan, Muhammad and Ali, Amjad and Shah, Kamal and Assiri, Taghreed A and Nofal, Taher A},
-  journal={Results in Physics},
-  volume={22},
-  pages={103873},
-  year={2021},
-  publisher={Elsevier}
-}
