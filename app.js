@@ -114,4 +114,13 @@ function initializeCitationChart() {
         }
     });
 }
-
+// Smooth Scroll Function
+function smoothScroll(targetId) {
+    const target = document.getElementById(targetId);
+    if (target) {
+        window.scrollTo({
+            top: target.offsetTop - 50, // Adjust offset if needed
+            behavior: "smooth"
+        });
+    }
+}
