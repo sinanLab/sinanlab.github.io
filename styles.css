@@ -166,7 +166,7 @@ input, textarea {
 }
 /* CSS */
 .academic-header {
-    position: fixed; /* Sticks header to the top */
+    position: relative; /* Sticks header to the top */
     top: 0;
     left: 0;
     width: 100%;
