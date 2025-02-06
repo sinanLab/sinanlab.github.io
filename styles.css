@@ -330,28 +330,7 @@ input, textarea {
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
-    .action-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .contact-btn, .cv-btn, .scholar-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .academic-nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-}
 .academic-nav {
     position: sticky;
     top: 0;
