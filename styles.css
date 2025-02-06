@@ -374,3 +374,9 @@ input, textarea {
     top: 0;
     z-index: 999;
 }
+/* Button Hover Effects */
+.contact-btn:hover { background: #0056b3; }
+.cv-btn { background: #28a745; }
+.cv-btn:hover { background: #218838; }
+.scholar-btn { background: #f1c40f; color: #333; }
+.scholar-btn:hover { background: #d4ac0d; }
