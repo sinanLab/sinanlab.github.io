@@ -50,9 +50,9 @@
     
             <!-- Action Buttons -->
             <div class="action-buttons">
-                <button class="contact-btn" onclick="smoothScroll('contact-section')">
+                <a href="./contact.html#contact-form" class="contact-btn">
                     <i class="fas fa-envelope"></i> Contact
-                </button>
+                </a>
                 <a href="./assets/docs/Muhammad_sinan_cv.pdf" download class="cv-btn">
                     <i class="fas fa-download"></i> Download CV
                 </a>
@@ -67,6 +67,7 @@
             <ul>
                 <li><a href="./index.html" class="active">Overview</a></li>
                 <li><a href="./publicationList.html">Publications</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -135,23 +136,6 @@
         <div class="chart-container">
             <canvas id="citationChart"></canvas>
         </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="section" id="contact-form">
-        <h3>Contact</h3>
-        <form class="contact-form"  id="contact-section" action="https://formspree.io/f/mqaeboje" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
     </section>
 
 
