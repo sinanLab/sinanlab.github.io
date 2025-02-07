@@ -320,7 +320,7 @@ body {
     margin: 0 auto;
     padding: 1rem;
     display: flex;
-    gap: 2rem;
+    gap: .5rem;
     list-style: none;
 }
 
