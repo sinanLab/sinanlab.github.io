@@ -234,6 +234,7 @@ body {
     color: #2c3e50;
     margin: 0;
     font-weight: 600;
+    text-align: left;
 }
 
 .position {
@@ -320,7 +321,7 @@ body {
     margin: 0 auto;
     padding: 1rem;
     display: flex;
-    gap: .5rem;
+    gap: .2rem;
     list-style: none;
 }
 
