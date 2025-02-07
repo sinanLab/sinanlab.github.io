@@ -437,7 +437,9 @@ body {
 .scholar-btn { background: #f1c40f; color: #333; }
 .scholar-btn:hover { background: #d4ac0d; }
 
-/* Gallery */
+#intro {
+    text-align: center;
+}
 /* Gallery Styling */
 .gallery-container {
     padding: 20px;
