@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // List of images (you may need a server-side script to fetch files dynamically)
     const images = [
-        "img4",
-        "img5",
-        "img9"
+        "img4.jpg",
+        "img5.jpg",
+        "img9.jpg"
     ];
 
     // Generate gallery
