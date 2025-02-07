@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const galleryContainer = document.getElementById("gallery");
 
     // Replace with your image folder path
-    const imageFolder = "assets/gallery/";
+    const imageFolder = "assets/gallery";
 
     // List of images (you may need a server-side script to fetch files dynamically)
     const images = [
