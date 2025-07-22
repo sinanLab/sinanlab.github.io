@@ -1,0 +1,177 @@
+@article{ali2020theoretical,
+  title={Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model},
+  author={Ali, Amjad and Khan, Muhammad Yasin and Sinan, Muhammad and Allehiany, FM and Mahmoud, Emad E and Abdel-Aty, Abdel-Haleem and Ali, Gohar},
+  journal={Results in Physics},
+  pages={103676},
+  year={2020},
+  publisher={Elsevier}
+}
+
+@article{sinan2020analytic,
+  title={Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method},
+  author={Sinan, Muhammad},
+  journal={Matrix Science Mathematics (MSMK)},
+  volume={4},
+  number={1},
+  pages={01--05},
+  year={2020}
+}
+
+@article{sinan2021stability,
+  title={Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment},
+  author={Sinan, Muhammad and Ali, Amjad and Shah, Kamal and Assiri, Taghreed A and Nofal, Taher A},
+  journal={Results in Physics},
+  pages={103873},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{sinan2021semianalytical,
+  title={On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method},
+  author={Sinan, Muhammad and Shah, Kamal and Khan, Zareen A and Al-Mdallal, Qasem and Rihan, Fathalla},
+  journal={Journal of Mathematics},
+  volume={2021},
+  number={1},
+  pages={6045722},
+  year={2021},
+  publisher={Hindawi}
+}
+
+@article{khan2022ion,
+  title={Ion temperature gradient modes driven soliton and shock by reduction perturbation method for electron-ion magneto-plasma},
+  author={Khan, Aziz and Khan, Abbas and Sinan, Muhammad},
+  journal={Mathematical Modelling and Numerical Simulation with Applications},
+  volume={2},
+  number={1},
+  pages={1--12},
+  year={2022},
+  publisher={Mehmet YAVUZ}
+}
+
+@misc{sinan2022mathematical,
+  title={Mathematical Modelling of Infectious Disease: Mathematical Biology (Stability Analysis of Dynamical Leptospirosis Disease with Harmonic Mean Incidence Rate)},
+  author={Sinan, Muhammad},
+  year={2022}
+}
+
+@article{rezapour2022mathematical,
+  title={A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis},
+  author={Rezapour, S and Etemad, S and Sinan, M and Alzabut, J and Vinodkumar, A},
+  journal={Journal of Function Spaces},
+  volume={2022},
+  number={1},
+  pages={3553021},
+  year={2022},
+  publisher={Hindawi}
+}
+
+@article{sinan2022asymptotic,
+  title={Asymptotic behavior and semi-analytic solution of a novel compartmental biological model},
+  author={Sinan, Muhammad and Leng, Jinsong and Anjum, Misbah and Fiaz, Mudassar},
+  journal={Mathematical Modelling and Numerical Simulation with Applications},
+  volume={2},
+  number={2},
+  pages={88--107},
+  year={2022},
+  publisher={Mehmet YAVUZ}
+}
+
+@article{shah2022detailed,
+  title={A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination},
+  author={Shah, Kamal and Sinan, Muhammad and Abdeljawad, Thabet and El-Shorbagy, Mohammed A and Abdalla, Bahaaeldin and Abualrub, Marwan S},
+  journal={Complexity},
+  volume={2022},
+  number={1},
+  pages={7236824},
+  year={2022},
+  publisher={Hindawi}
+}
+
+@article{sinan2023analysis,
+  title={Analysis of nonlinear mathematical model of COVID-19 via fractional-order piecewise derivative},
+  author={Sinan, Muhammad and Shah, Kamal and Abdeljawad, Thabet and Akgul, Ali},
+  journal={Chaos Theory and Applications},
+  volume={5},
+  number={1},
+  pages={27--33},
+  year={2023},
+  publisher={Akif AKG{\"U}L}
+}
+
+@article{sinan2023analysis,
+  title={Analysis of the mathematical model of cutaneous leishmaniasis disease},
+  author={Sinan, Muhammad and Ansari, Khursheed J and Kanwal, Asia and Shah, Kamal and Abdeljawad, Thabet and Abdalla, Bahaaeldin and others},
+  journal={Alexandria Engineering Journal},
+  volume={72},
+  pages={117--134},
+  year={2023},
+  publisher={Elsevier}
+}
+
+@article{sinan2023mathematical,
+  title={Mathematical analysis of fractal-fractional mathematical model of COVID-19},
+  author={Sinan, Muhammad and Alharthi, Nadiyah Hussain},
+  journal={Fractal and Fractional},
+  volume={7},
+  number={5},
+  pages={358},
+  year={2023},
+  publisher={MDPI}
+}
+
+@article{sinan2023advances,
+  title={Advances in numerical simulation with a clustering method based on K--means algorithm and Adams Bashforth scheme for fractional order laser chaotic system},
+  author={Sinan, Muhammad and Leng, Jinsong and Shah, Kamal and Abdeljawad, Thabet},
+  journal={Alexandria Engineering Journal},
+  volume={75},
+  pages={165--179},
+  year={2023},
+  publisher={Elsevier}
+}
+
+@article{naz2024enhancing,
+  title={Enhancing radar echo extrapolation by convlstm2d for precipitation nowcasting},
+  author={Naz, Farah and She, Lei and Sinan, Muhammad and Shao, Jie},
+  journal={Sensors},
+  volume={24},
+  number={2},
+  pages={459},
+  year={2024},
+  publisher={MDPI}
+}
+
+@article{khan2024dust,
+  title={Dust acoustic nonlinearity of nonlinear mode in plasma to compute temporal and spatial results},
+  author={Khan, Aziz and Sinan, Muhammad and Bibi, Sumera and Shah, Kamal and Hleili, Manel and Abdalla, Bahaaeldin and Abdeljawad, Thabet},
+  journal={Alexandria Engineering Journal},
+  volume={104},
+  pages={115--123},
+  year={2024},
+  publisher={Elsevier}
+}
+
+@article{sinan2022fractional,
+  title={Fractional mathematical modeling of malaria disease with treatment \& insecticides},
+  author={Sinan, Muhammad and Ahmad, Hijaz and Ahmad, Zubair and Baili, Jamel and Murtaza, Saqib and Aiyashi, MA and Botmart, Thongchai},
+  journal={Results in Physics},
+  volume={34},
+  pages={105220},
+  year={2022},
+  publisher={Elsevier}
+}
+
+@article{sinan2022fractional,
+  title={Fractional order mathematical modeling of typhoid fever disease},
+  author={Sinan, Muhammad and Shah, Kamal and Kumam, Poom and Mahariq, Ibrahim and Ansari, Khursheed J and Ahmad, Zubair and Shah, Zahir},
+  journal={Results in Physics},
+  volume={32},
+  pages={105044},
+  year={2022},
+  publisher={Elsevier}
+}
+
+@article{rezapour2022research,
+  title={Research Article A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis},
+  author={Rezapour, S and Etemad, S and Sinan, M and Alzabut, J and Vinodkumar, A},
+  year={2022}
+}
