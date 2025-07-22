@@ -1,90 +1,92 @@
 {
-    "name": "Muhammad Sinan",
-    "publications": [
-      {
-        "title": "Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model",
-        "journal": "Results in Physics",
-        "year": 2020,
-        "doi": "10.1016/j.rinp.2020.103676"
-      },
-      {
-        "title": "A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination",
-        "journal": "Complexity",
-        "year": 2022,
-        "doi": "10.1155/2022/7236824"
-      },
-      {
-        "title": "Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method",
-        "journal": "Matrix Science Mathematics (MSMK)",
-        "year": 2020,
-        "doi": null
-      },
-      {
-        "title": "Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment",
-        "journal": "Results in Physics",
-        "year": 2021,
-        "doi": null
-      },
-      {
-        "title": "On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method",
-        "journal": "Journal of Mathematics",
-        "year": 2021,
-        "doi": null
-      },
-      {
-        "title": "Ion temperature gradient modes driven soliton and shock by reduction perturbation method for electron-ion magneto-plasma",
-        "journal": "Mathematical Modelling and Numerical Simulation with Applications",
-        "year": 2022,
-        "doi": null
-      },
-      {
-        "title": "A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis",
-        "journal": "Journal of Function Spaces",
-        "year": 2022,
-        "doi": null
-      },
-      {
-        "title": "Asymptotic behavior and semi-analytic solution of a novel compartmental biological model",
-        "journal": "Mathematical Modelling and Numerical Simulation with Applications",
-        "year": 2022,
-        "doi": null
-      },
-      {
-        "title": "Analysis of nonlinear mathematical model of COVID-19 via fractional-order piecewise derivative",
-        "journal": "Chaos Theory and Applications",
-        "year": 2023,
-        "doi": null
-      },
-      {
-        "title": "Analysis of the mathematical model of cutaneous leishmaniasis disease",
-        "journal": "Alexandria Engineering Journal",
-        "year": 2023,
-        "doi": null
-      },
-      {
-        "title": "Mathematical analysis of fractal-fractional mathematical model of COVID-19",
-        "journal": "Fractal and Fractional",
-        "year": 2023,
-        "doi": null
-      },
-      {
-        "title": "Advances in numerical simulation with a clustering method based on K–means algorithm and Adams Bashforth scheme for fractional order laser chaotic system",
-        "journal": "Alexandria Engineering Journal",
-        "year": 2023,
-        "doi": null
-      },
-      {
-        "title": "Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting",
-        "journal": "Sensors",
-        "year": 2024,
-        "doi": null
-      },
-      {
-        "title": "Dust acoustic nonlinearity of nonlinear mode in plasma to compute temporal and spatial results",
-        "journal": "Alexandria Engineering Journal",
-        "year": 2024,
-         "doi": null
-       }
-     ]
-  }
-  
+  "name": "Muhammad Sinan",
+  "publications_count": "15+",
+  "citations": "250+",
+  "h_index": "8",
+  "publications": [
+    {
+      "title": "Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model",
+      "journal": "Results in Physics",
+      "year": 2020,
+      "doi": "10.1016/j.rinp.2020.103676"
+    },
+    {
+      "title": "A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination",
+      "journal": "Complexity",
+      "year": 2022,
+      "doi": "10.1155/2022/7236824"
+    },
+    {
+      "title": "Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method",
+      "journal": "Matrix Science Mathematics (MSMK)",
+      "year": 2020,
+      "doi": null
+    },
+    {
+      "title": "Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment",
+      "journal": "Results in Physics",
+      "year": 2021,
+      "doi": null
+    },
+    {
+      "title": "On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method",
+      "journal": "Journal of Mathematics",
+      "year": 2021,
+      "doi": null
+    },
+    {
+      "title": "Ion temperature gradient modes driven soliton and shock by reduction perturbation method for electron-ion magneto-plasma",
+      "journal": "Mathematical Modelling and Numerical Simulation with Applications",
+      "year": 2022,
+      "doi": null
+    },
+    {
+      "title": "A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis",
+      "journal": "Journal of Function Spaces",
+      "year": 2022,
+      "doi": null
+    },
+    {
+      "title": "Asymptotic behavior and semi-analytic solution of a novel compartmental biological model",
+      "journal": "Mathematical Modelling and Numerical Simulation with Applications",
+      "year": 2022,
+      "doi": null
+    },
+    {
+      "title": "Analysis of nonlinear mathematical model of COVID-19 via fractional-order piecewise derivative",
+      "journal": "Chaos Theory and Applications",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "title": "Analysis of the mathematical model of cutaneous leishmaniasis disease",
+      "journal": "Alexandria Engineering Journal",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "title": "Mathematical analysis of fractal-fractional mathematical model of COVID-19",
+      "journal": "Fractal and Fractional",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "title": "Advances in numerical simulation with a clustering method based on K–means algorithm and Adams Bashforth scheme for fractional order laser chaotic system",
+      "journal": "Alexandria Engineering Journal",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "title": "Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting",
+      "journal": "Sensors",
+      "year": 2024,
+      "doi": null
+    },
+    {
+      "title": "Dust acoustic nonlinearity of nonlinear mode in plasma to compute temporal and spatial results",
+      "journal": "Alexandria Engineering Journal",
+      "year": 2024,
+      "doi": null
+    }
+  ]
+}
