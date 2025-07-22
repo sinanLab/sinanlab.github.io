@@ -5,8 +5,8 @@ import bibtexparser
 import json
 import os
 
-BIB_PATH = '../assets/docs/citations.txt'
-JSON_PATH = '../researcher.json'
+BIB_PATH = 'assets/docs/publications.bib'
+JSON_PATH = 'researcher.json'
 
 # Load bib file
 def load_bib(path):
@@ -20,8 +20,13 @@ def bib_to_publications(entries):
     for entry in entries:
         pub = {
             'title': entry.get('title', '').replace('{', '').replace('}', ''),
+            'author': entry.get('author', '').replace('{', '').replace('}', ''),
             'journal': entry.get('journal', entry.get('booktitle', '')),
             'year': entry.get('year', ''),
+            'volume': entry.get('volume', ''),
+            'number': entry.get('number', ''),
+            'pages': entry.get('pages', ''),
+            'publisher': entry.get('publisher', ''),
             'doi': entry.get('doi', None)
         }
         publications.append(pub)

@@ -6,110 +6,200 @@
   "publications": [
     {
       "title": "Theoretical and Numerical Analysis of Novel COVID-19 via Fractional order Mathematical Model",
+      "author": "Ali, Amjad and Khan, Muhammad Yasin and Sinan, Muhammad and Allehiany, FM and Mahmoud, Emad E and Abdel-Aty, Abdel-Haleem and Ali, Gohar",
       "journal": "Results in Physics",
       "year": "2020",
+      "volume": "",
+      "number": "",
+      "pages": "103676",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "Analytic Approximate Solution of Rabies Transmission Dynamics Using Homotopy Perturbation Method",
+      "author": "Sinan, Muhammad",
       "journal": "Matrix Science Mathematics (MSMK)",
       "year": "2020",
+      "volume": "4",
+      "number": "1",
+      "pages": "01--05",
+      "publisher": "",
       "doi": null
     },
     {
       "title": "Stability Analysis and Optimal Control of Covid-19 Pandemic SEIQR Fractional Mathematical Model with Harmonic Mean Type Incidence Rate and Treatment",
+      "author": "Sinan, Muhammad and Ali, Amjad and Shah, Kamal and Assiri, Taghreed A and Nofal, Taher A",
       "journal": "Results in Physics",
       "year": "2021",
+      "volume": "",
+      "number": "",
+      "pages": "103873",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "On Semianalytical Study of Fractional-Order Kawahara Partial Differential Equation with the Homotopy Perturbation Method",
+      "author": "Sinan, Muhammad and Shah, Kamal and Khan, Zareen A and Al-Mdallal, Qasem and Rihan, Fathalla",
       "journal": "Journal of Mathematics",
       "year": "2021",
+      "volume": "2021",
+      "number": "1",
+      "pages": "6045722",
+      "publisher": "Hindawi",
       "doi": null
     },
     {
       "title": "Ion temperature gradient modes driven soliton and shock by reduction perturbation method for electron-ion magneto-plasma",
+      "author": "Khan, Aziz and Khan, Abbas and Sinan, Muhammad",
       "journal": "Mathematical Modelling and Numerical Simulation with Applications",
       "year": "2022",
+      "volume": "2",
+      "number": "1",
+      "pages": "1--12",
+      "publisher": "Mehmet YAVUZ",
       "doi": null
     },
     {
       "title": "Mathematical Modelling of Infectious Disease: Mathematical Biology (Stability Analysis of Dynamical Leptospirosis Disease with Harmonic Mean Incidence Rate)",
+      "author": "Sinan, Muhammad",
       "journal": "",
       "year": "2022",
+      "volume": "",
+      "number": "",
+      "pages": "",
+      "publisher": "",
       "doi": null
     },
     {
       "title": "A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis",
+      "author": "Rezapour, S and Etemad, S and Sinan, M and Alzabut, J and Vinodkumar, A",
       "journal": "Journal of Function Spaces",
       "year": "2022",
+      "volume": "2022",
+      "number": "1",
+      "pages": "3553021",
+      "publisher": "Hindawi",
       "doi": null
     },
     {
       "title": "Asymptotic behavior and semi-analytic solution of a novel compartmental biological model",
+      "author": "Sinan, Muhammad and Leng, Jinsong and Anjum, Misbah and Fiaz, Mudassar",
       "journal": "Mathematical Modelling and Numerical Simulation with Applications",
       "year": "2022",
+      "volume": "2",
+      "number": "2",
+      "pages": "88--107",
+      "publisher": "Mehmet YAVUZ",
       "doi": null
     },
     {
       "title": "A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination",
+      "author": "Shah, Kamal and Sinan, Muhammad and Abdeljawad, Thabet and El-Shorbagy, Mohammed A and Abdalla, Bahaaeldin and Abualrub, Marwan S",
       "journal": "Complexity",
       "year": "2022",
+      "volume": "2022",
+      "number": "1",
+      "pages": "7236824",
+      "publisher": "Hindawi",
       "doi": null
     },
     {
       "title": "Analysis of nonlinear mathematical model of COVID-19 via fractional-order piecewise derivative",
+      "author": "Sinan, Muhammad and Shah, Kamal and Abdeljawad, Thabet and Akgul, Ali",
       "journal": "Chaos Theory and Applications",
       "year": "2023",
+      "volume": "5",
+      "number": "1",
+      "pages": "27--33",
+      "publisher": "Akif AKG{\\\"U}L",
       "doi": null
     },
     {
       "title": "Analysis of the mathematical model of cutaneous leishmaniasis disease",
+      "author": "Sinan, Muhammad and Ansari, Khursheed J and Kanwal, Asia and Shah, Kamal and Abdeljawad, Thabet and Abdalla, Bahaaeldin and others",
       "journal": "Alexandria Engineering Journal",
       "year": "2023",
+      "volume": "72",
+      "number": "",
+      "pages": "117--134",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "Mathematical analysis of fractal-fractional mathematical model of COVID-19",
+      "author": "Sinan, Muhammad and Alharthi, Nadiyah Hussain",
       "journal": "Fractal and Fractional",
       "year": "2023",
+      "volume": "7",
+      "number": "5",
+      "pages": "358",
+      "publisher": "MDPI",
       "doi": null
     },
     {
       "title": "Advances in numerical simulation with a clustering method based on K--means algorithm and Adams Bashforth scheme for fractional order laser chaotic system",
+      "author": "Sinan, Muhammad and Leng, Jinsong and Shah, Kamal and Abdeljawad, Thabet",
       "journal": "Alexandria Engineering Journal",
       "year": "2023",
+      "volume": "75",
+      "number": "",
+      "pages": "165--179",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "Enhancing radar echo extrapolation by convlstm2d for precipitation nowcasting",
+      "author": "Naz, Farah and She, Lei and Sinan, Muhammad and Shao, Jie",
       "journal": "Sensors",
       "year": "2024",
+      "volume": "24",
+      "number": "2",
+      "pages": "459",
+      "publisher": "MDPI",
       "doi": null
     },
     {
       "title": "Dust acoustic nonlinearity of nonlinear mode in plasma to compute temporal and spatial results",
+      "author": "Khan, Aziz and Sinan, Muhammad and Bibi, Sumera and Shah, Kamal and Hleili, Manel and Abdalla, Bahaaeldin and Abdeljawad, Thabet",
       "journal": "Alexandria Engineering Journal",
       "year": "2024",
+      "volume": "104",
+      "number": "",
+      "pages": "115--123",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "Fractional mathematical modeling of malaria disease with treatment \\& insecticides",
+      "author": "Sinan, Muhammad and Ahmad, Hijaz and Ahmad, Zubair and Baili, Jamel and Murtaza, Saqib and Aiyashi, MA and Botmart, Thongchai",
       "journal": "Results in Physics",
       "year": "2022",
+      "volume": "34",
+      "number": "",
+      "pages": "105220",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "Fractional order mathematical modeling of typhoid fever disease",
+      "author": "Sinan, Muhammad and Shah, Kamal and Kumam, Poom and Mahariq, Ibrahim and Ansari, Khursheed J and Ahmad, Zubair and Shah, Zahir",
       "journal": "Results in Physics",
       "year": "2022",
+      "volume": "32",
+      "number": "",
+      "pages": "105044",
+      "publisher": "Elsevier",
       "doi": null
     },
     {
       "title": "Research Article A Mathematical Analysis on the New Fractal-Fractional Model of Second-Hand Smokers via the Power Law Type Kernel: Numerical Solutions, Equilibrium Points, and Sensitivity Analysis",
+      "author": "Rezapour, S and Etemad, S and Sinan, M and Alzabut, J and Vinodkumar, A",
       "journal": "",
       "year": "2022",
+      "volume": "",
+      "number": "",
+      "pages": "",
+      "publisher": "",
       "doi": null
     }
   ]
