@@ -277,6 +277,7 @@ function createPublicationSearch() {
         <input type="text" placeholder="Search publications..." class="search-input">
         <div class="search-filters">
             <button class="filter-btn active" data-year="all">All Years</button>
+            <button class="filter-btn" data-year="2025">2025</button>
             <button class="filter-btn" data-year="2024">2024</button>
             <button class="filter-btn" data-year="2023">2023</button>
         </div>
@@ -337,12 +338,13 @@ function createPublicationSearch() {
         
         publications.forEach(pub => {
             const title = pub.querySelector('h3').textContent.toLowerCase();
-            const authors = pub.querySelector('.pub-authors').textContent.toLowerCase();
+            const authorsElem = pub.querySelector('.pub-authors');
+            const authors = authorsElem ? authorsElem.textContent.toLowerCase() : '';
             const year = pub.querySelector('.pub-year').textContent;
-            
+
             const matchesSearch = title.includes(searchTerm) || authors.includes(searchTerm);
             const matchesYear = activeYear === 'all' || year === activeYear;
-            
+
             pub.style.display = matchesSearch && matchesYear ? 'block' : 'none';
         });
     }
