@@ -27,7 +27,8 @@ def bib_to_publications(entries):
             'number': entry.get('number', ''),
             'pages': entry.get('pages', ''),
             'publisher': entry.get('publisher', ''),
-            'doi': entry.get('doi', None)
+            'doi': entry.get('doi', None),
+            'abstract': entry.get('abstract', '').replace('{', '').replace('}', '')
         }
         publications.append(pub)
     return publications
