@@ -301,7 +301,15 @@ function createThemeToggle() {
 // Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Website loaded successfully!');
-    
+    // Email reveal functionality
+    var showEmail = document.getElementById('show-email');
+    if (showEmail) {
+        showEmail.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('email-hidden').style.display = 'inline';
+            showEmail.style.display = 'none';
+        });
+    }
     // Add any additional initialization here
     createThemeToggle();
 });
