@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning with CIFAR-10: Building a CNN Classifier with PyTorch - Dr. Sinan</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="stylesheet" href="../styles/post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Dr. Sinan</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> July 23, 2025</span>
+                <span><i class="far fa-clock"></i> 12 min read</span>
+                <span><i class="fas fa-tag"></i> Deep Learning</span>
+                <span><i class="fas fa-tag"></i> Computer Vision</span>
+                <span><i class="fas fa-tag"></i> PyTorch</span>
+            </div>
+            <h1 class="post-title">Deep Learning with CIFAR-10: Building a CNN Classifier with PyTorch</h1>
+            <p class="post-subtitle">A complete guide to implementing a Convolutional Neural Network for image classification using PyTorch, featuring data augmentation, TensorBoard visualization, and desktop deployment</p>
+            <div class="author-info">
+                <img src="../images/profile.jpg" alt="Dr. Sinan" class="author-avatar">
+                <div class="author-details">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & ML Engineer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content with Sidebar -->
+    <div class="post-content">
+        <div class="blog-post-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#project-overview">Project Overview</a></li>
+                    <li><a href="#data-preparation">Data Preparation</a></li>
+                    <li class="h3"><a href="#data-loading">Data Loading</a></li>
+                    <li class="h3"><a href="#data-augmentation">Data Augmentation</a></li>
+                    <li><a href="#model-architecture">CNN Architecture</a></li>
+                    <li class="h3"><a href="#simple-cnn">SimpleCNN Design</a></li>
+                    <li class="h3"><a href="#model-components">Model Components</a></li>
+                    <li><a href="#training-pipeline">Training Pipeline</a></li>
+                    <li class="h3"><a href="#training-loop">Training Loop</a></li>
+                    <li class="h3"><a href="#validation">Validation</a></li>
+                    <li class="h3"><a href="#tensorboard">TensorBoard Integration</a></li>
+                    <li><a href="#results-analysis">Results & Analysis</a></li>
+                    <li class="h3"><a href="#performance-metrics">Performance Metrics</a></li>
+                    <li class="h3"><a href="#training-visualization">Training Visualization</a></li>
+                    <li><a href="#deployment">Model Deployment</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="blog-post-main">
+                <div class="post-article">
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>Computer vision has revolutionized how machines understand and interpret visual information. The CIFAR-10 dataset, consisting of 60,000 32x32 color images across 10 classes, serves as an excellent benchmark for learning deep learning fundamentals. In this comprehensive tutorial, we'll build a Convolutional Neural Network (CNN) from scratch using PyTorch to classify these images.</p>
+                        
+                        <p>This project demonstrates the complete machine learning pipeline: from data preprocessing and augmentation to model training, evaluation, and deployment. We'll also integrate TensorBoard for real-time visualization and create a desktop application using Tkinter.</p>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-github"></i> Project Repository</h4>
+                            <p>The complete source code for this CIFAR-10 classifier is available on GitHub:</p>
+                            <a href="https://github.com/sinanLab/cifar10_app.git" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </section>
+
+                    <section id="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>Our CIFAR-10 classification system includes the following key components:</p>
+                        <ul>
+                            <li><strong>Dataset:</strong> CIFAR-10 (60,000 images across 10 classes)</li>
+                            <li><strong>Framework:</strong> PyTorch with CUDA support</li>
+                            <li><strong>Architecture:</strong> Custom CNN with 2 convolutional layers</li>
+                            <li><strong>Data Augmentation:</strong> Random flips, rotations, and crops</li>
+                            <li><strong>Monitoring:</strong> TensorBoard for real-time visualization</li>
+                            <li><strong>Deployment:</strong> Tkinter-based desktop application</li>
+                        </ul>
+
+                        <div class="result-box">
+                            <h4>CIFAR-10 Classes:</h4>
+                            <ul>
+                                <li><strong>0:</strong> Airplane</li>
+                                <li><strong>1:</strong> Automobile</li>
+                                <li><strong>2:</strong> Bird</li>
+                                <li><strong>3:</strong> Cat</li>
+                                <li><strong>4:</strong> Deer</li>
+                                <li><strong>5:</strong> Dog</li>
+                                <li><strong>6:</strong> Frog</li>
+                                <li><strong>7:</strong> Horse</li>
+                                <li><strong>8:</strong> Ship</li>
+                                <li><strong>9:</strong> Truck</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="data-preparation">
+                        <h2>Data Preparation</h2>
+                        
+                        <h3 id="data-loading">Data Loading</h3>
+                        <p>We start by creating a comprehensive data loading function that handles dataset download, normalization, and splitting:</p>
+
+<pre><code class="language-python">import torch.nn as nn
+import torch.nn.functional as F
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader, random_split
+
+def load_cifar10_data(root_dir, batch_size=None, num_workers=None):
+    """
+    Load CIFAR-10 dataset from the specified root directory.
+    """
+    # Basic normalization transform
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.4914, 0.4822, 0.4465),  # CIFAR-10 mean
+                            (0.2023, 0.1994, 0.2010))   # CIFAR-10 std
+    ])
+    
+    # Load datasets
+    full_dataset = datasets.CIFAR10(root=root_dir, train=True, 
+                                    download=True, transform=transform)
+    test_dataset = datasets.CIFAR10(root=root_dir, train=False,
+                                     download=True, transform=transform)
+    
+    # Split training data into train and validation sets (80-20 split)
+    train_size = int(0.8 * len(full_dataset))
+    val_size = len(full_dataset) - train_size
+    train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
+
+    # Create data loaders
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, 
+                             shuffle=True, num_workers=num_workers)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, 
+                           shuffle=False, num_workers=num_workers)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, 
+                            shuffle=False, num_workers=num_workers)
+
+    return train_loader, val_loader, test_loader</code></pre>
+
+                        <h3 id="data-augmentation">Data Augmentation</h3>
+                        <p>Data augmentation is crucial for improving model generalization. We implement various augmentation techniques:</p>
+
+<pre><code class="language-python">def data_augmentation(data_dir, batch_size=None, num_workers=None):
+    """
+    Enhanced data loading with comprehensive augmentation strategies.
+    """
+    # Training augmentation pipeline
+    train_transform = transforms.Compose([
+        transforms.RandomHorizontalFlip(p=0.5),    # 50% chance of horizontal flip
+        transforms.RandomRotation(degrees=15),     # Random rotation ±15 degrees
+        transforms.RandomCrop(32, padding=4),      # Random crop with padding
+        transforms.ToTensor(),                     # Convert to tensor
+        transforms.Normalize((0.4914, 0.4822, 0.4465),
+                            (0.2023, 0.1994, 0.2010))
+    ])
+
+    # Validation/Test transforms (no augmentation)
+    val_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.4914, 0.4822, 0.4465),
+                            (0.2023, 0.1994, 0.2010))
+    ])
+
+    # Create datasets with different transforms
+    train_dataset = datasets.CIFAR10(root=data_dir, train=True,
+                                    download=True, transform=train_transform)
+    val_dataset = datasets.CIFAR10(root=data_dir, train=False,
+                                   download=True, transform=val_transform)
+    test_dataset = datasets.CIFAR10(root=data_dir, train=False,
+                                    download=True, transform=val_transform)
+
+    # Create data loaders
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, 
+                             shuffle=True, num_workers=num_workers)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, 
+                           shuffle=False, num_workers=num_workers)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, 
+                            shuffle=False, num_workers=num_workers)
+
+    return train_loader, val_loader, test_loader</code></pre>
+
+                        <div class="result-box">
+                            <h4>Augmentation Benefits:</h4>
+                            <ul>
+                                <li><strong>Random Horizontal Flip:</strong> Simulates different viewpoints</li>
+                                <li><strong>Random Rotation:</strong> Handles rotated objects in real scenarios</li>
+                                <li><strong>Random Crop:</strong> Improves translation invariance</li>
+                                <li><strong>Normalization:</strong> Stabilizes training with standardized inputs</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="model-architecture">
+                        <h2>CNN Architecture</h2>
+                        
+                        <h3 id="simple-cnn">SimpleCNN Design</h3>
+                        <p>Our CNN architecture follows a classic design pattern optimized for CIFAR-10's 32x32 image size:</p>
+
+<pre><code class="language-python">class SimpleCNN(nn.Module):
+    def __init__(self):
+        super(SimpleCNN, self).__init__()
+        
+        # Convolutional layers
+        self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)    # 3 -> 32 channels
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)   # 32 -> 64 channels
+        
+        # Pooling layer
+        self.pool = nn.MaxPool2d(2, 2)  # 2x2 max pooling
+        
+        # Fully connected layers
+        self.fc1 = nn.Linear(64 * 8 * 8, 512)  # 64 channels * 8x8 spatial size
+        self.fc2 = nn.Linear(512, 10)          # 10 output classes
+        
+        # Regularization
+        self.dropout = nn.Dropout(0.25)
+        
+    def forward(self, x):
+        # First conv block: Conv -> ReLU -> Pool
+        x = F.relu(self.conv1(x))  # [batch, 32, 32, 32]
+        x = self.pool(x)           # [batch, 32, 16, 16]
+        
+        # Second conv block: Conv -> ReLU -> Pool  
+        x = F.relu(self.conv2(x))  # [batch, 64, 16, 16]
+        x = self.pool(x)           # [batch, 64, 8, 8]
+        
+        # Flatten for fully connected layers
+        x = x.view(-1, 64 * 8 * 8) # [batch, 4096]
+        
+        # Fully connected layers with dropout
+        x = F.relu(self.fc1(x))    # [batch, 512]
+        x = self.dropout(x)        # Regularization
+        x = self.fc2(x)            # [batch, 10] - final predictions
+        
+        return x</code></pre>
+
+                        <h3 id="model-components">Model Components Explained</h3>
+                        <div class="visualization-section">
+                            <h4>Architecture Breakdown:</h4>
+                            <ul>
+                                <li><strong>Input Layer:</strong> 3x32x32 (RGB images)</li>
+                                <li><strong>Conv1 + ReLU + Pool:</strong> 32x16x16 feature maps</li>
+                                <li><strong>Conv2 + ReLU + Pool:</strong> 64x8x8 feature maps</li>
+                                <li><strong>Flatten:</strong> 4096-dimensional vector</li>
+                                <li><strong>FC1 + ReLU + Dropout:</strong> 512 hidden units</li>
+                                <li><strong>FC2:</strong> 10 output classes</li>
+                            </ul>
+                            
+                            <p><strong>Key Design Decisions:</strong></p>
+                            <ul>
+                                <li><strong>Padding=1:</strong> Preserves spatial dimensions through convolutions</li>
+                                <li><strong>MaxPooling:</strong> Reduces spatial size while retaining important features</li>
+                                <li><strong>Dropout:</strong> Prevents overfitting during training</li>
+                                <li><strong>ReLU Activation:</strong> Introduces non-linearity and prevents vanishing gradients</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="training-pipeline">
+                        <h2>Training Pipeline</h2>
+                        
+                        <h3 id="training-loop">Comprehensive Training Function</h3>
+                        <p>Our training pipeline includes validation, metrics tracking, and TensorBoard integration:</p>
+
+<pre><code class="language-python">def train(model, train_loader, val_loader, criterion, optimizer, 
+          device, num_epochs=10, writer=None, excel_path="training_metrics.xlsx"):
+    
+    import torch
+    import pandas as pd
+    
+    # Initialize training history
+    history = {
+        'epoch': [], 'train_loss': [], 'val_loss': [],
+        'train_acc': [], 'val_acc': [],
+        'val_preds': [], 'val_labels': []
+    }
+
+    model.to(device)
+
+    for epoch in range(num_epochs):
+        # Training phase
+        model.train()
+        running_loss = 0.0
+        correct = 0
+
+        for images, labels in train_loader:
+            images, labels = images.to(device), labels.to(device)
+
+            # Forward pass
+            optimizer.zero_grad()
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+            
+            # Backward pass and optimization
+            loss.backward()
+            optimizer.step()
+
+            # Accumulate metrics
+            running_loss += loss.item() * images.size(0)
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+
+        # Calculate training metrics
+        train_loss = running_loss / len(train_loader.dataset)
+        train_acc = correct / len(train_loader.dataset)
+
+        # Validation phase
+        model.eval()
+        val_loss = 0.0
+        val_correct = 0
+        val_preds = []
+        val_labels = []
+
+        with torch.no_grad():
+            for images, labels in val_loader:
+                images, labels = images.to(device), labels.to(device)
+                outputs = model(images)
+                loss = criterion(outputs, labels)
+                
+                val_loss += loss.item() * images.size(0)
+                _, predicted = torch.max(outputs, 1)
+                val_preds.extend(predicted.cpu().numpy())
+                val_labels.extend(labels.cpu().numpy())
+                val_correct += (predicted == labels).sum().item()
+
+        val_loss = val_loss / len(val_loader.dataset)
+        val_acc = val_correct / len(val_loader.dataset)
+
+        # Log to TensorBoard
+        if writer is not None:
+            writer.add_scalar("Loss/Train", train_loss, epoch)
+            writer.add_scalar("Loss/Val", val_loss, epoch)
+            writer.add_scalar("Accuracy/Train", train_acc, epoch)
+            writer.add_scalar("Accuracy/Val", val_acc, epoch)
+
+        # Store metrics
+        history['epoch'].append(epoch + 1)
+        history['train_loss'].append(train_loss)
+        history['val_loss'].append(val_loss)
+        history['train_acc'].append(train_acc)
+        history['val_acc'].append(val_acc)
+        history['val_preds'].append(val_preds)
+        history['val_labels'].append(val_labels)
+
+        # Print progress
+        print(f"Epoch [{epoch+1}/{num_epochs}] | "
+              f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f} | "
+              f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}")
+
+    # Export metrics to Excel
+    df_history = pd.DataFrame(history)
+    df_history.to_excel(excel_path, index=False)
+    print(f"\n✅ Training complete. Metrics saved to: {excel_path}")
+    
+    return history</code></pre>
+
+                        <h3 id="tensorboard">TensorBoard Integration</h3>
+                        <p>We integrate TensorBoard for real-time monitoring of training progress:</p>
+
+<pre><code class="language-python"># TensorBoard setup
+from torch.utils.tensorboard import SummaryWriter
+
+# Initialize TensorBoard writer
+writer = SummaryWriter(log_dir="runs/cifar10_experiment")
+
+# Training with TensorBoard logging
+history = train(model, train_loader, val_loader, criterion, 
+                optimizer, device, num_epochs=20, writer=writer)
+
+# Close writer
+writer.close()
+
+# To view TensorBoard: run "tensorboard --logdir=runs" in terminal</code></pre>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-chart-line"></i> TensorBoard Features</h4>
+                            <ul>
+                                <li><strong>Loss Tracking:</strong> Real-time training and validation loss plots</li>
+                                <li><strong>Accuracy Monitoring:</strong> Training and validation accuracy curves</li>
+                                <li><strong>Scalars Dashboard:</strong> All metrics in one view</li>
+                                <li><strong>Live Updates:</strong> Automatic refresh during training</li>
+                            </ul>
+                            <p><strong>Access TensorBoard:</strong> Run <code>tensorboard --logdir=runs</code> and open <code>http://localhost:6006</code></p>
+                        </div>
+                    </section>
+
+                    <section id="results-analysis">
+                        <h2>Results & Analysis</h2>
+                        
+                        <h3 id="performance-metrics">Performance Metrics Generation</h3>
+                        <p>We generate comprehensive classification metrics and confusion matrices:</p>
+
+<pre><code class="language-python">def generate_metrices(history):
+    """
+    Generate classification report and confusion matrix from training history.
+    """
+    from sklearn.metrics import classification_report, confusion_matrix
+    import pandas as pd
+    import numpy as np
+
+    # Combine predictions and labels from all validation epochs
+    preds = np.concatenate(history['val_preds'])
+    labels = np.concatenate(history['val_labels'])
+
+    # Generate classification report
+    report = classification_report(labels, preds, output_dict=True)
+    report_df = pd.DataFrame(report).transpose()
+    report_df.to_csv("results/classification_report.csv", index=True)
+    
+    # Generate confusion matrix
+    cm = confusion_matrix(labels, preds)
+    cm_df = pd.DataFrame(cm)
+    cm_df.to_csv("results/confusion_matrix.csv", index=True)
+
+    return report_df, cm_df
+
+# Generate metrics after training
+report_df, cm_df = generate_metrices(history)</code></pre>
+
+                        <h3 id="training-visualization">Training Visualization</h3>
+                        <p>Create comprehensive training plots to analyze model performance:</p>
+
+<pre><code class="language-python">def plot_training(history):
+    """
+    Create training and validation loss/accuracy plots.
+    """
+    import matplotlib.pyplot as plt
+    
+    epochs = range(1, len(history['train_loss']) + 1)
+
+    plt.figure(figsize=(12, 5))
+
+    # Loss subplot
+    plt.subplot(1, 2, 1)
+    plt.plot(epochs, history['train_loss'], 'b-o', label='Train Loss')
+    plt.plot(epochs, history['val_loss'], 'r-o', label='Val Loss')
+    plt.title('Loss per Epoch')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+
+    # Accuracy subplot
+    plt.subplot(1, 2, 2)
+    plt.plot(epochs, history['train_acc'], 'b-o', label='Train Acc')
+    plt.plot(epochs, history['val_acc'], 'r-o', label='Val Acc')
+    plt.title('Accuracy per Epoch')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    plt.savefig("results/training_metrics.png", dpi=300, bbox_inches='tight')
+    print("Training metrics plot saved as 'results/training_metrics.png'")
+    plt.show()
+
+# Generate training plots
+plot_training(history)</code></pre>
+
+                        <div class="result-box">
+                            <h4>Expected Training Results:</h4>
+                            <ul>
+                                <li><strong>Training Accuracy:</strong> ~85-90% after 20 epochs</li>
+                                <li><strong>Validation Accuracy:</strong> ~80-85% (indicates good generalization)</li>
+                                <li><strong>Training Loss:</strong> Steadily decreasing trend</li>
+                                <li><strong>Validation Loss:</strong> Should stabilize without significant overfitting</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="deployment">
+                        <h2>Model Deployment</h2>
+                        <p>The final step involves saving the trained model and creating a deployment-ready system:</p>
+
+<pre><code class="language-python"># Complete main execution pipeline
+if __name__ == "__main__":
+    import torch.optim as optim
+    import matplotlib.pyplot as plt
+    import torch
+
+    # Configuration
+    batch_size = 64
+    num_workers = 2
+    num_epochs = 20
+    root_dir = './data'
+    
+    # Setup device
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f"Using device: {device}")
+    
+    # Load data with augmentation
+    train_loader, val_loader, test_loader = data_augmentation(
+        root_dir, batch_size=batch_size, num_workers=num_workers
+    )
+    
+    # Initialize model, loss, and optimizer
+    model = SimpleCNN().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    
+    # Setup TensorBoard
+    writer = SummaryWriter(log_dir="runs/cifar10_experiment")
+    
+    # Train the model
+    history = train(model, train_loader, val_loader, criterion, 
+                    optimizer, device, num_epochs, writer, 
+                    excel_path="results/training_metrics.xlsx")
+    writer.close()
+    
+    # Generate analytics
+    report_df, cm_df = generate_metrices(history)
+    plot_training(history)
+    
+    # Save complete model checkpoint
+    model_path = "models/cifar10_cnn.pth"
+    checkpoint = {
+        'epoch': history['epoch'],
+        'train_acc': history['train_acc'],
+        'val_acc': history['val_acc'],
+        'train_loss': history['train_loss'],
+        'val_loss': history['val_loss'],
+        'num_epochs': num_epochs,
+        'model_name': 'SimpleCNN',
+        'batch_size': batch_size,
+        'num_workers': num_workers,
+        'loss_function': 'CrossEntropyLoss',
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+    }
+    torch.save(checkpoint, model_path)
+    print(f"Model saved to: {model_path}")</code></pre>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-desktop"></i> Tkinter Desktop Application</h4>
+                            <p>The project includes a user-friendly desktop application built with Tkinter that allows users to:</p>
+                            <ul>
+                                <li>Load and preview images for classification</li>
+                                <li>Run inference with the trained CNN model</li>
+                                <li>Display predictions with confidence scores</li>
+                                <li>Browse through CIFAR-10 test images</li>
+                                <li>Visualize model architecture and performance metrics</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="conclusion">
+                        <h2>Conclusion</h2>
+                        <p>This CIFAR-10 CNN classifier project demonstrates a complete deep learning workflow using PyTorch. The implementation showcases modern best practices in computer vision, from data augmentation to model deployment.</p>
+                        
+                        <div class="key-insights">
+                            <h4>🎯 Key Learning Outcomes:</h4>
+                            <ul>
+                                <li><strong>CNN Architecture:</strong> Understanding convolutional layers, pooling, and fully connected layers</li>
+                                <li><strong>Data Augmentation:</strong> Improving model generalization through diverse training data</li>
+                                <li><strong>PyTorch Framework:</strong> Mastering tensors, autograd, and model training loops</li>
+                                <li><strong>Monitoring & Visualization:</strong> Using TensorBoard for real-time training analysis</li>
+                                <li><strong>Model Deployment:</strong> Creating user-friendly applications for model inference</li>
+                                <li><strong>Performance Analysis:</strong> Interpreting training curves and classification metrics</li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-implications">
+                            <h4>🚀 Advanced Extensions:</h4>
+                            <p>This foundational project can be extended in numerous ways:</p>
+                            <ul>
+                                <li><strong>Architecture Improvements:</strong> ResNet, DenseNet, or Vision Transformers</li>
+                                <li><strong>Advanced Augmentation:</strong> Mixup, CutMix, or AutoAugment techniques</li>
+                                <li><strong>Transfer Learning:</strong> Using pre-trained models for better performance</li>
+                                <li><strong>Deployment Options:</strong> Web APIs, mobile apps, or cloud services</li>
+                                <li><strong>Real-time Applications:</strong> Webcam-based live classification systems</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="resources">
+                        <h2>Resources & Further Reading</h2>
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <h4><i class="fab fa-github"></i> Source Code</h4>
+                                <p>Complete PyTorch implementation with Tkinter app</p>
+                                <a href="https://github.com/sinanLab/cifar10_app.git" target="_blank">View on GitHub</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-database"></i> CIFAR-10 Dataset</h4>
+                                <p>Official dataset information and benchmarks</p>
+                                <a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">Learn More</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-book"></i> PyTorch Documentation</h4>
+                                <p>Comprehensive PyTorch tutorials and guides</p>
+                                <a href="https://pytorch.org/tutorials/" target="_blank">Read Docs</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-chart-line"></i> TensorBoard Guide</h4>
+                                <p>Visualization and monitoring for ML experiments</p>
+                                <a href="https://pytorch.org/docs/stable/tensorboard.html" target="_blank">Learn TensorBoard</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Tags and Sharing -->
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <h4>Tags:</h4>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">CNN</span>
+                            <span class="tag">CIFAR-10</span>
+                            <span class="tag">TensorBoard</span>
+                            <span class="tag">Image Classification</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        
+                        <div class="share-buttons">
+                            <h4>Share this article:</h4>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <img src="../images/profile.jpg" alt="Dr. Sinan" class="bio-avatar">
+                        <div class="bio-content">
+                            <h3>About Dr. Sinan</h3>
+                            <p>Dr. Sinan is a Research Scientist and Machine Learning Engineer specializing in computer vision and deep learning applications. With extensive experience in PyTorch and TensorFlow, he focuses on creating practical AI solutions and educational content.</p>
+                            <div class="bio-links">
+                                <a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+                                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Posts CTA -->
+                    <div class="related-posts-cta">
+                        <h3>Explore More Deep Learning Projects</h3>
+                        <p>Discover our other machine learning and computer vision tutorials.</p>
+                        <a href="../blog.html" class="cta-button">
+                            <i class="fas fa-arrow-right"></i> Browse All Posts
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
