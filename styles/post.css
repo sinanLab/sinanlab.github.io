@@ -707,6 +707,34 @@
         margin: 1rem auto;
         letter-spacing: 0.01em;
     }
+    
+    ul, ol {
+        padding-left: 1.5rem;
+        margin-left: 0;
+    }
+    li {
+        word-break: break-word;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+    .post-tags {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .tag {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0.1rem 0;
+        min-width: 90px;
+        text-align: center;
+        border-radius: 18px;
+    }
 }
 
 /* Author Bio Section */
