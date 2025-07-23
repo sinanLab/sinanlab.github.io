@@ -564,6 +564,11 @@
         padding: 0 10px;
     }
     
+    .post-header {
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+    
     .post-title {
         font-size: 2rem;
         line-height: 1.2;
@@ -574,9 +579,12 @@
     }
     
     .post-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-        font-size: 0.85rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-bottom: 0.7rem;
+        align-items: center;
+        justify-content: flex-start;
     }
     
     .author-info {
@@ -728,12 +736,11 @@
         padding-right: 0.5rem;
     }
     .tag {
-        font-size: 1rem;
-        padding: 0.5rem 0.8rem;
-        margin: 0.1rem 0;
-        min-width: 90px;
-        text-align: center;
-        border-radius: 18px;
+        font-size: 0.95rem;
+        padding: 0.4rem 0.7rem;
+        min-width: 70px;
+        margin: 0.1rem 0.2rem;
+        border-radius: 16px;
     }
 }
 
