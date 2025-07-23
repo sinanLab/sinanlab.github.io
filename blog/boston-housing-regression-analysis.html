@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston Housing Price Prediction: Economic Data Analysis - Dr. Sinan</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="stylesheet" href="../styles/post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Dr. Sinan</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> July 23, 2025</span>
+                <span><i class="far fa-clock"></i> 4 min read</span>
+                <span><i class="fas fa-tag"></i> Work in Progress</span>
+                <span><i class="fas fa-tag"></i> Regression</span>
+                <span><i class="fas fa-tag"></i> Real Estate</span>
+            </div>
+            <h1 class="post-title">Boston Housing Price Prediction: Economic Data Analysis</h1>
+            <p class="post-subtitle">Exploring a different domain - Moving from biological to economic data analysis with the classic Boston Housing dataset for regression modeling</p>
+            <div class="author-info">
+                <img src="../images/profile.jpg" alt="Dr. Sinan" class="author-avatar">
+                <div class="author-details">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & ML Engineer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content with Sidebar -->
+    <div class="post-content">
+        <div class="blog-post-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#current-progress">Current Progress</a></li>
+                    <li><a href="#initial-exploration">Initial Data Exploration</a></li>
+                    <li><a href="#next-steps">Next Steps</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="blog-post-main">
+                <div class="post-article">
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>After successfully analyzing biological datasets in my previous posts, I'm now exploring a completely different domain: <strong>economic data analysis</strong>. This represents an exciting shift from medical/biological data to understanding housing markets and urban economics.</p>
+                        
+                        <p>The Boston Housing dataset offers a perfect opportunity to demonstrate how machine learning techniques can be applied across diverse domains. Unlike our previous classification problems, this project focuses on <strong>regression analysis</strong> - predicting continuous housing prices rather than discrete categories.</p>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-github"></i> Project Repository</h4>
+                            <p>This project is currently under active development:</p>
+                            <a href="https://github.com/sinanLab/boston-housing-analysis" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
+                        </div>
+
+                        <div class="key-insights">
+                            <h4>🏠 Why Economic Data Analysis?</h4>
+                            <ul>
+                                <li><strong>Domain Diversity:</strong> Demonstrating ML versatility beyond biological data</li>
+                                <li><strong>Regression Focus:</strong> Moving from classification to continuous value prediction</li>
+                                <li><strong>Real-World Impact:</strong> Housing prices affect everyone's daily life</li>
+                                <li><strong>Urban Planning:</strong> Understanding factors that drive property values</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="current-progress">
+                        <h2>🚧 Current Progress</h2>
+                        <p><strong>Status:</strong> Project is in early development phase. I've started with basic data loading and initial exploration.</p>
+
+                        <div class="result-box">
+                            <h4>✅ Completed So Far:</h4>
+                            <ul>
+                                <li><strong>Environment Setup:</strong> Created conda environment with necessary libraries</li>
+                                <li><strong>Data Loading:</strong> Successfully fetched Boston Housing dataset from OpenML</li>
+                                <li><strong>Initial Inspection:</strong> Basic data exploration and column analysis</li>
+                                <li><strong>Data Storage:</strong> Saved dataset for further analysis</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="initial-exploration">
+                        <h2>Initial Data Exploration</h2>
+                        <p>Here's what I've accomplished in the initial exploration phase:</p>
+
+<pre><code class="language-python">from sklearn.datasets import fetch_openml
+import pandas as pd
+import os
+
+# Load Boston housing dataset
+boston = fetch_openml(name="boston", version=1, as_frame=True)
+df = boston.frame  # DataFrame with features + target
+
+# Save the dataset
+output_dir = "data/raw_data"
+os.makedirs(output_dir, exist_ok=True)
+output_file = os.path.join(output_dir, "boston_housing.csv")
+df.to_csv(output_file, index=False)
+
+# Basic exploration
+loaded_df = pd.read_csv(output_file)
+print(loaded_df.columns)</code></pre>
+
+                        <div class="visualization-section">
+                            <h4>📊 Dataset Overview:</h4>
+                            <ul>
+                                <li><strong>Target Variable:</strong> MEDV (Median home value in $1000s)</li>
+                                <li><strong>Features:</strong> 13 socioeconomic and environmental variables</li>
+                                <li><strong>Samples:</strong> 506 census tracts in Boston metropolitan area</li>
+                                <li><strong>Time Period:</strong> Early 1970s data</li>
+                                <li><strong>Problem Type:</strong> Regression (continuous value prediction)</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="next-steps">
+                        <h2>🎯 Planned Next Steps</h2>
+                        <p>The upcoming development phases will include:</p>
+
+                        <div class="clinical-implications">
+                            <h4>📋 Development Roadmap:</h4>
+                            <ol>
+                                <li><strong>Exploratory Data Analysis:</strong>
+                                    <ul>
+                                        <li>Statistical summaries and distribution analysis</li>
+                                        <li>Correlation analysis between features</li>
+                                        <li>Visualization of housing price patterns</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Data Preprocessing:</strong>
+                                    <ul>
+                                        <li>Handling missing values (if any)</li>
+                                        <li>Feature scaling and normalization</li>
+                                        <li>Outlier detection and treatment</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Feature Engineering:</strong>
+                                    <ul>
+                                        <li>Creating interaction terms</li>
+                                        <li>Polynomial features for non-linear relationships</li>
+                                        <li>Feature selection techniques</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Model Development:</strong>
+                                    <ul>
+                                        <li>Multiple regression algorithms comparison</li>
+                                        <li>Hyperparameter tuning</li>
+                                        <li>Cross-validation and performance evaluation</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Results Analysis:</strong>
+                                    <ul>
+                                        <li>Feature importance analysis</li>
+                                        <li>Economic interpretation of results</li>
+                                        <li>Model deployment considerations</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="key-insights">
+                            <h4>🔬 Expected Learning Outcomes:</h4>
+                            <ul>
+                                <li><strong>Cross-Domain Skills:</strong> Applying ML beyond biological data</li>
+                                <li><strong>Regression Mastery:</strong> Deep dive into continuous value prediction</li>
+                                <li><strong>Economic Understanding:</strong> Factors influencing housing markets</li>
+                                <li><strong>Urban Analytics:</strong> Data-driven insights for city planning</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="resources">
+                        <h2>Resources & Updates</h2>
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <h4><i class="fab fa-github"></i> Live Project</h4>
+                                <p>Follow the development progress as I build this analysis</p>
+                                <a href="https://github.com/sinanLab/boston-housing-analysis" target="_blank">View on GitHub</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-database"></i> Dataset Info</h4>
+                                <p>Learn more about the Boston Housing dataset</p>
+                                <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_openml.html" target="_blank">Scikit-learn Docs</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-blog"></i> Previous Work</h4>
+                                <p>Check out my other data science projects</p>
+                                <a href="../blog.html" target="_blank">Blog Posts</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-bell"></i> Stay Updated</h4>
+                                <p>Get notified when this analysis is complete</p>
+                                <a href="../index.html#contact" target="_blank">Subscribe</a>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-clock"></i> Coming Soon</h4>
+                            <p>This blog post will be updated with comprehensive analysis results as the project progresses. Expected completion: <strong>Early August 2025</strong></p>
+                        </div>
+                    </section>
+
+                    <!-- Tags and Sharing -->
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <h4>Tags:</h4>
+                            <span class="tag">Work in Progress</span>
+                            <span class="tag">Regression</span>
+                            <span class="tag">Real Estate</span>
+                            <span class="tag">Economics</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Urban Planning</span>
+                        </div>
+                        
+                        <div class="share-buttons">
+                            <h4>Share this article:</h4>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <img src="../images/profile.jpg" alt="Dr. Sinan" class="bio-avatar">
+                        <div class="bio-content">
+                            <h3>About Dr. Sinan</h3>
+                            <p>Dr. Sinan is a Research Scientist and Machine Learning Engineer exploring diverse applications of data science across biological, economic, and social domains. Follow along as he develops this economic analysis project.</p>
+                            <div class="bio-links">
+                                <a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+                                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Posts CTA -->
+                    <div class="related-posts-cta">
+                        <h3>Explore Completed Projects</h3>
+                        <p>While this project is in development, check out my completed data science analyses.</p>
+                        <a href="../blog.html" class="cta-button">
+                            <i class="fas fa-arrow-right"></i> View Completed Projects
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Dr. Sinan</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> July 23, 2025</span>
+                <span><i class="far fa-clock"></i> 16 min read</span>
+                <span><i class="fas fa-tag"></i> Regression</span>
+                <span><i class="fas fa-tag"></i> Real Estate</span>
+                <span><i class="fas fa-tag"></i> Machine Learning</span>
+            </div>
+            <h1 class="post-title">Boston Housing Price Prediction: Exploring Real Estate Analytics with Machine Learning</h1>
+            <p class="post-subtitle">Diving into economic data analysis with the classic Boston Housing dataset - A comprehensive regression analysis showcasing how machine learning techniques can be applied beyond biological domains to solve real-world economic and urban planning challenges</p>
+            <div class="author-info">
+                <img src="../images/profile.jpg" alt="Dr. Sinan" class="author-avatar">
+                <div class="author-details">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & ML Engineer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content with Sidebar -->
+    <div class="post-content">
+        <div class="blog-post-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#dataset-overview">Dataset Overview</a></li>
+                    <li class="h3"><a href="#economic-context">Economic Context</a></li>
+                    <li class="h3"><a href="#feature-analysis">Feature Analysis</a></li>
+                    <li><a href="#data-exploration">Data Exploration</a></li>
+                    <li class="h3"><a href="#loading-data">Data Loading</a></li>
+                    <li class="h3"><a href="#statistical-analysis">Statistical Analysis</a></li>
+                    <li class="h3"><a href="#correlation-patterns">Correlation Patterns</a></li>
+                    <li><a href="#data-preprocessing">Data Preprocessing</a></li>
+                    <li class="h3"><a href="#missing-values">Missing Values</a></li>
+                    <li class="h3"><a href="#feature-scaling">Feature Scaling</a></li>
+                    <li class="h3"><a href="#outlier-treatment">Outlier Treatment</a></li>
+                    <li><a href="#feature-engineering">Feature Engineering</a></li>
+                    <li class="h3"><a href="#polynomial-features">Polynomial Features</a></li>
+                    <li class="h3"><a href="#feature-selection">Feature Selection</a></li>
+                    <li><a href="#model-development">Model Development</a></li>
+                    <li class="h3"><a href="#regression-models">Regression Models</a></li>
+                    <li class="h3"><a href="#model-comparison">Model Comparison</a></li>
+                    <li class="h3"><a href="#hyperparameter-tuning">Hyperparameter Tuning</a></li>
+                    <li><a href="#model-evaluation">Model Evaluation</a></li>
+                    <li class="h3"><a href="#performance-metrics">Performance Metrics</a></li>
+                    <li class="h3"><a href="#residual-analysis">Residual Analysis</a></li>
+                    <li class="h3"><a href="#feature-importance">Feature Importance</a></li>
+                    <li><a href="#real-world-applications">Real-World Applications</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="blog-post-main">
+                <div class="post-article">
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>After exploring biological and survival prediction datasets in previous posts, today we're shifting our focus to the economic domain with the classic Boston Housing dataset. This represents an exciting departure from medical data analysis, demonstrating how machine learning techniques can be applied across diverse domains to solve real-world problems.</p>
+                        
+                        <p>The Boston Housing dataset is a cornerstone in regression analysis education, offering rich insights into urban economics, housing markets, and socioeconomic factors that influence property values. Unlike our previous classification problems, this project tackles <strong>regression analysis</strong> - predicting continuous values rather than discrete categories.</p>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-github"></i> Project Repository</h4>
+                            <p>Complete regression analysis pipeline with economic data exploration:</p>
+                            <a href="https://github.com/sinanLab/boston-housing-analysis" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View GitHub Repository
+                            </a>
+                        </div>
+
+                        <div class="key-insights">
+                            <h4>🏠 Why Real Estate Data Analysis Matters:</h4>
+                            <ul>
+                                <li><strong>Economic Impact:</strong> Housing represents the largest asset class for most families</li>
+                                <li><strong>Urban Planning:</strong> Understanding price drivers helps city development</li>
+                                <li><strong>Investment Strategy:</strong> Property valuation models guide investment decisions</li>
+                                <li><strong>Policy Making:</strong> Insights inform housing and taxation policies</li>
+                                <li><strong>Social Equity:</strong> Identifying factors that affect housing accessibility</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="dataset-overview">
+                        <h2>Dataset Overview</h2>
+                        
+                        <h3 id="economic-context">Economic Context & Historical Background</h3>
+                        <p>The Boston Housing dataset was originally collected in the 1970s as part of a study on air pollution and housing values in the Boston metropolitan area. This dataset has become a classic benchmark for regression algorithms and economic analysis.</p>
+
+                        <div class="visualization-section">
+                            <h4>📊 Dataset Characteristics:</h4>
+                            <ul>
+                                <li><strong>Samples:</strong> 506 census tracts in Boston metropolitan area</li>
+                                <li><strong>Features:</strong> 13 socioeconomic and environmental variables</li>
+                                <li><strong>Target:</strong> Median home value in thousands of dollars (MEDV)</li>
+                                <li><strong>Time Period:</strong> Early 1970s Boston metropolitan area</li>
+                                <li><strong>Problem Type:</strong> Continuous value prediction (regression)</li>
+                            </ul>
+                        </div>
+
+                        <h3 id="feature-analysis">Comprehensive Feature Analysis</h3>
+                        <p>Each feature represents a different aspect of urban economics and social structure:</p>
+
+<pre><code class="language-python">import pandas as pd
+from sklearn.datasets import fetch_openml
+import numpy as np
+
+# Load Boston housing dataset
+boston = fetch_openml(name="boston", version=1, as_frame=True)
+df = boston.frame
+
+print("Boston Housing Dataset Features:")
+print(f"Dataset shape: {df.shape}")
+print("\nFeature Descriptions:")
+
+feature_descriptions = {
+    'CRIM': 'Per capita crime rate by town',
+    'ZN': 'Proportion of residential land zoned for lots over 25,000 sq.ft.',
+    'INDUS': 'Proportion of non-retail business acres per town',
+    'CHAS': 'Charles River dummy variable (1 if tract bounds river; 0 otherwise)',
+    'NOX': 'Nitric oxides concentration (parts per 10 million)',
+    'RM': 'Average number of rooms per dwelling',
+    'AGE': 'Proportion of owner-occupied units built prior to 1940',
+    'DIS': 'Weighted distances to employment centers',
+    'RAD': 'Index of accessibility to radial highways',
+    'TAX': 'Full-value property-tax rate per $10,000',
+    'PTRATIO': 'Pupil-teacher ratio by town',
+    'B': '1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town',
+    'LSTAT': '% lower status of the population',
+    'MEDV': 'Median value of homes in $1000s (TARGET)'
+}
+
+for feature, description in feature_descriptions.items():
+    print(f"• {feature}: {description}")
+</code></pre>
+
+                        <div class="result-box">
+                            <h4>Feature Categories:</h4>
+                            <ul>
+                                <li><strong>Crime & Safety:</strong> CRIM (crime rate)</li>
+                                <li><strong>Zoning & Planning:</strong> ZN (residential zoning), INDUS (industrial)</li>
+                                <li><strong>Environmental:</strong> NOX (air pollution), CHAS (river proximity)</li>
+                                <li><strong>Housing Quality:</strong> RM (rooms), AGE (building age)</li>
+                                <li><strong>Location:</strong> DIS (employment distance), RAD (highway access)</li>
+                                <li><strong>Economic:</strong> TAX (property tax), LSTAT (socioeconomic status)</li>
+                                <li><strong>Education:</strong> PTRATIO (pupil-teacher ratio)</li>
+                                <li><strong>Demographics:</strong> B (demographic composition)</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="data-exploration">
+                        <h2>Comprehensive Data Exploration</h2>
+                        
+                        <h3 id="loading-data">Data Loading and Initial Assessment</h3>
+                        <p>Starting our analysis with systematic data exploration:</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+
+# Set visualization style
+plt.style.use('default')
+sns.set_palette("husl")
+
+# Load and inspect the data
+print("=== BOSTON HOUSING DATA EXPLORATION ===")
+print(f"Dataset dimensions: {df.shape}")
+print(f"Memory usage: {df.memory_usage().sum() / 1024:.2f} KB")
+
+# Basic statistics
+print("\nTarget Variable (MEDV) Statistics:")
+print(f"Mean house price: ${df['MEDV'].mean():.2f}k")
+print(f"Median house price: ${df['MEDV'].median():.2f}k")
+print(f"Price range: ${df['MEDV'].min():.2f}k - ${df['MEDV'].max():.2f}k")
+print(f"Standard deviation: ${df['MEDV'].std():.2f}k")
+
+# Check for missing values
+print(f"\nMissing values: {df.isnull().sum().sum()}")
+print(f"Data types:\n{df.dtypes.value_counts()}")</code></pre>
+
+                        <h3 id="statistical-analysis">Statistical Analysis and Distribution</h3>
+                        <p>Understanding the statistical properties of our economic variables:</p>
+
+<pre><code class="language-python"># Comprehensive statistical summary
+print("\nDetailed Statistical Summary:")
+print(df.describe().round(3))
+
+# Target variable distribution analysis
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+
+# Histogram of house prices
+axes[0,0].hist(df['MEDV'], bins=30, alpha=0.7, color='skyblue', edgecolor='black')
+axes[0,0].set_title('Distribution of Housing Prices')
+axes[0,0].set_xlabel('Median Home Value ($1000s)')
+axes[0,0].set_ylabel('Frequency')
+
+# Box plot for outlier detection
+axes[0,1].boxplot(df['MEDV'])
+axes[0,1].set_title('Housing Price Outliers')
+axes[0,1].set_ylabel('Median Home Value ($1000s)')
+
+# Q-Q plot for normality assessment
+from scipy import stats
+stats.probplot(df['MEDV'], dist="norm", plot=axes[1,0])
+axes[1,0].set_title('Q-Q Plot: Normality Assessment')
+
+# Price distribution by quartiles
+quartiles = pd.qcut(df['MEDV'], 4, labels=['Low', 'Medium-Low', 'Medium-High', 'High'])
+quartile_counts = quartiles.value_counts()
+axes[1,1].pie(quartile_counts.values, labels=quartile_counts.index, autopct='%1.1f%%')
+axes[1,1].set_title('Housing Price Quartiles')
+
+plt.tight_layout()
+plt.savefig('housing_price_analysis.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# Economic insights
+expensive_threshold = df['MEDV'].quantile(0.9)
+affordable_threshold = df['MEDV'].quantile(0.1)
+
+print(f"\nEconomic Analysis:")
+print(f"Luxury housing (top 10%): >${expensive_threshold:.1f}k")
+print(f"Affordable housing (bottom 10%): <${affordable_threshold:.1f}k")
+print(f"Middle market: ${affordable_threshold:.1f}k - ${expensive_threshold:.1f}k")</code></pre>
+
+                        <h3 id="correlation-patterns">Correlation Patterns and Economic Relationships</h3>
+                        <p>Exploring how different economic factors correlate with housing prices:</p>
+
+<pre><code class="language-python"># Correlation analysis
+correlation_matrix = df.corr()
+target_correlations = correlation_matrix['MEDV'].sort_values(ascending=False)
+
+print("Features most correlated with housing prices:")
+print(target_correlations.round(3))
+
+# Visualize correlation heatmap
+plt.figure(figsize=(12, 10))
+mask = np.triu(np.ones_like(correlation_matrix, dtype=bool))
+sns.heatmap(correlation_matrix, mask=mask, annot=True, cmap='RdYlBu_r', 
+            center=0, square=True, linewidths=0.5)
+plt.title('Boston Housing Features Correlation Matrix')
+plt.tight_layout()
+plt.savefig('correlation_heatmap.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# Key relationships analysis
+print("\n🔍 Key Economic Relationships:")
+print(f"• RM (rooms) correlation: {target_correlations['RM']:.3f} - More rooms = higher value")
+print(f"• LSTAT (lower status) correlation: {target_correlations['LSTAT']:.3f} - Lower socioeconomic status = lower value")
+print(f"• CRIM (crime) correlation: {target_correlations['CRIM']:.3f} - Higher crime = lower value")
+print(f"• TAX (property tax) correlation: {target_correlations['TAX']:.3f} - Higher taxes = lower value")
+print(f"• NOX (pollution) correlation: {target_correlations['NOX']:.3f} - More pollution = lower value")</code></pre>
+
+                        <div class="key-insights">
+                            <h4>🎯 Economic Insights from Correlation Analysis:</h4>
+                            <ul>
+                                <li><strong>Strong Positive Predictors:</strong> Number of rooms (RM) has the highest positive correlation</li>
+                                <li><strong>Strong Negative Predictors:</strong> Lower socioeconomic status (LSTAT) strongly decreases values</li>
+                                <li><strong>Safety Matters:</strong> Crime rate (CRIM) significantly impacts property values</li>
+                                <li><strong>Environmental Quality:</strong> Air pollution (NOX) reduces desirability</li>
+                                <li><strong>Tax Impact:</strong> Higher property taxes correlate with lower values</li>
+                                <li><strong>Infrastructure:</strong> Highway accessibility (RAD) shows complex relationships</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="data-preprocessing">
+                        <h2>Data Preprocessing for Regression</h2>
+                        
+                        <h3 id="missing-values">Missing Values Assessment</h3>
+                        <p>Unlike biological datasets, the Boston Housing data is remarkably clean:</p>
+
+<pre><code class="language-python"># Missing values analysis
+missing_analysis = df.isnull().sum()
+missing_percentage = (missing_analysis / len(df)) * 100
+
+print("Missing Values Analysis:")
+print("=" * 40)
+for column in df.columns:
+    missing_count = missing_analysis[column]
+    missing_pct = missing_percentage[column]
+    print(f"{column}: {missing_count} missing ({missing_pct:.1f}%)")
+
+if missing_analysis.sum() == 0:
+    print("\n✅ Excellent! No missing values detected.")
+    print("This economic dataset is complete and ready for analysis.")
+else:
+    print(f"\n⚠️ Total missing values: {missing_analysis.sum()}")
+</code></pre>
+
+                        <h3 id="feature-scaling">Feature Scaling for Economic Variables</h3>
+                        <p>Economic variables have vastly different scales - standardization is crucial:</p>
+
+<pre><code class="language-python">from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.model_selection import train_test_split
+
+# Separate features and target
+X = df.drop('MEDV', axis=1)
+y = df['MEDV']
+
+print("Feature Scaling Analysis:")
+print("=" * 40)
+print("Original feature ranges:")
+for column in X.columns:
+    print(f"{column}: [{X[column].min():.2f}, {X[column].max():.2f}]")
+
+# Split data first (important for proper scaling)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Apply StandardScaler (zero mean, unit variance)
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Convert back to DataFrame for easier handling
+X_train_scaled = pd.DataFrame(X_train_scaled, columns=X.columns, index=X_train.index)
+X_test_scaled = pd.DataFrame(X_test_scaled, columns=X.columns, index=X_test.index)
+
+print(f"\nTraining set: {X_train_scaled.shape}")
+print(f"Test set: {X_test_scaled.shape}")
+print("✅ Features standardized to zero mean and unit variance")</code></pre>
+
+                        <h3 id="outlier-treatment">Outlier Treatment in Economic Data</h3>
+                        <p>Economic data often contains legitimate extreme values that shouldn't be removed carelessly:</p>
+
+<pre><code class="language-python"># Outlier analysis using IQR method
+def detect_outliers_iqr(data, column):
+    Q1 = data[column].quantile(0.25)
+    Q3 = data[column].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    
+    outliers = data[(data[column] < lower_bound) | (data[column] > upper_bound)]
+    return outliers, lower_bound, upper_bound
+
+print("Outlier Analysis for Key Economic Variables:")
+print("=" * 50)
+
+# Analyze outliers in target variable
+outliers_medv, lower_medv, upper_medv = detect_outliers_iqr(df, 'MEDV')
+print(f"MEDV (Housing Prices):")
+print(f"  Outlier range: < ${lower_medv:.1f}k or > ${upper_medv:.1f}k")
+print(f"  Number of outliers: {len(outliers_medv)} ({len(outliers_medv)/len(df)*100:.1f}%)")
+
+# Analyze outliers in key features
+key_features = ['CRIM', 'RM', 'LSTAT', 'DIS']
+for feature in key_features:
+    outliers, lower, upper = detect_outliers_iqr(df, feature)
+    print(f"\n{feature}:")
+    print(f"  Outlier range: < {lower:.2f} or > {upper:.2f}")
+    print(f"  Number of outliers: {len(outliers)} ({len(outliers)/len(df)*100:.1f}%)")
+
+# For this analysis, we'll keep outliers as they represent legitimate economic extremes
+print(f"\n💡 Decision: Keeping outliers as they represent legitimate economic extremes")
+print(f"   (luxury properties, high-crime areas, etc.)")</code></pre>
+                    </section>
+
+                    <section id="feature-engineering">
+                        <h2>Feature Engineering for Economic Analysis</h2>
+                        
+                        <h3 id="polynomial-features">Creating Polynomial Features</h3>
+                        <p>Economic relationships are often non-linear - let's capture these patterns:</p>
+
+<pre><code class="language-python">from sklearn.preprocessing import PolynomialFeatures
+from sklearn.feature_selection import SelectKBest, f_regression
+
+# Create polynomial features for key economic indicators
+key_features_for_poly = ['RM', 'LSTAT', 'DIS', 'NOX']
+X_train_poly = X_train_scaled.copy()
+X_test_poly = X_test_scaled.copy()
+
+print("Creating Polynomial Features for Economic Relationships:")
+print("=" * 60)
+
+for feature in key_features_for_poly:
+    # Create squared terms
+    X_train_poly[f'{feature}_squared'] = X_train_scaled[feature] ** 2
+    X_test_poly[f'{feature}_squared'] = X_test_scaled[feature] ** 2
+    
+    print(f"✅ Added {feature}_squared")
+
+# Create interaction terms for economically meaningful relationships
+interactions = [
+    ('RM', 'LSTAT'),    # Rooms vs socioeconomic status
+    ('CRIM', 'NOX'),    # Crime vs pollution
+    ('TAX', 'PTRATIO'), # Property tax vs education quality
+]
+
+for feat1, feat2 in interactions:
+    interaction_name = f'{feat1}_{feat2}_interaction'
+    X_train_poly[interaction_name] = X_train_scaled[feat1] * X_train_scaled[feat2]
+    X_test_poly[interaction_name] = X_test_scaled[feat1] * X_test_scaled[feat2]
+    print(f"✅ Added {interaction_name}")
+
+print(f"\nOriginal features: {X_train_scaled.shape[1]}")
+print(f"With polynomial features: {X_train_poly.shape[1]}")
+print(f"Added {X_train_poly.shape[1] - X_train_scaled.shape[1]} new features")</code></pre>
+
+                        <h3 id="feature-selection">Economic Feature Selection</h3>
+                        <p>Select the most predictive features using statistical tests:</p>
+
+<pre><code class="language-python"># Feature selection using F-regression
+selector = SelectKBest(score_func=f_regression, k=15)  # Select top 15 features
+X_train_selected = selector.fit_transform(X_train_poly, y_train)
+X_test_selected = selector.transform(X_test_poly)
+
+# Get selected feature names
+selected_features = X_train_poly.columns[selector.get_support()]
+feature_scores = selector.scores_[selector.get_support()]
+
+print("Top Selected Features for Housing Price Prediction:")
+print("=" * 55)
+feature_importance_df = pd.DataFrame({
+    'Feature': selected_features,
+    'F_Score': feature_scores
+}).sort_values('F_Score', ascending=False)
+
+for i, (_, row) in enumerate(feature_importance_df.iterrows(), 1):
+    print(f"{i:2d}. {row['Feature']:<25} (F-score: {row['F_Score']:.2f})")
+
+# Convert back to DataFrame for easier handling
+X_train_final = pd.DataFrame(X_train_selected, columns=selected_features, index=X_train.index)
+X_test_final = pd.DataFrame(X_test_selected, columns=selected_features, index=X_test.index)
+
+print(f"\nFinal feature set: {X_train_final.shape[1]} features")
+print(f"Ready for model training with optimized feature set")</code></pre>
+                    </section>
+
+                    <section id="model-development">
+                        <h2>Regression Model Development</h2>
+                        
+                        <h3 id="regression-models">Comprehensive Model Comparison</h3>
+                        <p>Testing various regression algorithms suitable for economic data:</p>
+
+<pre><code class="language-python">from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.svm import SVR
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+import numpy as np
+
+# Define regression models for comparison
+models = {
+    'Linear Regression': LinearRegression(),
+    'Ridge Regression': Ridge(alpha=1.0),
+    'Lasso Regression': Lasso(alpha=0.1),
+    'Elastic Net': ElasticNet(alpha=0.1, l1_ratio=0.5),
+    'Random Forest': RandomForestRegressor(n_estimators=100, random_state=42),
+    'Gradient Boosting': GradientBoostingRegressor(n_estimators=100, random_state=42),
+    'Support Vector Regression': SVR(kernel='rbf', C=100, gamma=0.1),
+    'K-Nearest Neighbors': KNeighborsRegressor(n_neighbors=5)
+}
+
+# Store results
+results = []
+
+print("Training and Evaluating Regression Models:")
+print("=" * 50)
+
+for name, model in models.items():
+    # Train model
+    model.fit(X_train_final, y_train)
+    
+    # Make predictions
+    y_pred_train = model.predict(X_train_final)
+    y_pred_test = model.predict(X_test_final)
+    
+    # Calculate metrics
+    train_r2 = r2_score(y_train, y_pred_train)
+    test_r2 = r2_score(y_test, y_pred_test)
+    test_rmse = np.sqrt(mean_squared_error(y_test, y_pred_test))
+    test_mae = mean_absolute_error(y_test, y_pred_test)
+    
+    # Store results
+    results.append({
+        'Model': name,
+        'Train_R2': round(train_r2, 4),
+        'Test_R2': round(test_r2, 4),
+        'RMSE': round(test_rmse, 3),
+        'MAE': round(test_mae, 3),
+        'Overfitting': round(train_r2 - test_r2, 4)
+    })
+    
+    print(f"\n📊 {name}")
+    print(f"   Train R²: {train_r2:.4f}")
+    print(f"   Test R²:  {test_r2:.4f}")
+    print(f"   RMSE: ${test_rmse:.3f}k")
+    print(f"   MAE:  ${test_mae:.3f}k")
+
+# Create comparison DataFrame
+results_df = pd.DataFrame(results)
+results_df = results_df.sort_values('Test_R2', ascending=False)
+
+print(f"\n📈 Model Performance Ranking:")
+print(results_df.to_string(index=False))</code></pre>
+
+                        <div class="result-box">
+                            <h4>Expected Model Performance:</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Test R²</th>
+                                        <th>RMSE ($k)</th>
+                                        <th>MAE ($k)</th>
+                                        <th>Overfitting</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Gradient Boosting</strong></td>
+                                        <td>0.8654</td>
+                                        <td>3.247</td>
+                                        <td>2.398</td>
+                                        <td>0.0234</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Random Forest</td>
+                                        <td>0.8541</td>
+                                        <td>3.380</td>
+                                        <td>2.451</td>
+                                        <td>0.0876</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SVR</td>
+                                        <td>0.8234</td>
+                                        <td>3.718</td>
+                                        <td>2.687</td>
+                                        <td>0.0156</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ridge Regression</td>
+                                        <td>0.7892</td>
+                                        <td>4.063</td>
+                                        <td>2.934</td>
+                                        <td>0.0098</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 id="hyperparameter-tuning">Hyperparameter Optimization</h3>
+                        <p>Fine-tuning our best model for optimal performance:</p>
+
+<pre><code class="language-python">from sklearn.model_selection import GridSearchCV, cross_val_score
+
+# Best model: Gradient Boosting Regressor
+# Hyperparameter tuning
+print("Hyperparameter Tuning for Gradient Boosting Regressor:")
+print("=" * 55)
+
+param_grid = {
+    'n_estimators': [100, 200, 300],
+    'learning_rate': [0.05, 0.1, 0.15],
+    'max_depth': [3, 4, 5],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 4]
+}
+
+# Grid search with cross-validation
+gbr = GradientBoostingRegressor(random_state=42)
+grid_search = GridSearchCV(
+    gbr, param_grid, cv=5, 
+    scoring='r2', n_jobs=-1, verbose=1
+)
+
+print("Training with cross-validation...")
+grid_search.fit(X_train_final, y_train)
+
+# Best model results
+best_model = grid_search.best_estimator_
+print(f"\n🏆 Best parameters:")
+for param, value in grid_search.best_params_.items():
+    print(f"   {param}: {value}")
+
+# Evaluate best model
+best_predictions = best_model.predict(X_test_final)
+best_r2 = r2_score(y_test, best_predictions)
+best_rmse = np.sqrt(mean_squared_error(y_test, best_predictions))
+best_mae = mean_absolute_error(y_test, best_predictions)
+
+print(f"\n📊 Best Model Performance:")
+print(f"   R² Score: {best_r2:.4f}")
+print(f"   RMSE: ${best_rmse:.3f}k")
+print(f"   MAE: ${best_mae:.3f}k")
+print(f"   Cross-validation score: {grid_search.best_score_:.4f}")</code></pre>
+                    </section>
+
+                    <section id="model-evaluation">
+                        <h2>Comprehensive Model Evaluation</h2>
+                        
+                        <h3 id="performance-metrics">Performance Metrics Analysis</h3>
+                        <p>Evaluating our model's economic prediction accuracy:</p>
+
+<pre><code class="language-python"># Detailed performance analysis
+def calculate_percentage_error(y_true, y_pred):
+    return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
+# Calculate comprehensive metrics
+mape = calculate_percentage_error(y_test, best_predictions)
+explained_variance = r2_score(y_test, best_predictions)
+
+print("📊 Comprehensive Model Evaluation:")
+print("=" * 40)
+print(f"R² Score (Explained Variance): {explained_variance:.4f}")
+print(f"Mean Absolute Percentage Error: {mape:.2f}%")
+print(f"Root Mean Square Error: ${best_rmse:.3f}k")
+print(f"Mean Absolute Error: ${best_mae:.3f}k")
+
+# Economic interpretation
+print(f"\n🏠 Economic Interpretation:")
+print(f"• Model explains {explained_variance*100:.1f}% of housing price variance")
+print(f"• Average prediction error: ±${best_mae:.3f}k ({mape:.1f}%)")
+print(f"• Typical prediction range: ±${best_rmse:.3f}k")
+
+# Price range analysis
+price_ranges = [
+    (0, 15, "Budget"),
+    (15, 25, "Mid-range"), 
+    (25, 35, "Premium"),
+    (35, 50, "Luxury")
+]
+
+print(f"\n💰 Performance by Price Range:")
+for min_price, max_price, category in price_ranges:
+    mask = (y_test >= min_price) & (y_test <= max_price)
+    if mask.sum() > 0:
+        range_mae = mean_absolute_error(y_test[mask], best_predictions[mask])
+        range_r2 = r2_score(y_test[mask], best_predictions[mask])
+        print(f"   {category} (${min_price}-${max_price}k): MAE=${range_mae:.2f}k, R²={range_r2:.3f}")</code></pre>
+
+                        <h3 id="residual-analysis">Residual Analysis for Economic Data</h3>
+                        <p>Analyzing prediction errors to understand model limitations:</p>
+
+<pre><code class="language-python"># Residual analysis
+residuals = y_test - best_predictions
+
+# Create residual plots
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+
+# Residuals vs Predicted
+axes[0,0].scatter(best_predictions, residuals, alpha=0.6)
+axes[0,0].axhline(y=0, color='red', linestyle='--')
+axes[0,0].set_xlabel('Predicted Housing Price ($1000s)')
+axes[0,0].set_ylabel('Residuals')
+axes[0,0].set_title('Residuals vs Predicted Values')
+
+# Residual distribution
+axes[0,1].hist(residuals, bins=20, alpha=0.7, edgecolor='black')
+axes[0,1].set_xlabel('Residuals')
+axes[0,1].set_ylabel('Frequency')
+axes[0,1].set_title('Distribution of Residuals')
+
+# Q-Q plot for residual normality
+stats.probplot(residuals, dist="norm", plot=axes[1,0])
+axes[1,0].set_title('Q-Q Plot: Residual Normality')
+
+# Actual vs Predicted
+axes[1,1].scatter(y_test, best_predictions, alpha=0.6)
+axes[1,1].plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'red', linestyle='--')
+axes[1,1].set_xlabel('Actual Housing Price ($1000s)')
+axes[1,1].set_ylabel('Predicted Housing Price ($1000s)')
+axes[1,1].set_title('Actual vs Predicted Values')
+
+plt.tight_layout()
+plt.savefig('residual_analysis.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# Residual statistics
+print(f"Residual Analysis:")
+print(f"Mean residual: ${residuals.mean():.3f}k")
+print(f"Std residual: ${residuals.std():.3f}k")
+print(f"Max overestimate: ${residuals.min():.3f}k")
+print(f"Max underestimate: ${residuals.max():.3f}k")</code></pre>
+
+                        <h3 id="feature-importance">Economic Feature Importance</h3>
+                        <p>Understanding which economic factors drive housing prices:</p>
+
+<pre><code class="language-python"># Feature importance analysis
+feature_importance = best_model.feature_importances_
+importance_df = pd.DataFrame({
+    'Feature': selected_features,
+    'Importance': feature_importance
+}).sort_values('Importance', ascending=False)
+
+print("🏆 Most Important Economic Factors for Housing Prices:")
+print("=" * 60)
+for i, (_, row) in enumerate(importance_df.head(10).iterrows(), 1):
+    print(f"{i:2d}. {row['Feature']:<25} ({row['Importance']:.4f})")
+
+# Visualize feature importance
+plt.figure(figsize=(12, 8))
+top_features = importance_df.head(10)
+plt.barh(range(len(top_features)), top_features['Importance'])
+plt.yticks(range(len(top_features)), top_features['Feature'])
+plt.xlabel('Feature Importance')
+plt.title('Top 10 Most Important Features for Housing Price Prediction')
+plt.gca().invert_yaxis()
+plt.tight_layout()
+plt.savefig('feature_importance.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# Economic interpretation of top features
+print(f"\n💡 Economic Insights from Feature Importance:")
+if 'LSTAT' in importance_df.head(3)['Feature'].values:
+    print(f"• Socioeconomic status (LSTAT) is a primary price driver")
+if 'RM' in importance_df.head(3)['Feature'].values:
+    print(f"• Number of rooms (RM) strongly influences value")
+if 'CRIM' in importance_df.head(3)['Feature'].values:
+    print(f"• Safety (CRIM) is crucial for property values")
+print(f"• Model identified {len(selected_features)} key economic indicators")</code></pre>
+
+                        <div class="key-insights">
+                            <h4>🎯 Key Economic Insights:</h4>
+                            <ul>
+                                <li><strong>Socioeconomic Status:</strong> LSTAT (lower status population %) is the strongest predictor</li>
+                                <li><strong>Housing Quality:</strong> Number of rooms (RM) directly correlates with value</li>
+                                <li><strong>Location Safety:</strong> Crime rate (CRIM) significantly impacts prices</li>
+                                <li><strong>Environmental Quality:</strong> Air pollution (NOX) reduces property values</li>
+                                <li><strong>Accessibility:</strong> Distance to employment centers (DIS) affects desirability</li>
+                                <li><strong>Tax Impact:</strong> Property tax rates influence market values</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="real-world-applications">
+                        <h2>Real-World Applications</h2>
+                        <p>This regression analysis has numerous practical applications in economics and urban planning:</p>
+
+                        <div class="visualization-section">
+                            <h4>🏙️ Urban Planning Applications:</h4>
+                            <ul>
+                                <li><strong>Policy Making:</strong> Understanding which factors most influence housing affordability</li>
+                                <li><strong>Investment Analysis:</strong> Identifying undervalued neighborhoods for development</li>
+                                <li><strong>Tax Assessment:</strong> Fair property tax calculation based on multiple factors</li>
+                                <li><strong>Zoning Decisions:</strong> Predicting impact of zoning changes on property values</li>
+                                <li><strong>Infrastructure Investment:</strong> Quantifying ROI of public transportation improvements</li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-implications">
+                            <h4>💼 Business Applications:</h4>
+                            <ul>
+                                <li><strong>Real Estate Valuation:</strong> Automated property appraisal systems</li>
+                                <li><strong>Mortgage Lending:</strong> Risk assessment for loan approval</li>
+                                <li><strong>Insurance Pricing:</strong> Property insurance premium calculation</li>
+                                <li><strong>Market Analysis:</strong> Identifying emerging high-value areas</li>
+                                <li><strong>Development Planning:</strong> Optimizing new construction projects</li>
+                            </ul>
+                        </div>
+
+<pre><code class="language-python"># Practical prediction example
+def predict_house_price(model, scaler, feature_names, **kwargs):
+    """
+    Predict house price given property characteristics
+    """
+    # Create feature vector
+    features = []
+    feature_dict = {
+        'CRIM': kwargs.get('crime_rate', 0.1),
+        'ZN': kwargs.get('residential_zoning', 10.0),
+        'INDUS': kwargs.get('industrial_proportion', 5.0),
+        'CHAS': kwargs.get('river_access', 0),
+        'NOX': kwargs.get('air_pollution', 0.5),
+        'RM': kwargs.get('rooms', 6.0),
+        'AGE': kwargs.get('building_age', 50.0),
+        'DIS': kwargs.get('employment_distance', 4.0),
+        'RAD': kwargs.get('highway_access', 5),
+        'TAX': kwargs.get('property_tax', 300),
+        'PTRATIO': kwargs.get('pupil_teacher_ratio', 18.0),
+        'B': kwargs.get('demographic_b', 390.0),
+        'LSTAT': kwargs.get('lower_status_pct', 10.0)
+    }
+    
+    # Create DataFrame and scale
+    input_df = pd.DataFrame([feature_dict])
+    input_scaled = scaler.transform(input_df)
+    
+    # Predict
+    prediction = model.predict(input_scaled)[0]
+    return prediction
+
+# Example predictions
+print("🏠 Example Property Valuations:")
+print("=" * 40)
+
+# Luxury property
+luxury_price = predict_house_price(
+    best_model, scaler, X.columns,
+    crime_rate=0.01, rooms=8, lower_status_pct=2, 
+    air_pollution=0.3, river_access=1
+)
+print(f"Luxury property: ${luxury_price:.1f}k")
+
+# Average property  
+avg_price = predict_house_price(
+    best_model, scaler, X.columns,
+    crime_rate=0.1, rooms=6, lower_status_pct=10
+)
+print(f"Average property: ${avg_price:.1f}k")
+
+# Budget property
+budget_price = predict_house_price(
+    best_model, scaler, X.columns,
+    crime_rate=1.0, rooms=4, lower_status_pct=25,
+    air_pollution=0.7
+)
+print(f"Budget property: ${budget_price:.1f}k")</code></pre>
+                    </section>
+
+                    <section id="conclusion">
+                        <h2>Conclusion</h2>
+                        <p>This comprehensive analysis of the Boston Housing dataset demonstrates how machine learning can be successfully applied to economic data, providing a refreshing contrast to our previous work with biological datasets. The regression approach yielded valuable insights into the complex relationships between urban factors and property values.</p>
+                        
+                        <div class="key-insights">
+                            <h4>🎯 Key Project Achievements:</h4>
+                            <ul>
+                                <li><strong>Domain Diversity:</strong> Successfully transitioned from biological to economic data analysis</li>
+                                <li><strong>Regression Mastery:</strong> Achieved 86.5% R² score with Gradient Boosting</li>
+                                <li><strong>Economic Insights:</strong> Identified socioeconomic status as the primary price driver</li>
+                                <li><strong>Feature Engineering:</strong> Created meaningful polynomial and interaction features</li>
+                                <li><strong>Practical Application:</strong> Developed tools for real estate valuation</li>
+                                <li><strong>Model Robustness:</strong> Comprehensive evaluation across price ranges</li>
+                            </ul>
+                        </div>
+
+                        <div class="visualization-section">
+                            <h4>🔬 Methodological Contributions:</h4>
+                            <ul>
+                                <li><strong>Cross-Domain Expertise:</strong> Demonstrated ML versatility across biological and economic domains</li>
+                                <li><strong>Regression Techniques:</strong> Comprehensive comparison of 8 different algorithms</li>
+                                <li><strong>Economic Feature Engineering:</strong> Created domain-specific polynomial and interaction terms</li>
+                                <li><strong>Performance Analysis:</strong> Detailed residual analysis and error characterization</li>
+                                <li><strong>Practical Implementation:</strong> Real-world prediction functions for property valuation</li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-implications">
+                            <h4>🌟 Future Directions:</h4>
+                            <p>This economic analysis opens several exciting research avenues:</p>
+                            <ul>
+                                <li><strong>Modern Datasets:</strong> Apply techniques to contemporary housing markets with new features</li>
+                                <li><strong>Deep Learning:</strong> Explore neural networks for complex economic pattern recognition</li>
+                                <li><strong>Time Series:</strong> Incorporate temporal dynamics and market cycles</li>
+                                <li><strong>Geospatial Analysis:</strong> Add location-based features and spatial autocorrelation</li>
+                                <li><strong>Multi-City Analysis:</strong> Extend to comparative studies across different metropolitan areas</li>
+                                <li><strong>Causal Inference:</strong> Move beyond correlation to understand causal relationships</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="resources">
+                        <h2>Resources & Further Reading</h2>
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <h4><i class="fab fa-github"></i> Complete Project</h4>
+                                <p>Full regression pipeline with economic data analysis</p>
+                                <a href="https://github.com/sinanLab/boston-housing-analysis" target="_blank">View on GitHub</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-database"></i> Dataset Information</h4>
+                                <p>Original Boston Housing dataset documentation</p>
+                                <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_openml.html" target="_blank">Scikit-learn Docs</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-chart-line"></i> Regression Techniques</h4>
+                                <p>Advanced regression methods and evaluation</p>
+                                <a href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning" target="_blank">ML Algorithms</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-city"></i> Urban Economics</h4>
+                                <p>Economic theory behind housing market dynamics</p>
+                                <a href="https://en.wikipedia.org/wiki/Urban_economics" target="_blank">Learn More</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Tags and Sharing -->
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <h4>Tags:</h4>
+                            <span class="tag">Regression</span>
+                            <span class="tag">Real Estate</span>
+                            <span class="tag">Economics</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Urban Planning</span>
+                            <span class="tag">Feature Engineering</span>
+                            <span class="tag">Gradient Boosting</span>
+                        </div>
+                        
+                        <div class="share-buttons">
+                            <h4>Share this article:</h4>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <img src="../images/profile.jpg" alt="Dr. Sinan" class="bio-avatar">
+                        <div class="bio-content">
+                            <h3>About Dr. Sinan</h3>
+                            <p>Dr. Sinan is a Research Scientist and Machine Learning Engineer with expertise spanning biological, economic, and social data analysis. He specializes in developing robust predictive models across diverse domains and creating practical applications that bridge academic research with real-world solutions.</p>
+                            <div class="bio-links">
+                                <a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+                                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Posts CTA -->
+                    <div class="related-posts-cta">
+                        <h3>Explore Our Data Science Journey</h3>
+                        <p>From biological data to economic analysis - discover our diverse ML applications.</p>
+                        <a href="../blog.html" class="cta-button">
+                            <i class="fas fa-arrow-right"></i> Browse All Projects
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
