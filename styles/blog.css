@@ -232,27 +232,65 @@
     padding: 2rem;
 }
 
+.blog-card .blog-content p {
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.blog-card .blog-date, .blog-card .read-time {
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+    text-shadow: none;
+}
+
+.featured-post .post-meta .post-date, .featured-post .post-meta .read-time {
+    color: #334155;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    text-shadow: none;
+}
+
 .blog-meta, .post-meta {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: #64748b;
-}
-
-.blog-date, .post-date {
+    font-size: 0.95rem;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.18);
     font-weight: 500;
 }
 
+.blog-meta i, .post-meta i {
+    color: #ffd700;
+    margin-right: 0.3em;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.blog-date, .post-date {
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+
 .read-time {
-    color: #94a3b8;
+    color: #ffd700;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.18);
 }
 
 .blog-content h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #1f2937;
+    color: #fff;
     line-height: 1.4;
 }
 
@@ -267,7 +305,7 @@
 }
 
 .blog-content p {
-    color: #6b7280;
+    color: #e0e7ff;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -528,5 +566,23 @@
     
     .author-avatar {
         margin: 0 auto;
+    }
+    
+    .read-more {
+        font-size: 1.05rem;
+        font-weight: 600;
+        padding: 0.8rem 0.5rem;
+        min-width: 120px;
+        margin: 0.5rem auto;
+        letter-spacing: 0.01em;
+    }
+    .newsletter-form button {
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 0.9rem 0.5rem;
+        min-width: 140px;
+        margin: 0.5rem auto;
+        box-shadow: 0 2px 8px rgba(99,102,241,0.12);
+        letter-spacing: 0.01em;
     }
 }
