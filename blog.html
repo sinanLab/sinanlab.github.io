@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Dr. [Your Name]</title>
+    <title>Blog - Dr. Sinan</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/blog.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,11 +14,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">Dr. [Your Name]</a>
+                <a href="index.html">Dr. Sinan</a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="index.html#about" class="nav-link">About</a>
@@ -46,185 +47,124 @@
     <!-- Blog Header -->
     <section class="blog-header">
         <div class="container">
-            <div class="blog-header-content">
-                <h1>Blog & Insights</h1>
-                <p>Thoughts on research, data science, and academic life</p>
-                <div class="blog-search">
-                    <input type="text" placeholder="Search articles..." class="search-input">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Categories -->
-    <section class="blog-categories">
-        <div class="container">
-            <div class="category-filters">
-                <button class="category-btn active" data-category="all">All Posts</button>
-                <button class="category-btn" data-category="research">Research</button>
-                <button class="category-btn" data-category="data-science">Data Science</button>
-                <button class="category-btn" data-category="python">Python</button>
-                <button class="category-btn" data-category="academic">Academic Life</button>
-                <button class="category-btn" data-category="tutorials">Tutorials</button>
-            </div>
+            <h1>Blog & Insights</h1>
+            <p>Exploring the intersection of research, technology, and data science</p>
         </div>
     </section>
 
     <!-- Blog Posts -->
     <section class="blog-posts">
         <div class="container">
-            <div class="posts-grid">
-                <!-- Featured Post -->
-                <article class="post-card featured" data-category="research">
-                    <div class="post-image">
-                        <img src="images/blog1.jpg" alt="Machine Learning in Research">
-                        <div class="post-category">Research</div>
+            <!-- Featured Post -->
+            <article class="featured-post">
+                <div class="post-image">
+                    <img src="images/blog1.jpg" alt="Machine Learning in Research">
+                    <div class="post-category featured">Featured</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-date">July 15, 2024</span>
+                        <span class="read-time">8 min read</span>
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">July 15, 2024</span>
-                            <span class="read-time">8 min read</span>
-                        </div>
-                        <h2>Integrating Machine Learning into Academic Research: Lessons Learned</h2>
-                        <p>Over the past few years, I've been incorporating machine learning techniques into my research workflow. This comprehensive guide shares the lessons I've learned, common pitfalls to avoid, and practical strategies for successfully integrating ML into traditional research methodologies.</p>
-                        <div class="post-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Research Methodology</span>
-                            <span class="tag">Data Analysis</span>
-                        </div>
-                        <a href="blog/ml-in-research.html" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+                    <h2><a href="blog/ml-in-research.html">Integrating Machine Learning into Academic Research</a></h2>
+                    <p>A comprehensive guide on how to effectively incorporate ML techniques into traditional research methodologies, based on my experience working with various datasets and research projects.</p>
+                    <a href="blog/ml-in-research.html" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-                <!-- Regular Posts -->
-                <article class="post-card" data-category="python">
-                    <div class="post-image">
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
                         <img src="images/blog2.jpg" alt="Python Tools for Researchers">
-                        <div class="post-category">Python</div>
+                        <div class="blog-category">Tutorial</div>
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">July 8, 2024</span>
-                            <span class="read-time">5 min read</span>
-                        </div>
-                        <h3>Essential Python Libraries Every Researcher Should Know</h3>
-                        <p>A curated list of Python libraries that can significantly enhance your research workflow and data analysis capabilities. From pandas to specialized domain libraries.</p>
-                        <div class="post-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Libraries</span>
-                            <span class="tag">Tools</span>
-                        </div>
-                        <a href="blog/python-for-researchers.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="post-card" data-category="academic">
-                    <div class="post-image">
-                        <img src="images/blog3.jpg" alt="PhD Journey">
-                        <div class="post-category">Academic Life</div>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">June 30, 2024</span>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 8, 2024</span>
                             <span class="read-time">6 min read</span>
                         </div>
-                        <h3>Navigating the PhD Journey: Tips for Success</h3>
-                        <p>Personal insights and practical advice for fellow PhD students on managing research, maintaining work-life balance, and staying motivated throughout the journey.</p>
-                        <div class="post-tags">
-                            <span class="tag">PhD Life</span>
-                            <span class="tag">Productivity</span>
-                            <span class="tag">Mental Health</span>
-                        </div>
-                        <a href="blog/phd-journey.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3><a href="blog/python-tools.html">Essential Python Libraries Every Researcher Should Know</a></h3>
+                        <p>A curated list of Python libraries that can significantly enhance your research workflow, from data analysis to visualization.</p>
+                        <a href="blog/python-tools.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="post-card" data-category="data-science">
-                    <div class="post-image">
-                        <img src="images/blog4.jpg" alt="Data Visualization">
-                        <div class="post-category">Data Science</div>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog3.jpg" alt="Data Visualization">
+                        <div class="blog-category">Analysis</div>
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">June 20, 2024</span>
-                            <span class="read-time">7 min read</span>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 28, 2024</span>
+                            <span class="read-time">5 min read</span>
                         </div>
-                        <h3>Creating Effective Data Visualizations for Research</h3>
-                        <p>Best practices for creating compelling and informative visualizations that effectively communicate your research findings to both academic and general audiences.</p>
-                        <div class="post-tags">
-                            <span class="tag">Visualization</span>
-                            <span class="tag">Communication</span>
-                            <span class="tag">Research</span>
-                        </div>
+                        <h3><a href="blog/data-visualization.html">Creating Compelling Data Visualizations for Research</a></h3>
+                        <p>Best practices and tools for creating visualizations that effectively communicate your research findings.</p>
                         <a href="blog/data-visualization.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="post-card" data-category="tutorials">
-                    <div class="post-image">
-                        <img src="images/blog5.jpg" alt="Git for Researchers">
-                        <div class="post-category">Tutorials</div>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog4.jpg" alt="Research Methods">
+                        <div class="blog-category">Research</div>
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">June 10, 2024</span>
-                            <span class="read-time">10 min read</span>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 15, 2024</span>
+                            <span class="read-time">7 min read</span>
                         </div>
-                        <h3>Version Control for Research: Git and GitHub Tutorial</h3>
-                        <p>A comprehensive tutorial on using Git and GitHub for research projects, including best practices for collaboration and code management in academic settings.</p>
-                        <div class="post-tags">
-                            <span class="tag">Git</span>
-                            <span class="tag">GitHub</span>
-                            <span class="tag">Version Control</span>
-                        </div>
-                        <a href="blog/git-for-researchers.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3><a href="blog/research-methodology.html">Modern Research Methodologies in the Digital Age</a></h3>
+                        <p>How digital tools and methodologies are transforming the way we conduct and present research.</p>
+                        <a href="blog/research-methodology.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="post-card" data-category="research">
-                    <div class="post-image">
-                        <img src="images/blog6.jpg" alt="Research Reproducibility">
-                        <div class="post-category">Research</div>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog5.jpg" alt="Academic Writing">
+                        <div class="blog-category">Writing</div>
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">May 28, 2024</span>
-                            <span class="read-time">9 min read</span>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 2, 2024</span>
+                            <span class="read-time">4 min read</span>
                         </div>
-                        <h3>Building Reproducible Research Workflows</h3>
-                        <p>Strategies and tools for creating reproducible research workflows that ensure your findings can be verified and built upon by other researchers.</p>
-                        <div class="post-tags">
-                            <span class="tag">Reproducibility</span>
-                            <span class="tag">Workflow</span>
-                            <span class="tag">Best Practices</span>
+                        <h3><a href="blog/academic-writing.html">Tips for Effective Academic Writing</a></h3>
+                        <p>Strategies to improve your academic writing and make your research more accessible to broader audiences.</p>
+                        <a href="blog/academic-writing.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog6.jpg" alt="Career Development">
+                        <div class="blog-category">Career</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 18, 2024</span>
+                            <span class="read-time">6 min read</span>
                         </div>
-                        <a href="blog/reproducible-research.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3><a href="blog/phd-journey.html">Navigating the PhD Journey: Lessons Learned</a></h3>
+                        <p>Personal insights and advice for current and prospective PhD students based on my academic journey.</p>
+                        <a href="blog/phd-journey.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <span class="pagination-dots">...</span>
-                <button class="page-btn">Next</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to get notified about new blog posts and research updates</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <!-- Newsletter Subscription -->
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to get notified about new blog posts and research insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -234,7 +174,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dr. [Your Name]</h3>
+                    <h3>Dr. Sinan</h3>
                     <p>PhD Scholar & Data Scientist dedicated to advancing knowledge through research and innovation.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-github"></i></a>
@@ -256,14 +196,14 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="#">CV/Resume</a></li>
-                        <li><a href="#">Publications</a></li>
+                        <li><a href="publications.html">Publications</a></li>
                         <li><a href="#">Code Repository</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dr. [Your Name]. All rights reserved.</p>
+                <p>&copy; 2024 Dr. Sinan. All rights reserved.</p>
             </div>
         </div>
     </footer>
