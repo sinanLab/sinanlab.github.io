@@ -56,6 +56,209 @@
                 <span><i class="far fa-calendar"></i> July 23, 2025</span>
                 <span><i class="far fa-clock"></i> 4 min read</span>
                 <span><i class="fas fa-tag"></i> Work in Progress</span>
+                <span><i class="fas fa-tag"></i> Economics</span>
+            </div>
+            <h1 class="post-title">Boston Housing Price Prediction: Economic Data Analysis</h1>
+            <p class="post-subtitle">Exploring a different domain - Moving from biological to economic data analysis with the classic Boston Housing dataset</p>
+            <div class="author-info">
+                <img src="../images/profile.jpg" alt="Dr. Sinan" class="author-avatar">
+                <div class="author-details">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & ML Engineer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <div class="post-content">
+        <div class="container">
+            <div class="post-article">
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>After successfully analyzing biological datasets in my previous posts, I'm now exploring a completely different domain: <strong>economic data analysis</strong>. This represents an exciting shift from medical/biological data to understanding housing markets and urban economics.</p>
+                    
+                    <p>The Boston Housing dataset offers a perfect opportunity to demonstrate how machine learning techniques can be applied across diverse domains. Unlike our previous classification problems, this project focuses on <strong>regression analysis</strong> - predicting continuous housing prices rather than discrete categories.</p>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-github"></i> Project Repository</h4>
+                        <p>This project is currently under active development:</p>
+                        <a href="https://github.com/sinanLab/boston-housing-analysis" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View GitHub Repository
+                        </a>
+                    </div>
+                </section>
+
+                <section id="current-progress">
+                    <h2>🚧 Current Progress</h2>
+                    <p><strong>Status:</strong> Project is in early development phase. I've started with basic data loading and initial exploration.</p>
+
+                    <div class="result-box">
+                        <h4>✅ Completed So Far:</h4>
+                        <ul>
+                            <li><strong>Environment Setup:</strong> Created conda environment with necessary libraries</li>
+                            <li><strong>Data Loading:</strong> Successfully fetched Boston Housing dataset from OpenML</li>
+                            <li><strong>Initial Inspection:</strong> Basic data exploration and column analysis</li>
+                            <li><strong>Data Storage:</strong> Saved dataset for further analysis</li>
+                        </ul>
+                    </div>
+
+                    <h3>Initial Code Implementation</h3>
+<pre><code class="language-python">from sklearn.datasets import fetch_openml
+import pandas as pd
+import os
+
+# Load Boston housing dataset
+boston = fetch_openml(name="boston", version=1, as_frame=True)
+df = boston.frame  # DataFrame with features + target
+
+# Save the dataset
+output_dir = "data/raw_data"
+os.makedirs(output_dir, exist_ok=True)
+output_file = os.path.join(output_dir, "boston_housing.csv")
+df.to_csv(output_file, index=False)
+
+# Basic exploration
+loaded_df = pd.read_csv(output_file)
+print(loaded_df.columns)</code></pre>
+                </section>
+
+                <section id="dataset-overview">
+                    <h2>Dataset Overview</h2>
+                    <p>The Boston Housing dataset contains information about housing prices in the Boston metropolitan area from the 1970s.</p>
+                    
+                    <div class="key-insights">
+                        <h4>📊 Dataset Characteristics:</h4>
+                        <ul>
+                            <li><strong>Target Variable:</strong> MEDV (Median home value in $1000s)</li>
+                            <li><strong>Features:</strong> 13 socioeconomic and environmental variables</li>
+                            <li><strong>Samples:</strong> 506 census tracts in Boston metropolitan area</li>
+                            <li><strong>Problem Type:</strong> Regression (continuous value prediction)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="next-steps">
+                    <h2>🎯 Next Steps</h2>
+                    <p>The upcoming development phases will include:</p>
+
+                    <div class="visualization-section">
+                        <h4>📋 Development Roadmap:</h4>
+                        <ol>
+                            <li><strong>Exploratory Data Analysis:</strong> Statistical summaries and visualization</li>
+                            <li><strong>Data Preprocessing:</strong> Feature scaling and outlier treatment</li>
+                            <li><strong>Feature Engineering:</strong> Creating interaction terms and polynomial features</li>
+                            <li><strong>Model Development:</strong> Multiple regression algorithms comparison</li>
+                            <li><strong>Results Analysis:</strong> Feature importance and economic interpretation</li>
+                        </ol>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-clock"></i> Expected Timeline</h4>
+                        <p>This blog post will be updated with comprehensive analysis results as the project progresses. Expected completion: <strong>Early August 2025</strong></p>
+                    </div>
+                </section>
+
+                <section id="resources">
+                    <h2>Resources</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4><i class="fab fa-github"></i> Live Project</h4>
+                            <p>Follow the development progress</p>
+                            <a href="https://github.com/sinanLab/boston-housing-analysis" target="_blank">View on GitHub</a>
+                        </div>
+                        <div class="resource-card">
+                            <h4><i class="fas fa-blog"></i> Other Projects</h4>
+                            <p>Check out completed analyses</p>
+                            <a href="../blog.html" target="_blank">Blog Posts</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & ML Engineer exploring diverse applications of data science.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-orcid"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#research">Research</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Sinan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Dr. Sinan</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> July 23, 2025</span>
+                <span><i class="far fa-clock"></i> 4 min read</span>
+                <span><i class="fas fa-tag"></i> Work in Progress</span>
                 <span><i class="fas fa-tag"></i> Regression</span>
                 <span><i class="fas fa-tag"></i> Real Estate</span>
             </div>
