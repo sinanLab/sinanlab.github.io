@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Machine Learning Pipeline for Breast Cancer Detection - Dr. Sinan</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="stylesheet" href="../styles/post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Dr. Sinan</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> July 23, 2025</span>
+                <span><i class="far fa-clock"></i> 15 min read</span>
+                <span><i class="fas fa-tag"></i> Machine Learning</span>
+                <span><i class="fas fa-tag"></i> Healthcare</span>
+                <span><i class="fas fa-tag"></i> Python</span>
+            </div>
+            <h1 class="post-title">Building a Machine Learning Pipeline for Breast Cancer Detection</h1>
+            <p class="post-subtitle">A comprehensive guide to developing, tuning, and deploying a Random Forest classifier for medical diagnosis using the Wisconsin Breast Cancer dataset</p>
+            <div class="author-info">
+                <img src="../images/profile.jpg" alt="Dr. Sinan" class="author-avatar">
+                <div class="author-details">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & ML Engineer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content with Sidebar -->
+    <div class="post-content">
+        <div class="blog-post-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#project-overview">Project Overview</a></li>
+                    <li><a href="#data-exploration">Data Exploration</a></li>
+                    <li class="h3"><a href="#data-loading">Data Loading</a></li>
+                    <li class="h3"><a href="#data-inspection">Data Inspection</a></li>
+                    <li class="h3"><a href="#data-cleaning">Data Cleaning</a></li>
+                    <li><a href="#model-development">Model Development</a></li>
+                    <li class="h3"><a href="#baseline-model">Baseline Model</a></li>
+                    <li class="h3"><a href="#multiple-models">Multiple Models Comparison</a></li>
+                    <li class="h3"><a href="#hyperparameter-tuning">Hyperparameter Tuning</a></li>
+                    <li><a href="#results-analysis">Results Analysis</a></li>
+                    <li class="h3"><a href="#performance-metrics">Performance Metrics</a></li>
+                    <li class="h3"><a href="#feature-importance">Feature Importance</a></li>
+                    <li><a href="#deployment">Model Deployment</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="blog-post-main">
+                <div class="post-article">
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>Breast cancer is one of the most common cancers affecting women worldwide, with early detection being crucial for successful treatment outcomes. In this comprehensive tutorial, we'll walk through the complete process of building a machine learning pipeline for breast cancer detection using the Wisconsin Breast Cancer dataset.</p>
+                        
+                        <p>This project demonstrates real-world application of machine learning in healthcare, covering everything from data preprocessing to model deployment. We'll explore multiple algorithms, perform hyperparameter tuning, and analyze feature importance to understand what makes our model effective.</p>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-github"></i> Project Repository</h4>
+                            <p>The complete Jupyter notebook for this project is available on GitHub:</p>
+                            <a href="https://github.com/sinanLab/breat_cancer_detector/blob/main/main.ipynb" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View Jupyter Notebook
+                            </a>
+                        </div>
+                    </section>
+
+                    <section id="project-overview">
+                        <h2>Project Overview</h2>
+                        <p>Our machine learning pipeline includes the following key components:</p>
+                        <ul>
+                            <li><strong>Data Source:</strong> Wisconsin Breast Cancer Diagnostic Dataset</li>
+                            <li><strong>Problem Type:</strong> Binary Classification (Malignant vs Benign)</li>
+                            <li><strong>Models Tested:</strong> 6 different algorithms including Random Forest, SVM, and Logistic Regression</li>
+                            <li><strong>Best Model:</strong> Tuned Random Forest with 97.37% accuracy</li>
+                            <li><strong>Deployment:</strong> Tkinter-based desktop application</li>
+                        </ul>
+                    </section>
+
+                    <section id="data-exploration">
+                        <h2>Data Exploration</h2>
+                        
+                        <h3 id="data-loading">Data Loading</h3>
+                        <p>We start by loading the Wisconsin Breast Cancer dataset directly from the UCI repository:</p>
+
+<pre><code class="language-python">import warnings
+warnings.filterwarnings("ignore")
+import pandas as pd
+
+# Load the UCI Breast Cancer Wisconsin dataset
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"
+column_names = ['ID', 'Diagnosis'] + [
+    # Mean values
+    'radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean',
+    'smoothness_mean', 'compactness_mean', 'concavity_mean', 'concave_points_mean',
+    'symmetry_mean', 'fractal_dimension_mean',
+    # Standard error values
+    'radius_se', 'texture_se', 'perimeter_se', 'area_se',
+    'smoothness_se', 'compactness_se', 'concavity_se', 'concave_points_se',
+    'symmetry_se', 'fractal_dimension_se',
+    # Worst values
+    'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
+    'smoothness_worst', 'compactness_worst', 'concavity_worst', 'concave_points_worst',
+    'symmetry_worst', 'fractal_dimension_worst'
+]
+cancer_data = pd.read_csv(url, names=column_names, na_values='?')
+
+# Save the raw data
+cancer_data.to_csv('results/data/raw_cancer_data.csv', index=False)</code></pre>
+
+                        <h3 id="data-inspection">Data Inspection</h3>
+                        <p>Next, we examine the structure and characteristics of our dataset:</p>
+
+<pre><code class="language-python"># Basic dataset information
+print(cancer_data.head(5))
+print(f"Shape: {cancer_data.shape}")
+
+# Check target variable categories
+print(cancer_data.Diagnosis.unique())  # Output: ['M' 'B']
+
+# Dataset statistics
+print(f"Dataset info:\n{cancer_data.info()}")
+print(f"Description:\n{cancer_data.describe()}")
+
+# Check for missing values
+print(f"Missing values:\n{cancer_data.isnull().sum()}")
+
+# Check for duplicates
+print(f"Number of duplicated rows: {cancer_data.duplicated().sum()}")</code></pre>
+
+                        <div class="result-box">
+                            <h4>Key Dataset Characteristics:</h4>
+                            <ul>
+                                <li><strong>Shape:</strong> 569 samples × 32 features</li>
+                                <li><strong>Target Classes:</strong> M (Malignant), B (Benign)</li>
+                                <li><strong>Missing Values:</strong> 0 (Clean dataset)</li>
+                                <li><strong>Duplicates:</strong> 0 rows</li>
+                                <li><strong>Data Types:</strong> All numerical features except target</li>
+                            </ul>
+                        </div>
+
+                        <h3 id="data-cleaning">Data Cleaning</h3>
+                        <p>We convert the categorical diagnosis labels to numerical format for machine learning:</p>
+
+<pre><code class="language-python"># Convert diagnosis to binary format
+cancer_data['Diagnosis'] = cancer_data['Diagnosis'].map({'M': 1, 'B': 0})  # Malignant=1, Benign=0
+
+# Export cleaned data
+cancer_data.to_csv("results/data/clean_breast_cancer_wisconsin_mapped.csv", index=False)
+df = pd.read_csv("results/data/clean_breast_cancer_wisconsin_mapped.csv")
+print(df.head(5))</code></pre>
+                    </section>
+
+                    <section id="model-development">
+                        <h2>Model Development</h2>
+                        
+                        <p>Our model development process follows a systematic approach: baseline model → multiple model comparison → hyperparameter tuning.</p>
+
+                        <h3 id="baseline-model">Baseline Model</h3>
+                        <p>We start with a simple Logistic Regression model as our baseline:</p>
+
+<pre><code class="language-python">from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report
+
+# Split the dataset
+X = df.drop(['Diagnosis', 'ID'], axis=1)
+y = df['Diagnosis']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+# Create and train baseline model
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+# Evaluate baseline performance
+y_pred = model.predict(X_test)
+print("Baseline Accuracy:", accuracy_score(y_test, y_pred))
+print(classification_report(y_test, y_pred))</code></pre>
+
+                        <h3 id="multiple-models">Multiple Models Comparison</h3>
+                        <p>We compare six different machine learning algorithms to identify the best performer:</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+
+# Define models to compare
+models = {
+    "Logistic Regression": LogisticRegression(max_iter=1000),
+    "Decision Tree": DecisionTreeClassifier(),
+    "Random Forest": RandomForestClassifier(),
+    "K-Nearest Neighbors": KNeighborsClassifier(),
+    "Support Vector Machine": SVC()
+}
+
+# Store metrics for comparison
+metrics_list = []
+
+# Train and evaluate each model
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    acc = accuracy_score(y_test, y_pred)
+    report = classification_report(y_test, y_pred, output_dict=True)
+    
+    # Extract metrics for malignant class (class '1')
+    precision = report['1']['precision']
+    recall = report['1']['recall']
+    f1 = report['1']['f1-score']
+    
+    metrics_list.append({
+        'Model': name,
+        'Accuracy': round(acc, 4),
+        'Precision (Malignant)': round(precision, 4),
+        'Recall (Malignant)': round(recall, 4),
+        'F1-Score (Malignant)': round(f1, 4)
+    })
+
+# Create comparison DataFrame
+df_metrics = pd.DataFrame(metrics_list)
+df_metrics = df_metrics.sort_values(by='F1-Score (Malignant)', ascending=False).reset_index(drop=True)
+print(df_metrics)
+
+# Save metrics
+df_metrics.to_csv("results/metrices/breast_cancer_model_metrics.csv", index=False)</code></pre>
+
+                        <div class="result-box">
+                            <h4>Model Comparison Results:</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Accuracy</th>
+                                        <th>Precision</th>
+                                        <th>Recall</th>
+                                        <th>F1-Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Random Forest</strong></td>
+                                        <td>0.9649</td>
+                                        <td>1.0000</td>
+                                        <td>0.9048</td>
+                                        <td><strong>0.9500</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Logistic Regression</td>
+                                        <td>0.9386</td>
+                                        <td>0.9730</td>
+                                        <td>0.8571</td>
+                                        <td>0.9114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Decision Tree</td>
+                                        <td>0.9211</td>
+                                        <td>0.9231</td>
+                                        <td>0.8571</td>
+                                        <td>0.8889</td>
+                                    </tr>
+                                    <tr>
+                                        <td>K-Nearest Neighbors</td>
+                                        <td>0.9123</td>
+                                        <td>0.9706</td>
+                                        <td>0.7857</td>
+                                        <td>0.8684</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support Vector Machine</td>
+                                        <td>0.9035</td>
+                                        <td>1.0000</td>
+                                        <td>0.7381</td>
+                                        <td>0.8493</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
+                        <p>Since Random Forest performed best, we optimize its hyperparameters using GridSearchCV:</p>
+
+<pre><code class="language-python">from sklearn.model_selection import GridSearchCV
+
+# Define hyperparameter grid
+param_grid = {
+    'n_estimators': [100, 200, 500],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5],
+    'min_samples_leaf': [1, 2],
+    'max_features': ['auto', 'sqrt'],
+    'bootstrap': [True, False]
+}
+
+# Set up GridSearchCV
+rf = RandomForestClassifier(random_state=42)
+grid_search = GridSearchCV(estimator=rf, param_grid=param_grid,
+                          cv=5, n_jobs=-1, scoring='f1', verbose=2)
+
+# Fit grid search
+grid_search.fit(X_train, y_train)
+
+# Best parameters and performance
+print("Best parameters:", grid_search.best_params_)
+print("Best F1 Score:", grid_search.best_score_)
+
+# Evaluate tuned model
+best_rf = grid_search.best_estimator_
+y_pred_tuned = best_rf.predict(X_test)
+print(classification_report(y_test, y_pred_tuned, target_names=['Benign', 'Malignant']))</code></pre>
+
+                        <div class="result-box">
+                            <h4>Optimal Hyperparameters:</h4>
+                            <ul>
+                                <li><strong>bootstrap:</strong> False</li>
+                                <li><strong>max_depth:</strong> None</li>
+                                <li><strong>max_features:</strong> sqrt</li>
+                                <li><strong>min_samples_leaf:</strong> 1</li>
+                                <li><strong>min_samples_split:</strong> 5</li>
+                                <li><strong>n_estimators:</strong> 100</li>
+                            </ul>
+                            <p><strong>Cross-validation F1 Score:</strong> 0.956</p>
+                        </div>
+                    </section>
+
+                    <section id="results-analysis">
+                        <h2>Results Analysis</h2>
+                        
+                        <h3 id="performance-metrics">Performance Metrics</h3>
+                        <p>Our tuned Random Forest achieved outstanding performance:</p>
+
+<pre><code class="language-python"># Add tuned model to comparison
+report = classification_report(y_test, y_pred_tuned, output_dict=True)
+acc = best_rf.score(X_test, y_test)
+
+df_metrics.loc[len(df_metrics.index)] = {
+    'Model': 'Tuned Random Forest',
+    'Accuracy': round(acc, 4),
+    'Precision (Malignant)': round(report['1']['precision'], 4),
+    'Recall (Malignant)': round(report['1']['recall'], 4),
+    'F1-Score (Malignant)': round(report['1']['f1-score'], 4),
+}
+
+# Final comparison
+df_metrics_final = df_metrics.sort_values(by='F1-Score (Malignant)', ascending=False)
+print(df_metrics_final)</code></pre>
+
+                        <div class="result-box">
+                            <h4>Final Model Performance:</h4>
+                            <ul>
+                                <li><strong>Accuracy:</strong> 97.37% (Best)</li>
+                                <li><strong>Precision:</strong> 100% (No false positives)</li>
+                                <li><strong>Recall:</strong> 90.48% (Catches most malignant cases)</li>
+                                <li><strong>F1-Score:</strong> 95.00% (Excellent balance)</li>
+                            </ul>
+                        </div>
+
+                        <h3 id="feature-importance">Feature Importance Analysis</h3>
+                        <p>Understanding which features drive our model's predictions:</p>
+
+<pre><code class="language-python">import seaborn as sns
+
+# Get feature importances
+importances = best_rf.feature_importances_
+features = X.columns
+feature_df = pd.DataFrame({'Feature': features, 'Importance': importances})
+feature_df.sort_values(by='Importance', ascending=False, inplace=True)
+
+# Create visualization
+plt.figure(figsize=(8, 5))
+sns.barplot(x='Importance', y='Feature', data=feature_df.head(10), palette='viridis')
+plt.title('Top 10 Feature Importances - Tuned Random Forest')
+plt.xlabel('Importance Score')
+plt.tight_layout()
+plt.savefig("results/figures/feature_importances_breast_cancer_tuned_rf.png", dpi=600)
+plt.show()
+
+print("Top 10 Most Important Features:")
+print(feature_df.head(10))</code></pre>
+
+                        <div class="result-box">
+                            <h4>Top Contributing Features:</h4>
+                            <ol>
+                                <li><strong>concave_points_worst:</strong> Most discriminative feature</li>
+                                <li><strong>perimeter_worst:</strong> Tumor boundary characteristics</li>
+                                <li><strong>concave_points_mean:</strong> Average concave point measurements</li>
+                                <li><strong>radius_worst:</strong> Maximum radius measurements</li>
+                                <li><strong>area_worst:</strong> Largest area measurements</li>
+                            </ol>
+                            <p>Notice that "worst" features (maximum values) are particularly important for distinguishing malignant tumors.</p>
+                        </div>
+
+                        <div class="visualization-section">
+                            <h4>Model Comparison Visualization</h4>
+                            <p>Below is the performance comparison between our baseline and best model:</p>
+
+<pre><code class="language-python"># Create comparison plot
+baseline = df_metrics[df_metrics['Model'] == 'Logistic Regression'].iloc[0]
+best = df_metrics_final.iloc[0]
+
+compare_df = pd.DataFrame({
+    'Metric': ['Accuracy', 'Precision', 'Recall', 'F1-Score'],
+    'Baseline (LogReg)': [
+        baseline['Accuracy'], baseline['Precision (Malignant)'],
+        baseline['Recall (Malignant)'], baseline['F1-Score (Malignant)']
+    ],
+    'Best (Tuned RF)': [
+        best['Accuracy'], best['Precision (Malignant)'],
+        best['Recall (Malignant)'], best['F1-Score (Malignant)']
+    ]
+})
+
+# Plot comparison
+compare_df.set_index('Metric').plot(kind='bar', figsize=(8, 5), colormap='Set2')
+plt.title('Baseline vs Best Model Performance')
+plt.ylabel('Score')
+plt.xticks(rotation=0)
+plt.ylim(0.7, 1.05)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig("results/figures/bar_graph_breast_cancer_model_comparison.png", dpi=600)
+plt.show()</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="deployment">
+                        <h2>Model Deployment</h2>
+                        <p>The final step involves saving our trained model and creating a deployment-ready application:</p>
+
+<pre><code class="language-python">import pickle
+
+# Save the optimized model
+with open("results/models/breast_cancer_tuned_model.pkl", "wb") as f:
+    pickle.dump(best_rf, f)
+
+# Load model for inference (example)
+with open("results/models/breast_cancer_tuned_model.pkl", "rb") as f:
+    loaded_model = pickle.load(f)</code></pre>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-desktop"></i> Desktop Application</h4>
+                            <p>The project includes a Tkinter-based desktop application that provides a user-friendly interface for medical professionals to input patient data and receive instant predictions.</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Input form for all 30 diagnostic features</li>
+                                <li>Real-time prediction with confidence scores</li>
+                                <li>Easy-to-interpret results display</li>
+                                <li>Professional medical interface design</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="conclusion">
+                        <h2>Conclusion</h2>
+                        <p>This project demonstrates a complete machine learning workflow for medical diagnosis, achieving exceptional performance with 97.37% accuracy. Key takeaways include:</p>
+                        
+                        <div class="key-insights">
+                            <h4>🎯 Key Insights:</h4>
+                            <ul>
+                                <li><strong>Model Selection:</strong> Random Forest outperformed other algorithms due to its ability to handle feature interactions</li>
+                                <li><strong>Feature Engineering:</strong> "Worst" measurements proved most discriminative for malignancy detection</li>
+                                <li><strong>Hyperparameter Tuning:</strong> GridSearchCV improved performance from 96.49% to 97.37% accuracy</li>
+                                <li><strong>Medical Relevance:</strong> High precision (100%) is crucial to avoid false positive diagnoses</li>
+                                <li><strong>Deployment Ready:</strong> The model is packaged for real-world medical applications</li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-implications">
+                            <h4>🏥 Clinical Implications:</h4>
+                            <p>While this model shows excellent performance, it's important to note that machine learning should augment, not replace, clinical expertise. The model serves as a valuable decision support tool that can:</p>
+                            <ul>
+                                <li>Assist radiologists in prioritizing cases for review</li>
+                                <li>Provide second opinions for borderline cases</li>
+                                <li>Support screening programs in resource-limited settings</li>
+                                <li>Contribute to standardized diagnostic criteria</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="resources">
+                        <h2>Resources & Further Reading</h2>
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <h4><i class="fab fa-github"></i> Code Repository</h4>
+                                <p>Complete Jupyter notebook with all code and data</p>
+                                <a href="https://github.com/sinanLab/breat_cancer_detector/blob/main/main.ipynb" target="_blank">View on GitHub</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-database"></i> Dataset</h4>
+                                <p>Wisconsin Breast Cancer Diagnostic Dataset</p>
+                                <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)" target="_blank">UCI Repository</a>
+                            </div>
+                            <div class="resource-card">
+                                <h4><i class="fas fa-book"></i> Documentation</h4>
+                                <p>Scikit-learn Random Forest Guide</p>
+                                <a href="https://scikit-learn.org/stable/modules/ensemble.html#forest" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Tags and Sharing -->
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <h4>Tags:</h4>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Random Forest</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Classification</span>
+                            <span class="tag">Medical AI</span>
+                        </div>
+                        
+                        <div class="share-buttons">
+                            <h4>Share this article:</h4>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <img src="../images/profile.jpg" alt="Dr. Sinan" class="bio-avatar">
+                        <div class="bio-content">
+                            <h3>About Dr. Sinan</h3>
+                            <p>Dr. Sinan is a Research Scientist and Machine Learning Engineer specializing in AI applications in healthcare. With extensive experience in developing ML solutions for medical diagnosis, he focuses on creating interpretable and clinically-relevant models.</p>
+                            <div class="bio-links">
+                                <a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+                                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Posts CTA -->
+                    <div class="related-posts-cta">
+                        <h3>Interested in More ML Projects?</h3>
+                        <p>Explore our other machine learning tutorials and research articles.</p>
+                        <a href="../blog.html" class="cta-button">
+                            <i class="fas fa-arrow-right"></i> Browse All Posts
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

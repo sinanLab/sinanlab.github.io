@@ -453,3 +453,200 @@
         justify-content: center;
     }
 }
+
+/* Additional styles for new blog post elements */
+.info-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.info-box h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-box p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.info-box ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-box ul li {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.result-box {
+    background: #f8fafc;
+    border-left: 4px solid #10b981;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.result-box h4 {
+    color: #065f46;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.result-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.result-box th,
+.result-box td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.result-box th {
+    background: #f3f4f6;
+    font-weight: 600;
+    color: #374151;
+}
+
+.result-box tbody tr:hover {
+    background: #f9fafb;
+}
+
+.key-insights {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.key-insights h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.key-insights ul li {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.clinical-implications {
+    background: #fef3f2;
+    border-left: 4px solid #ef4444;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.clinical-implications h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.clinical-implications p {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.clinical-implications ul li {
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.resource-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.resource-card h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.resource-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.resource-card a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #2563eb;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.resource-card a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.visualization-section {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid #e5e7eb;
+}
+
+.visualization-section h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.visualization-section p {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,71 @@
+# Blog project folders - exclude source project directories
+blog/*/
+!blog/*.html
+
+# Keep specific blog files
+!blog/ml-in-research.html
+!blog/breast-cancer-detector.html
+
+# Assets/docs - exclude source files not directly usable by website
+assets/docs/*.bib
+assets/docs/*.tex
+assets/docs/*.docx
+assets/docs/*.doc
+assets/docs/*.md
+assets/docs/*.txt
+assets/docs/*.rtf
+assets/docs/*.odt
+assets/docs/*.xlsx
+assets/docs/*.xls
+assets/docs/*.csv
+assets/docs/*.pptx
+assets/docs/*.ppt
+assets/docs/raw/
+assets/docs/source/
+assets/docs/drafts/
+
+# Keep web-ready docs
+!assets/docs/*.pdf
+!assets/docs/*.json
+!assets/docs/*.xml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Log files
+*.log
+
+# Node modules (if using any build tools)
+node_modules/
+
+# Python cache (if using Python scripts)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
