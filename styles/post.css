@@ -638,6 +638,25 @@
         font-size: 0.95rem;
         word-break: break-word;
     }
+    
+    .post-tags {
+        flex-wrap: wrap;
+        gap: 0.5rem 0.4rem;
+        margin: 0.7rem 0 1.2rem 0;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+    
+    .tag {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0.2rem 0.2rem;
+        min-width: 90px;
+        text-align: center;
+        border-radius: 18px;
+        display: inline-block;
+    }
 }
 
 /* Author Bio Section */
