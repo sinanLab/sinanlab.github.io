@@ -1,9 +1,9 @@
 // Fetch stats from researcher.json and update research-stats
 // Manually set statistics for research-stats
 // Manually set statistics for research-stats
-document.querySelector('.stat-number.publications').textContent = '15+';
-document.querySelector('.stat-number.citations').textContent = '250+';
-document.querySelector('.stat-number.h-index').textContent = '8';
+document.querySelector('.stat-number.publications').textContent = '17';
+document.querySelector('.stat-number.citations').textContent = '327';
+document.querySelector('.stat-number.h-index').textContent = '10';
 
 // Dynamically render publications from researcher.json with search and filter
 fetch('researcher.json')
