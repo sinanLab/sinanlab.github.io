@@ -995,6 +995,15 @@
     font-size: 1.2rem;
 }
 
+.visualization-section img.full-width-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 1rem 0;
+}
+
 .visualization-section p {
     color: #4b5563;
     margin-bottom: 1.5rem;
