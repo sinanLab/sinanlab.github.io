@@ -277,13 +277,16 @@
 
 .related-videos {
     margin-top: 4rem;
+    padding-bottom: 6rem;
 }
 
 .related-videos h2 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #1f2937;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
 }
 
 .related-videos-grid {
@@ -365,11 +368,11 @@
 }
 
 .category-section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #1f2937;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid #e5e7eb;
 }
 

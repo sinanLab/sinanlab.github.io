@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microscopy Image Analyzer: A GUI Tool for Processing Timeframe Images - Dr. Sinan</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="stylesheet" href="../styles/post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Dr. Sinan</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../videos.html" class="nav-link">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> July 25, 2025</span>
+                <span><i class="far fa-clock"></i> 12 min read</span>
+                <span><i class="fas fa-tag"></i> Python</span>
+                <span><i class="fas fa-tag"></i> GUI Development</span>
+                <span><i class="fas fa-tag"></i> Scientific Software</span>
+            </div>
+            <h1 class="post-title">Microscopy Image Analyzer: A Professional GUI Tool for Processing Timeframe Images</h1>
+            <p class="post-subtitle">A comprehensive Python application for researchers working with time-series microscopy data, featuring interactive ROI selection, batch processing, and professional animation export</p>
+            <div class="author-info">
+                <img src="../assets/images/profile.jpg" alt="Dr. Sinan" class="author-avatar">
+                <div class="author-details">
+                    <h3>Dr. Sinan</h3>
+                    <p>Research Scientist & Software Developer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content with Sidebar -->
+    <div class="post-content">
+        <div class="blog-post-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#key-features">Key Features</a></li>
+                    <li class="h3"><a href="#image-sequence-handling">Image Sequence Handling</a></li>
+                    <li class="h3"><a href="#roi-management">ROI Management</a></li>
+                    <li class="h3"><a href="#export-capabilities">Export Capabilities</a></li>
+                    <li><a href="#technical-implementation">Technical Implementation</a></li>
+                    <li class="h3"><a href="#architecture">Architecture Overview</a></li>
+                    <li class="h3"><a href="#gui-components">GUI Components</a></li>
+                    <li class="h3"><a href="#image-processing">Image Processing</a></li>
+                    <li><a href="#usage-guide">Usage Guide</a></li>
+                    <li class="h3"><a href="#installation">Installation</a></li>
+                    <li class="h3"><a href="#basic-workflow">Basic Workflow</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="blog-post-main">
+                <div class="post-article">
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>The Microscopy Image Analyzer is a specialized GUI application I developed to address a common challenge in cell biology research: processing and presenting time-series microscopy data. When preparing microscopy images for scientific publications, researchers often need to track specific cells across multiple timeframes while maintaining consistent framing and presentation quality.</p>
+                        
+                        <p>This tool streamlines the entire workflow from raw microscopy data to publication-ready figures and animations, eliminating the need for multiple software tools and manual processing steps.</p>
+
+                        <div class="info-box">
+                            <h4><i class="fab fa-github"></i> Project Repository</h4>
+                            <p>The complete source code is available on GitHub:</p>
+                            <a href="https://github.com/sinanLab/timeframes_microscopy_images" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View Source Code
+                            </a>
+                        </div>
+                    </section>
+
+                    <section id="key-features">
+                        <h2>Key Features</h2>
+                        
+                        <h3 id="image-sequence-handling">Image Sequence Handling</h3>
+                        <ul>
+                            <li>Support for multiple image formats (JPEG, PNG, TIFF, BMP, GIF)</li>
+                            <li>Intuitive navigation through timeframe sequences</li>
+                            <li>Automatic sequence organization and management</li>
+                            <li>Built-in image format conversion capabilities</li>
+                        </ul>
+
+                        <h3 id="roi-management">ROI Management</h3>
+                        <ul>
+                            <li>Interactive ROI drawing with real-time preview</li>
+                            <li>Precise cell location targeting with coordinate input</li>
+                            <li>ROI resize and repositioning capabilities</li>
+                            <li>Batch processing across entire image sequences</li>
+                        </ul>
+
+                        <h3 id="export-capabilities">Export Capabilities</h3>
+                        <ul>
+                            <li>High-quality individual frame export</li>
+                            <li>Professional GIF animation creation</li>
+                            <li>MP4 video export with quality settings</li>
+                            <li>Smart file naming and duplicate handling</li>
+                        </ul>
+
+                        <div class="visualization-section">
+                            <h4>Application Interface</h4>
+                            <img src="../docs/images/app_preview.png" alt="Microscopy Image Analyzer Interface" class="full-width-image">
+                            <p class="image-caption">The main interface showing the image viewer, ROI tools, and control panels</p>
+                        </div>
+                    </section>
+
+                    <section id="technical-implementation">
+                        <h2>Technical Implementation</h2>
+
+                        <h3 id="architecture">Architecture Overview</h3>
+                        <p>The application follows a modular architecture with clear separation of concerns:</p>
+
+<pre><code class="language-text">microscopy_analyzer/
+├── src/
+│   ├── core/              # Core processing logic
+│   ├── gui/              # User interface components
+│   └── utils/            # Helper functions
+├── config/               # Configuration settings
+└── tests/               # Unit tests</code></pre>
+
+                        <h3 id="gui-components">GUI Components</h3>
+                        <p>The interface is built using tkinter with custom components for:</p>
+                        <ul>
+                            <li>Interactive canvas for image display and ROI manipulation</li>
+                            <li>Control panels for navigation and settings</li>
+                            <li>Professional export dialog with advanced options</li>
+                            <li>Status information display</li>
+                        </ul>
+
+                        <h3 id="image-processing">Image Processing</h3>
+                        <p>The application leverages several Python libraries for image processing:</p>
+<pre><code class="language-python">from PIL import Image, ImageTk
+import numpy as np
+import imageio
+
+class ImageProcessor:
+    def __init__(self):
+        self.supported_formats = ['.jpg', '.jpeg', '.png', '.tiff', '.bmp', '.gif']
+
+    def load_sequence(self, folder_path):
+        """Load and validate image sequence from folder"""
+        image_files = self._get_image_files(folder_path)
+        return [Image.open(f) for f in image_files]
+
+    def crop_with_roi(self, image, roi):
+        """Crop image using ROI coordinates"""
+        x1, y1, x2, y2 = roi
+        return image.crop((x1, y1, x2, y2))
+
+    def create_animation(self, images, fps=5, output_path=None):
+        """Create GIF animation from image sequence"""
+        if output_path is None:
+            output_path = 'animation.gif'
+        imageio.mimsave(output_path, images, fps=fps)</code></pre>
+                    </section>
+
+                    <section id="usage-guide">
+                        <h2>Usage Guide</h2>
+
+                        <h3 id="installation">Installation</h3>
+                        <p>The application requires Python 3.7 or higher and can be installed using pip:</p>
+<pre><code class="language-bash"># Install required packages
+pip install -r requirements.txt
+
+# Run the application
+python main.py</code></pre>
+
+                        <h3 id="basic-workflow">Basic Workflow</h3>
+                        <ol>
+                            <li><strong>Load Images:</strong> Select a folder containing timeframe images</li>
+                            <li><strong>Navigate Sequence:</strong> Use Previous/Next buttons to browse images</li>
+                            <li><strong>Define ROI:</strong> Draw region of interest around target cells</li>
+                            <li><strong>Process Batch:</strong> Apply ROI to all images in sequence</li>
+                            <li><strong>Export Results:</strong> Save cropped images or create animations</li>
+                        </ol>
+
+                        <div class="info-box">
+                            <h4>💡 Pro Tips</h4>
+                            <ul>
+                                <li>Use coordinate input for precise cell targeting</li>
+                                <li>Preview animations before final export</li>
+                                <li>Utilize keyboard shortcuts for efficient navigation</li>
+                                <li>Save commonly used ROI coordinates for reuse</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="applications">
+                        <h2>Applications</h2>
+                        <p>This tool is particularly valuable for:</p>
+                        
+                        <div class="application-cards">
+                            <div class="app-card">
+                                <h4>📝 Manuscript Preparation</h4>
+                                <ul>
+                                    <li>Create consistently framed cell images</li>
+                                    <li>Generate publication-quality figures</li>
+                                    <li>Prepare supplementary animations</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="app-card">
+                                <h4>🔬 Cell Tracking</h4>
+                                <ul>
+                                    <li>Track cell movement over time</li>
+                                    <li>Document morphological changes</li>
+                                    <li>Create focused time-lapse sequences</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="app-card">
+                                <h4>🎓 Research Presentations</h4>
+                                <ul>
+                                    <li>Create engaging visual aids</li>
+                                    <li>Demonstrate cellular processes</li>
+                                    <li>Export presentation-ready media</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="conclusion">
+                        <h2>Conclusion</h2>
+                        <p>The Microscopy Image Analyzer represents a significant improvement in microscopy image processing workflow, offering:</p>
+                        
+                        <div class="key-insights">
+                            <h4>🎯 Key Benefits:</h4>
+                            <ul>
+                                <li><strong>Time Efficiency:</strong> Streamlined workflow reduces processing time</li>
+                                <li><strong>Consistency:</strong> Maintains uniform presentation across image sequences</li>
+                                <li><strong>Quality:</strong> Professional-grade output for publications</li>
+                                <li><strong>Usability:</strong> Intuitive interface for researchers</li>
+                            </ul>
+                        </div>
+
+                        <div class="future-development">
+                            <h4>🔮 Future Development</h4>
+                            <p>Planned enhancements include:</p>
+                            <ul>
+                                <li>Integration with machine learning for automated cell detection</li>
+                                <li>Advanced image analysis capabilities</li>
+                                <li>Support for additional file formats</li>
+                                <li>Enhanced batch processing features</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Tags and Sharing -->
+                    <div class="post-footer">
+                        <div class="post-tags">
+                            <h4>Tags:</h4>
+                            <span class="tag">Python</span>
+                            <span class="tag">GUI Development</span>
+                            <span class="tag">Scientific Software</span>
+                            <span class="tag">Image Processing</span>
+                            <span class="tag">Research Tools</span>
+                            <span class="tag">Microscopy</span>
+                        </div>
+                        
+                        <div class="share-buttons">
+                            <h4>Share this article:</h4>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <img src="../assets/images/profile.jpg" alt="Dr. Sinan" class="bio-avatar">
+                        <div class="bio-content">
+                            <h3>About Dr. Sinan</h3>
+                            <p>Dr. Sinan is a Research Scientist specializing in biomedical engineering and scientific software development. With experience in both research and software development, he focuses on creating practical tools that enhance research workflows and productivity.</p>
+                            <div class="bio-links">
+                                <a href="../index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+                                <a href="https://www.linkedin.com/in/muhammadsinan/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="https://github.com/sinanLab"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Posts CTA -->
+                    <div class="related-posts-cta">
+                        <h3>Interested in More Scientific Tools?</h3>
+                        <p>Explore our other software development and research tool articles.</p>
+                        <a href="../blog.html" class="cta-button">
+                            <i class="fas fa-arrow-right"></i> Browse All Posts
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
