@@ -1,3 +1,27 @@
+// Parallax Effect for Hero Section
+const heroSection = document.querySelector('.hero');
+const aboutSection = document.querySelector('#about');
+
+window.addEventListener('scroll', () => {
+    if (heroSection && aboutSection) {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+        
+        // Parallax background movement
+        heroSection.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        
+        // Fade out the hero content as you scroll
+        const fadeOut = Math.min(scrollPosition / (heroHeight * 0.6), 1);
+        heroSection.style.opacity = 1 - (fadeOut * 0.3);
+        
+        // Fade the overlay gradient
+        const overlay = heroSection.querySelector('::after');
+        if (overlay) {
+            heroSection.style.backgroundColor = `rgba(0, 0, 0, ${fadeOut * 0.2})`;
+        }
+    }
+});
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
