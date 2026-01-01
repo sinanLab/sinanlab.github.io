@@ -1,0 +1,8 @@
+{
+  "name": "sinan-contact-api",
+  "version": "1.0.0",
+  "description": "Contact form API for sinanlab.github.io",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  }
+}
