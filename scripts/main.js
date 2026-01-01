@@ -108,29 +108,70 @@ const observer = new IntersectionObserver((entries) => {
 const animateElements = document.querySelectorAll('.about-card, .skill-category, .stat-card, .publication-item, .project-card, .blog-card, .contact-card');
 animateElements.forEach(el => observer.observe(el));
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form form');
+// Contact form handling with API
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelector('input[type="text"]:nth-of-type(2)').value;
-        const message = this.querySelector('textarea').value;
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
         
-        // Simple validation
-        if (!name || !email || !message) {
-            showNotification('Please fill in all required fields.', 'error');
+        // Get form data
+        const formData = {
+            name: this.querySelector('input[name="name"]').value,
+            email: this.querySelector('input[name="email"]').value,
+            subject: this.querySelector('input[name="subject"]').value,
+            message: this.querySelector('textarea[name="message"]').value,
+        };
+        
+        // Validate
+        if (!formData.name || !formData.email || !formData.message) {
+            showStatus(formStatus, 'Please fill in all required fields.', 'error');
             return;
         }
         
-        // Simulate form submission
-        showNotification('Thank you for your message! I will get back to you soon.', 'success');
-        this.reset();
+        // Disable submit button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.innerHTML = '';
+        
+        try {
+            // Send to API endpoint
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok && result.success) {
+                showStatus(formStatus, 'Message sent successfully! You will receive a confirmation email shortly.', 'success');
+                this.reset();
+            } else {
+                showStatus(formStatus, result.error || 'Failed to send message. Please try again.', 'error');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showStatus(formStatus, 'Network error. Please check your connection and try again.', 'error');
+        } finally {
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
     });
+}
+
+// Show form status message
+function showStatus(element, message, type) {
+    element.innerHTML = `
+        <div class="form-status form-status-${type}">
+            ${message}
+        </div>
+    `;
 }
 
 // Notification system

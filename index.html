@@ -380,7 +380,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/xldljlnb" method="POST">
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -393,7 +393,8 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="formStatus"></div>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                     </form>
                 </div>
             </div>
