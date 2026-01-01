@@ -137,8 +137,8 @@ if (contactForm) {
         formStatus.innerHTML = '';
         
         try {
-            // Send to API endpoint
-            const response = await fetch('/api/send-email', {
+            // Send to Vercel API endpoint (change to your actual Vercel domain)
+            const response = await fetch('https://sinanlab-github-io.vercel.app/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
