@@ -1,0 +1,19 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeading from '../../components/PageHeading.astro';
+import Icon from '../../components/Icon.astro';
+import { withBase, formatDate } from '../../lib/utils';
+export async function getStaticPaths() {
+  return (await getCollection('blog', ({ data }) => !data.draft)).map(post => ({ params: { id: post.id }, props: { post } }));
+}
+interface Props { post: CollectionEntry<'blog'> }
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+---
+<BaseLayout title={post.data.title} description={post.data.description} active="Blog" article noindex={post.data.placeholder}>
+  <a class="back-link" href={withBase('blog/')}><Icon name="arrow" size={15} />All notes</a>
+  <div class="detail-heading"><PageHeading eyebrow={post.data.category} title={post.data.title} description={post.data.description} /><div class="note-meta article-meta">{post.data.date && <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>}{post.data.updated && <span>Updated {formatDate(post.data.updated)}</span>}{post.data.placeholder && <span class="placeholder-badge">Editable placeholder</span>}</div></div>
+  {post.data.placeholder && <div class="notice">This example post is a template for future writing. It does not report completed research or experimental findings.</div>}
+  <div class="detail-layout"><article class="prose"><Content /><footer class="article-footer"><ul class="tag-list" aria-label="Post topics">{post.data.tags.map(tag => <li>{tag}</li>)}</ul></footer></article><aside class="detail-sidebar"><nav aria-label="On this post"><h2>On this page</h2><ul>{headings.filter(heading => heading.depth === 2).map(heading => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></nav></aside></div>
+</BaseLayout>

@@ -1,0 +1,11 @@
+{
+  "title": "Analysis of the mathematical model of cutaneous leishmaniasis disease",
+  "authors": ["Muhammad Sinan", "Khursheed J Ansari", "Asia Kanwal", "Kamal Shah", "Thabet Abdeljawad", "Bahaaeldin Abdalla", "others"],
+  "venue": "Alexandria Engineering Journal",
+  "year": 2023,
+  "type": "Journal article",
+  "abstract": "Analysis of the mathematical model of cutaneous leishmaniasis disease.",
+  "bibtex": "@article{sinan2023analysis,\n  title={Analysis of the mathematical model of cutaneous leishmaniasis disease},\n  author={Sinan, Muhammad and Ansari, Khursheed J and Kanwal, Asia and Shah, Kamal and Abdeljawad, Thabet and Abdalla, Bahaaeldin and others},\n  journal={Alexandria Engineering Journal},\n  volume={72},\n  pages={117--134},\n  year={2023},\n  publisher={Elsevier}\n}",
+  "selected": true,
+  "placeholder": false
+}

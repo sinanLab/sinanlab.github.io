@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ScienceVisual from './ScienceVisual.astro';
+import Icon from './Icon.astro';
+import { withBase } from '../lib/utils';
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const { data } = project;
+---
+<article class="project-card">
+  <a class="project-image-link" href={withBase(`projects/${project.id}/`)} aria-label={`Read about ${data.title}`} tabindex="-1" aria-hidden="true">
+    {data.figure ? <img src={withBase(data.figure.src)} alt="" width="720" height="340" loading="lazy" /> : <ScienceVisual type={data.visual} />}
+  </a>
+  <div class="project-card-body">
+    <div class="card-eyebrow"><span>{data.category}</span>{data.placeholder && <span class="placeholder-badge">Template</span>}</div>
+    <h3><a href={withBase(`projects/${project.id}/`)}>{data.title}<Icon name="arrow" size={18} /></a></h3>
+    <p>{data.description}</p>
+    <ul class="tag-list" aria-label="Topics">{data.tags.slice(0, 3).map((tag) => <li>{tag}</li>)}</ul>
+  </div>
+</article>

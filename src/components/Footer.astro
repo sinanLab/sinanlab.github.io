@@ -1,0 +1,14 @@
+---
+import { profile } from '../data/profile';
+import { withBase } from '../lib/utils';
+const links = profile.profiles.filter((link) => link.url);
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div><a class="footer-name" href={withBase()}>{profile.name}</a><p>{profile.role} · {profile.field}</p></div>
+    <div class="footer-right">
+      <nav aria-label="Footer navigation"><a href={withBase('contact/')}>Contact</a>{links.map((link) => <a href={link.url}>{link.label}</a>)}<a href={withBase('cv/')}>CV</a></nav>
+      <p>© {new Date().getFullYear()} {profile.name}</p>
+    </div>
+  </div>
+</footer>

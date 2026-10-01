@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import PublicationEntry from '../components/PublicationEntry.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+import { cvSections } from '../data/cv';
+import { withBase, publicationDescending } from '../lib/utils';
+const publications = (await getCollection('publications', ({ data }) => !data.draft && !data.placeholder)).sort(publicationDescending);
+---
+<BaseLayout title="Curriculum vitae" active="CV" description={`Education, research experience, and academic activities of ${profile.name}.`}>
+  <PageHeading eyebrow="Academic background" title="Curriculum vitae" description={`${profile.name} · ${profile.role} in ${profile.field.toLowerCase()}`}>
+    {profile.cvPdf ? <a class="button button-primary" href={withBase(profile.cvPdf)} download><Icon name="download" size={16} />Download CV (PDF)</a> : <p class="small muted" style="margin-top: 18px;">A downloadable CV will be available when the PDF is supplied.</p>}
+  </PageHeading>
+  {cvSections.every(section => section.entries.length === 0) && <div class="notice">This CV is awaiting verified details. No education history, employment, awards, or achievements have been assumed.</div>}
+  {cvSections.map((section, index) => <>
+    <section class="cv-section"><h2>{section.title}</h2><div>{section.entries.length ? section.entries.map(entry => <article class="cv-entry"><h3>{entry.title}</h3>{entry.organization && <p>{entry.organization}</p>}{entry.period && <p class="small">{entry.period}</p>}{entry.description && <p>{entry.description}</p>}</article>) : <p class="cv-placeholder">{section.title} details to be added.</p>}</div></section>
+    {index === 1 && <section class="cv-section"><h2>Publications</h2><div>{publications.length ? publications.map(publication => <PublicationEntry publication={publication} />) : <p class="cv-placeholder">Verified publications to be added. <a href={withBase('publications/')}>View the publication list</a>.</p>}</div></section>}
+  </>)}
+</BaseLayout>

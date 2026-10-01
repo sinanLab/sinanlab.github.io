@@ -1,0 +1,33 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeading from '../../components/PageHeading.astro';
+import ScienceVisual from '../../components/ScienceVisual.astro';
+import Figure from '../../components/Figure.astro';
+import Icon from '../../components/Icon.astro';
+import { withBase } from '../../lib/utils';
+export async function getStaticPaths() {
+  return (await getCollection('projects', ({ data }) => !data.draft)).map(project => ({ params: { id: project.id }, props: { project } }));
+}
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const { data } = project;
+const { Content, headings } = await render(project);
+---
+<BaseLayout title={data.title} description={data.description} active="Projects" article noindex={data.placeholder}>
+  <a class="back-link" href={withBase('projects/')}><Icon name="arrow" size={15} />All projects</a>
+  <div class="detail-heading"><PageHeading eyebrow={data.category} title={data.title} description={data.description} /></div>
+  {data.placeholder && <div class="notice">Editable project template. The research topic has been supplied; specific methods, results, and resources have not.</div>}
+  <div class="detail-layout">
+    <div class="detail-content">
+      {data.figure ? <Figure {...data.figure} /> : <figure class="research-figure"><ScienceVisual type={data.visual} large /><figcaption>Illustrative schematic. No experimental data or results are represented.</figcaption></figure>}
+      <div class="prose"><Content /></div>
+      {data.embed && <figure class="research-figure"><iframe class="embed-frame" src={data.embed.src} title={data.embed.title} loading="lazy" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe><figcaption>{data.embed.caption} <a href={data.embed.src}>Open visualization in a new page</a>.</figcaption></figure>}
+    </div>
+    <aside class="detail-sidebar">
+      <nav aria-label="On this project page"><h2>On this page</h2><ul>{headings.filter(heading => heading.depth === 2).map(heading => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></nav>
+      {data.tags.length > 0 && <><h2>Topics</h2><ul class="tag-list">{data.tags.map(tag => <li>{tag}</li>)}</ul></>}
+      {data.links.length > 0 && <><h2>Resources</h2><div class="detail-links">{data.links.map(link => <a class="small-link" href={withBase(link.url)}>{link.label}<Icon name="external" size={12} /></a>)}</div></>}
+    </aside>
+  </div>
+</BaseLayout>

@@ -1,0 +1,12 @@
+
+{
+  "title": "A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination",
+  "authors": ["Kamal Shah", "Muhammad Sinan", "Thabet Abdeljawad", "Mohammed A El-Shorbagy", "Bahaaeldin Abdalla", "Marwan S Abualrub"],
+  "venue": "Complexity",
+  "year": 2022,
+  "type": "Journal article",
+  "abstract": "A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination.",
+  "bibtex": "@article{shah2022detailed,\n  title={A Detailed Study of a Fractal-Fractional Transmission Dynamical Model of Viral Infectious Disease with Vaccination},\n  author={Shah, Kamal and Sinan, Muhammad and Abdeljawad, Thabet and El-Shorbagy, Mohammed A and Abdalla, Bahaaeldin and Abualrub, Marwan S},\n  journal={Complexity},\n  volume={2022},\n  number={1},\n  pages={7236824},\n  year={2022},\n  publisher={Wiley Online Library}\n}",
+  "selected": false,
+  "placeholder": false
+}

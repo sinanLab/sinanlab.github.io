@@ -1,0 +1,11 @@
+{
+  "title": "Mathematical analysis of fractal-fractional mathematical model of COVID-19",
+  "authors": ["Muhammad Sinan", "Nadiyah Hussain Alharthi"],
+  "venue": "Fractal and Fractional",
+  "year": 2023,
+  "type": "Journal article",
+  "abstract": "Mathematical analysis of a fractal-fractional mathematical model of COVID-19.",
+  "bibtex": "@article{sinan2023mathematical,\n  title={Mathematical analysis of fractal-fractional mathematical model of COVID-19},\n  author={Sinan, Muhammad and Alharthi, Nadiyah Hussain},\n  journal={Fractal and Fractional},\n  volume={7},\n  number={5},\n  pages={358},\n  year={2023},\n  publisher={MDPI}\n}",
+  "selected": false,
+  "placeholder": false
+}

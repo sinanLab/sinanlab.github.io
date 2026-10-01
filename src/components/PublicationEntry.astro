@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../lib/utils';
+import Icon from './Icon.astro';
+interface Props { publication: CollectionEntry<'publications'> }
+const { publication } = Astro.props;
+const { data, id } = publication;
+const labels: Record<string, string> = { doi: 'DOI', pdf: 'PDF', preprint: 'Preprint', code: 'Code', dataset: 'Dataset' };
+const searchText = [data.title, ...data.authors, data.venue, data.abstract, data.type].join(' ').toLowerCase();
+---
+<article class="publication-entry" data-publication data-year={data.year ?? 'pending'} data-type={data.type} data-search={searchText}>
+  <div class="publication-year">{data.year ?? '—'}<span>{data.placeholder ? 'Example' : data.type}</span></div>
+  <div class="publication-body">
+    {data.thumbnail && <img class="publication-thumbnail" src={withBase(data.thumbnail.src)} alt={data.thumbnail.alt} width="180" height="130" loading="lazy" />}
+    <div class="publication-labels"><span class="category-label">{data.type}</span>{data.placeholder && <span class="placeholder-badge">Editable placeholder</span>}</div>
+    <h3>{data.title}</h3>
+    <p class="publication-authors">{data.authors.join(', ') || 'Authors to be added'}</p>
+    <p class="publication-venue">{data.venue || 'Publication venue and year to be added'}</p>
+    <div class="publication-links">{Object.entries(data.links).filter(([,url]) => url).map(([label,url]) => <a class="small-link" href={withBase(url!)}>{labels[label]}<Icon name="external" size={12} /></a>)}</div>
+    <div class="publication-details">
+      <details><summary>Abstract</summary><p>{data.abstract}</p></details>
+      <details class="bibtex-details"><summary>BibTeX</summary><div class="bibtex-panel"><pre id={`bib-${id}`}><code>{data.bibtex}</code></pre><button class="button button-small copy-button" data-copy-target={`bib-${id}`} type="button" hidden><Icon name="copy" size={14} /><span>Copy BibTeX</span></button><span class="copy-status" role="status"></span></div></details>
+    </div>
+  </div>
+</article>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-target]').forEach((button) => {
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      const target = document.getElementById(button.dataset.copyTarget!);
+      const status = button.parentElement?.querySelector('.copy-status');
+      try {
+        await navigator.clipboard.writeText(target?.textContent ?? '');
+        if (status) status.textContent = 'Citation copied.';
+      } catch {
+        if (target) {
+          const range = document.createRange(); range.selectNodeContents(target);
+          const selection = window.getSelection(); selection?.removeAllRanges(); selection?.addRange(range);
+        }
+        if (status) status.textContent = 'Copy unavailable. Citation selected; use your keyboard to copy.';
+      }
+    });
+  });
+</script>
