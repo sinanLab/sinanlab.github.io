@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+---
+<BaseLayout title="Contact" active="Contact" description={`Contact information and academic profiles for ${profile.name}.`}>
+  <PageHeading eyebrow="Get in touch" title="Contact" description="For questions about the research, academic conversations, and potential collaborations." />
+  <div class="contact-grid">
+    <section class="contact-panel"><Icon name="mail" size={25} /><h2>Start a conversation</h2><p>Email is the best way to get in touch.</p>{profile.email ? <a class="button button-primary" href={`mailto:${profile.email}`}>{profile.email}<Icon name="arrow" size={16} /></a> : <p><span class="placeholder-badge">Email address to be added</span></p>}<dl><dt>Institution</dt><dd>{profile.institution || 'Institution to be added'}</dd><dt>Department</dt><dd>{profile.department || 'Department to be added'}</dd><dt>Location</dt><dd>{profile.location || 'Institutional address to be added'}</dd></dl></section>
+    <section class="contact-panel"><Icon name="external" size={25} /><h2>Elsewhere</h2><p>Research profiles and professional links.</p><ul class="contact-profile-list">{profile.profiles.map(link => <li>{link.url ? <a href={link.url}>{link.label}<Icon name="external" size={15} /></a> : <span class="pending-link"><span>{link.label}</span><span class="placeholder-badge">Link pending</span></span>}</li>)}</ul></section>
+  </div>
+</BaseLayout>

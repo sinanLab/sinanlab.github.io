@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeading from '../../components/PageHeading.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort((a,b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Projects" active="Projects" description="Research project outlines covering cellular signaling, microscopy segmentation, and single-cell analysis.">
+  <PageHeading eyebrow="Research in focus" title="Projects" description="A closer look at the questions, methods, and workflows behind the research." />
+  {projects.some(project => project.data.placeholder) && <div class="notice">The entries marked “Template” are editable outlines. They do not claim completed work, experimental results, or achievements.</div>}
+  <div class="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div>
+  {projects.length === 0 && <div class="empty-state"><h2>Projects forthcoming</h2><p>Research projects will appear here when available.</p></div>}
+  <p class="figure-note">Schematic thumbnails are original illustrations and contain no experimental data.</p>
+</BaseLayout>

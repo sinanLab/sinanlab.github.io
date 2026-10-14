@@ -1,0 +1,14 @@
+{
+  "title": "Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting",
+  "authors": ["Farah Naz", "Lei She", "Muhammad Sinan", "Jie Shao"],
+  "venue": "Sensors",
+  "year": 2024,
+  "type": "Journal article",
+  "abstract": "Precipitation nowcasting in real-time is a challenging task that demands accurate and current data from multiple sources. Despite various approaches proposed by researchers to address this challenge, models such as the interaction-based dual attention LSTM (IDA-LSTM) face limitations, particularly in radar echo extrapolation. These limitations include higher computational costs and resource requirements. Moreover, the fixed kernel size across layers in these models restricts their ability to extract global features, focusing more on local representations. To address these issues, this study introduces an enhanced convolutional long short-term 2D (ConvLSTM2D) based architecture for precipitation nowcasting. The proposed approach includes time-distributed layers that enable parallel Conv2D operations on each image input, enabling effective analysis of spatial patterns. Following this, ConvLSTM2D is applied to capture spatiotemporal features, which improves the model’s forecasting skills and computational efficacy. The performance evaluation employs a real-world weather dataset benchmarked against established techniques, with metrics including the Heidke skill score (HSS), critical success index (CSI), mean absolute error (MAE), and structural similarity index (SSIM). ConvLSTM2D demonstrates superior performance, achieving an HSS of 0.5493, a CSI of 0.5035, and an SSIM of 0.3847. Notably, a lower MAE of 11.16 further indicates the model’s precision in predicting precipitation.",
+  "bibtex": "@article{naz2024enhancing,\n  author  = {Naz, Farah and She, Lei and Sinan, Muhammad and Shao, Jie},\n  title   = {Enhancing Radar Echo Extrapolation by ConvLSTM2D for Precipitation Nowcasting},\n  journal = {Sensors},\n  volume  = {24},\n  number  = {2},\n  pages   = {459},\n  year    = {2024},\n  doi     = {10.3390/s24020459}\n}",
+  "selected": false,
+  "placeholder": false,
+  "links": {
+    "doi": "https://doi.org/10.3390/s24020459"
+  }
+}

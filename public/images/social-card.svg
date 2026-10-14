@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fafbf9"/>
+  <path d="M80 82h1040M80 548h1040" stroke="#dfe5de"/>
+  <g fill="#286553"><circle cx="94" cy="133" r="9"/><circle cx="119" cy="133" r="6" opacity=".6"/><circle cx="94" cy="158" r="6" opacity=".6"/><circle cx="119" cy="158" r="9"/></g>
+  <g font-family="Arial, Helvetica, sans-serif"><text x="80" y="248" fill="#286553" font-size="18" letter-spacing="4">SYSTEMS BIOLOGY</text><text x="76" y="328" fill="#24332e" font-size="62">Cells, signals, and time.</text><text x="80" y="382" fill="#64706a" font-size="24">Research · Microscopy · Single-cell analysis</text><text x="80" y="507" fill="#64706a" font-size="18">An academic research portfolio</text></g>
+  <g stroke="#286553" fill="none"><path d="M820 490c25 0 26-66 46-64s25 68 47 62 26-48 45-44 24 44 47 39 28-26 45-22 28 12 47 8" stroke-width="3"/><path d="M820 490h282" stroke="#dfe5de"/></g>
+</svg>

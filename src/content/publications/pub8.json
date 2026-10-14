@@ -1,0 +1,11 @@
+{
+  "title": "Theoretical and numerical analysis of novel COVID-19 via fractional order mathematical model",
+  "authors": ["Amjad Ali", "Muhammad Yasin Khan", "Muhammad Sinan", "FM Allehiany", "Emad E Mahmoud", "Abdel-Haleem Abdel-Aty", "Gohar Ali"],
+  "venue": "Results in physics",
+  "year": 2021,
+  "type": "Journal article",
+  "abstract": "Theoretical and numerical analysis of novel COVID-19 via fractional order mathematical model.",
+  "bibtex": "@article{ali2021theoretical,\n  title={Theoretical and numerical analysis of novel COVID-19 via fractional order mathematical model},\n  author={Ali, Amjad and Khan, Muhammad Yasin and Sinan, Muhammad and Allehiany, FM and Mahmoud, Emad E and Abdel-Aty, Abdel-Haleem and Ali, Gohar},\n  journal={Results in physics},\n  volume={20},\n  pages={103676},\n  year={2021},\n  publisher={Elsevier}\n}",
+  "selected": true,
+  "placeholder": false
+}

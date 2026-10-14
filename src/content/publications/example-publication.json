@@ -1,0 +1,12 @@
+{
+  "title": "Publication title to be added",
+  "authors": [],
+  "venue": "",
+  "year": null,
+  "type": "Journal article",
+  "abstract": "This is an editable placeholder, not a real publication. Replace it with the exact abstract, authors, publication venue, and year of a paper you have supplied.",
+  "bibtex": "@article{replace_with_citation_key,\n  title   = {REPLACE WITH VERIFIED TITLE},\n  author  = {REPLACE WITH AUTHORS},\n  journal = {REPLACE WITH VENUE},\n  year    = {REPLACE WITH YEAR}\n}",
+  "selected": true,
+  "placeholder": true,
+  "links": {}
+}

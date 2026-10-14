@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import Icon from '../components/Icon.astro';
+import { withBase } from '../lib/utils';
+---
+<BaseLayout title="Page not found" noindex><PageHeading eyebrow="404" title="This page isn’t here." description="The link may have changed, or the page may no longer exist."><a class="button button-primary" href={withBase()}>Back to home<Icon name="arrow" size={16} /></a></PageHeading></BaseLayout>

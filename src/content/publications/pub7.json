@@ -1,0 +1,11 @@
+{
+  "title": "Fractional order mathematical modeling of typhoid fever disease",
+  "authors": ["Muhammad Sinan", "Kamal Shah", "Poom Kumam", "Ibrahim Mahariq", "Khursheed J Ansari", "Zubair Ahmad", "Zahir Shah"],
+  "venue": "Results in Physics",
+  "year": 2022,
+  "type": "Journal article",
+  "abstract": "Fractional order mathematical modeling of typhoid fever disease.",
+  "bibtex": "@article{sinan2022fractional,\n  title={Fractional order mathematical modeling of typhoid fever disease},\n  author={Sinan, Muhammad and Shah, Kamal and Kumam, Poom and Mahariq, Ibrahim and Ansari, Khursheed J and Ahmad, Zubair and Shah, Zahir},\n  journal={Results in Physics},\n  volume={32},\n  pages={105044},\n  year={2022},\n  publisher={Elsevier}\n}",
+  "selected": true,
+  "placeholder": false
+}
