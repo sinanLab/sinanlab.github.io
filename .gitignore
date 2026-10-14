@@ -1,0 +1,12 @@
+# Local dependencies and generated output
+node_modules/
+dist/
+dist-subpath/
+.astro/
+test-results/
+playwright-report/
+
+# Repository and asset documentation
+/README.md
+/prompt.md
+/public/**/README.md
