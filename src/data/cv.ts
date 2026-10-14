@@ -23,13 +23,12 @@ export const cvSections: { title: string; entries: CVEntry[] }[] = [
     title: 'BS in Mathematics',
     organization: 'University of Swat, Pakistan',
     period: '2016 - November, 2020',
-    description: 'Mathematical Biology'
   }] },
   { title: 'Research experience', entries: [{
     title: 'First Stage Researcher (R1)',
     organization: 'Institute of Fundamental and Technological Research IPPT, Polish Academy of Sciences PAS, Poland',
     period: '2025 - December, 2028',
-    description: 'Mathematical Biology'
+    description: 'Mathematical and numerical system biology, Ordinary and partial differential equations. Stochastic processes. Image analysis, segmentation, quantification, hypothesis testing.'
   }] },
   { title: 'Presentations', entries: [{
     title: 'Fever modulates antibacterial innate immune response',
