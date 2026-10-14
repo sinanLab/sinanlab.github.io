@@ -1,7 +1,8 @@
 name: Deploy academic website to GitHub Pages
 
-# Deliberately manual. Merely pushing this workflow does not publish the site.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
